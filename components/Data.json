@@ -37,5 +37,37 @@
           
         }
       ]
+    },
+    {
+      "project_id": 2,
+      "owner_name": "Awantika Nigam",
+      "github_username": "awantika10",
+      "project_name": "Desgen",
+      "project_description": "We are trying to develop innovative designs through lastest UI/UX technologies. Most of the open source organisation and platforms have Web development, Android Development, ML etc, but ever wonder any organization or project which is completely dedicated to solving real world problems related to UI? Think about designing a wireless garden management system, or a smart video management system!! Here we provide a platform to learn and build innovative solutions for such problem. We love to brainstorm and come up with different techniques and approaches to design problems which we face in our day-to-day basis.",
+      "project_video_link": "https://youtu.be/cEWfIYKSuyw",
+      "technology_used": "HTML, CSS, Figma, AdobeXD, Illustrator, Framer, Anima",
+      "github": "https://github.com/awantika10/Desgen",
+      "email": "awantikanigam101220@gmail.com",
+      "repo_fullname": "awantika10/Desgen",
+      "mentors_id": [
+        {
+          "name": "Aryan Bhardwaj",
+          "github": "https://github.com/weebo-ary",
+          "email": "aryan.bhardwaj1233@gmail.com"
+          
+        },
+        {
+          "name": "Shitiz Aggarwal",
+          
+          "email": "shitizaggarwal2000@gmail.com"
+  
+        },
+        {
+          "name": "Shaurya Bhandari",
+        
+          "email": "shauryabhandari25@gmail.com"
+        
+        }
+      ]
     }
   ]
