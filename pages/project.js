@@ -46,21 +46,27 @@ export default function Modal() {
            setSearchTerm(event.target.value);
          }}
         />
-       {/* {Data.map((post)=>{
+        {Data.filter((val)=>{
           if(searchTerm ==""){
-            return post
+            return val
           }
-          else if(post.repo_fullname.toLowerCase().includes(searchTerm.toLowerCase())){
-            return post
+          else if(val.repo_fullname.toLowerCase().includes(searchTerm.toLowerCase())){
+            return val
           }
-        })}*/}
-        <button className="flex border-orange-400 items-center justify-center px-4 border-l">
+        }).map((val,key) => {
+          return(
+            <div key={key} className="user">
+              <p>{val.project_name}</p>
+            </div>
+          );
+        })}
+      {/*  <button className="flex border-orange-400 items-center justify-center px-4 border-l">
             <svg className="border-orange-400 w-8 h-8 text-orange-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24">
                 <path
                     d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
             </svg>
-        </button>
+      </button> */}
     </div>
 </div>
 </div>
@@ -177,7 +183,7 @@ export default function Modal() {
         <button
         className="absolute inset-y-0 top-0 right-0 text-center pb-5 bg-orange-400 text-white active:bg-orange-600 font-bold uppercase text-sm px-2 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none m-1 mb-6 ease-linear transition-all duration-150"
         type="button"
-        onClick={() => setShowModal(true)}>explore</button>
+        onClick={() => setShowModal(true)}>explore </button>
     </div>
         <div className="font-bold text-xl mb-6 text-primary_orange-0">{post.project_name}</div>
         <p className="text-gray-700 text-base mt-2">
@@ -189,6 +195,7 @@ export default function Modal() {
       </div>
     </div>
   </div>
+
   </div>
 
 
