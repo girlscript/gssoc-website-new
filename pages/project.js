@@ -5,7 +5,6 @@ import Link from 'next/link'
 import styles from "../styles/Home.module.css";
 import Card from "../components/homepage/Card";
 import Navbar from "../components/Navbar"
-import { Icon, InlineIcon } from "@iconify/react";
 import Data from "../components/Data"
 import useState from 'react';
 
