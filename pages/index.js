@@ -428,10 +428,17 @@ export default function Home() {
             <span className="text-primary_orange-0">Schedule</span> of GSSoC
             2022!
           </p>
-          <img
+          {theme === "light" ? (
+            <img
+              
+              src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/LightModeSchedule.svg?raw=true"
+            />
+          ) : (
+            <img
             src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Frame%2082.svg?raw=true"
             alt="schedule"
-          />
+            />
+          )}
         </div>
       </div>
     </div>
