@@ -93,7 +93,7 @@ export default function Home() {
               data-aos="flip-left" 
               data-aos-duration="700">
             <img
-              src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Rectangle%205.svg?raw=true"
+              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Rectangle%20(1).png"
               height="453"
               width="420"
             />
@@ -102,7 +102,7 @@ export default function Home() {
           data-aos="flip-left"
           data-aos-duration="700">
             <img
-              src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Rectangle%205.svg?raw=true"
+              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Rectangle%20(1).png"
               height="453"
               width="420"
             />
