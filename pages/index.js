@@ -80,7 +80,7 @@ export default function Home() {
             >
               <div className="img__container">
                 <img
-                  src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Saly-13%201.svg"
+                  src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Saly-13%201.svg?raw=true"
                   alt="hero-image"
                   />
               </div>
@@ -93,7 +93,7 @@ export default function Home() {
               data-aos="flip-left" 
               data-aos-duration="700">
             <img
-              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Rectangle.svg"
+              src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Rectangle%205.svg?raw=true"
               height="453"
               width="420"
             />
@@ -102,7 +102,7 @@ export default function Home() {
           data-aos="flip-left"
           data-aos-duration="700">
             <img
-              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Rectangle.png"
+              src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Rectangle%205.svg?raw=true"
               height="453"
               width="420"
             />
@@ -115,13 +115,13 @@ export default function Home() {
             {theme === "light" ? (
               <img
                 className=" mt-4 mb-8 md:mb-9 md:mt-0"
-                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logos/GirlScript_logo_Black.png?raw=true"
+                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/GS_logo_Black.svg?raw=true"
                 alt="logo"
               />
             ) : (
               <img
                 className=" mt-4 mb-8 md:mb-9 md:mt-0"
-                src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/GsLogo_White.png"
+                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/GsLogo_White.svg?raw=true"
                 alt="logo"
               />
             )}
@@ -153,13 +153,13 @@ export default function Home() {
               <img
                 id="Learn_more"
                 className="mb-10"
-                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logos/GS_logo_Black.png?raw=true"
+                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/GS_logo_Black%20(1).svg?raw=true"
               />
             ) : (
               <img
                 id="Learn_more"
                 className="mb-10"
-                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logos/GS_logo_White.png?raw=true"
+                src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/type-logo%201.svg?raw=true"
               />
             )}
             <p className="text-primary_orange-0 font-semibold font-sans text-4xl 2.25rem 3rem mb-10">
@@ -193,7 +193,7 @@ export default function Home() {
             <img
               className="mt-3 md:mt-0"
               id="Learn_more"
-              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Frame%201(4).png"
+              src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Frame%201.svg?raw=true"
             />
           ) : (
             <img
@@ -429,7 +429,7 @@ export default function Home() {
             2022!
           </p>
           <img
-            src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Schedule/Schedule.png?raw=true"
+            src="https://github.com/GSSoC-Web/gssoc-assets/blob/main/Logo/Frame%2082.svg?raw=true"
             alt="schedule"
           />
         </div>
