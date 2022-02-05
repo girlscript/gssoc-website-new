@@ -80,7 +80,7 @@ export default function Home() {
             >
               <div className="img__container">
                 <img
-                  src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Saly-13%201.png"
+                  src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Saly-13%201.svg"
                   alt="hero-image"
                   />
               </div>
@@ -93,7 +93,7 @@ export default function Home() {
               data-aos="flip-left" 
               data-aos-duration="700">
             <img
-              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Rectangle.png"
+              src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/Rectangle.svg"
               height="453"
               width="420"
             />
