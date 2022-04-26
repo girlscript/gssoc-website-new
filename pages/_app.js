@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
             showOnShallow={true}
             options={{ showSpinner: false }}
           />
-
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>

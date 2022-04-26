@@ -175,6 +175,77 @@ html {
   justify-content: flex-end;
 }
 
+/* Blog Slider  */
+
+.carousel-wrapper {
+  height: 600px;
+  position: relative;
+  width: 1200px;
+  display: block;
+  margin: 50px auto ;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background-color: #ff6701;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item-2 {
+  background-color: #2bff01;
+  background-size: cover;
+}
+.item-3 {
+  background-color: #011aff;
+  background-size: cover;
+}
+
+*:target ~ .item-1{
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+} 
+
 /* media queries for the date part of chrono */
 @media screen and (max-width: 600px) {
   .css-1blinku-TitleWrapper {
