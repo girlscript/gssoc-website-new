@@ -16,13 +16,18 @@ import Dialog from "@material-ui/core/Dialog";
 // import DialogTitle from "@material-ui/core/DialogTitle";
 // import Backdrop from "@material-ui/core/Backdrop";
 // import CircularProgress from "@material-ui/core/CircularProgress";
-
+import { Spinner } from '@chakra-ui/react'
+import Confetti from 'react-confetti'
+import { Skeleton, SkeletonCircle, SkeletonText, Stack } from '@chakra-ui/react'
+import { useTheme } from "next-themes";
+import Pagination from "react-js-pagination";
 import {
     faGithub,
     // faGithubSquare,
   } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faList } from "@fortawesome/free-solid-svg-icons";
+import { useCallback } from 'react'
 const columns = [
   { id: "position", label: "Rank", minWidth: 50 },
   { id: "avatar", label: "Avatar", minWidth: 50 },
@@ -40,6 +45,12 @@ const columns = [
     minWidth: 100,
     align: "right",
   },
+  {
+    id: "viewBtn",
+    label: "",
+    minWidth: 100,
+    align: "right"
+  }
 ];
 
 // const StyledTableCell = withStyles((theme) => ({
@@ -129,17 +140,55 @@ const columns = [
 //   };
 // });
 
+function useWindowDimensions() {
+
+  const hasWindow = typeof window !== 'undefined';
+
+  var getWindowDimensions = useCallback(() => {
+    const width = hasWindow ? window.innerWidth : null;
+    const height = hasWindow ? window.innerHeight : null;
+    return {
+      width,
+      height,
+    };
+  }, [hasWindow])
+
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    if (hasWindow) {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, [getWindowDimensions, hasWindow]);
+
+  return windowDimensions;
+}
+
 function Leaderboard() {
   // const classes = useStyles();
-  let [totalData, setTotalData] = useState({});
-  let [leaderss, setLeaderss] = useState({});
-  let [links, setLinks] = useState("");
+  const { theme } = useTheme();
+  let [totalData, setTotalData] = useState([]);
+  let [leaderss, setLeaderss] = useState([]);
+  let [searchData, setSearchData] = useState([]);
+  let [links, setLinks] = useState([]);
   let [login, setLogin] = useState("");
   let [score, setScore] = useState("");
   let [avatar, setAvatar] = useState("");
   let [lastupdated, setLastupdated] = useState("");
   let [filter, setFilter] = useState("");
+  let [isLoading, setIsLoading] = useState(false);
+  let [isLboardLoading, setIsLboardLoading] = useState(false);
+  let [loadingMsg, setLoadingMsg] = useState("Sent request to the server");
+  let [showConfetti, setShowConfetti] = useState(false);
   const [openn, setOpenn] = React.useState(true);
+  const [activePage, setActivePage] = useState(1);
+  const { height, width } = useWindowDimensions();
+  // console.log("Width : ", width);
   let rows = [];
   function createData(
     username,
@@ -171,25 +220,47 @@ function Leaderboard() {
     };
   }
   useEffect(() => {
+    setIsLoading(true);
+    setIsLboardLoading(true);
+    setTimeout(function(){
+      setLoadingMsg("Waiting for response from server")
+    }, 600);
+    // clearTimeout(timeout)
     fetch("https://gssoc22-leaderboard.herokuapp.com/OSLeaderboard")
-      .then((res) => res.json())
+      .then((res) => {
+        setLoadingMsg("Data received. Starting to populate.")
+        setTimeout(function(){setIsLoading(false), 8000})
+        return res.json()
+      })
       .then((data) => {
-        data.leaderboard.sort(function (a, b) {
-          return (
-            b.score - a.score ||
-            b.level4 - a.level4 ||
-            b.level3 - a.level3 ||
-            b.level2 - a.level2 ||
-            b.level1 - a.level1 ||
-            b.level0 - a.level0 ||
-            a.login < b.login
-          );
-        });
-        const rankedData = data.leaderboard.map((contributorData, idx) => ({...contributorData, rank: idx+1}));
-        setLeaderss(rankedData);
-        setTotalData(rankedData);
-        setOpenn(false);
-        setLastupdated(data.updatedTimestring);
+        if(data.leaderboard.length === 0 && data.success === true){
+          setIsLoading(false)
+          setIsLboardLoading(false)
+          setLastupdated(null);
+        }
+        else{
+          data.leaderboard.sort(function (a, b) {
+            return (
+              b.score - a.score ||
+              b.level4 - a.level4 ||
+              b.level3 - a.level3 ||
+              b.level2 - a.level2 ||
+              b.level1 - a.level1 ||
+              b.level0 - a.level0 ||
+              a.login < b.login
+            );
+          });
+          const rankedData = data.leaderboard.map((contributorData, idx) => ({...contributorData, rank: idx+1}));
+          setLeaderss(rankedData.slice(0, 50));
+          setIsLboardLoading(false);
+          setIsLoading(false);
+          setTotalData(rankedData);
+          setSearchData(rankedData);
+          setOpenn(false);
+          setLastupdated(data.updatedTimestring);
+          setShowConfetti(true);
+          setTimeout(function (){setShowConfetti(false)}, 5000);
+        }
       });
   }, []);
 
@@ -235,11 +306,16 @@ function Leaderboard() {
   };
 
   const filterData = () => {
+    setIsLboardLoading(true)
     if(filter === "" && leaderss.length !== totalData.length){
-      setLeaderss(totalData);
+      setSearchData(totalData);
+      setActivePage(1);
+      setIsLboardLoading(false);
     } else{
       const filtered = totalData.filter((leader) => leader.login.toLowerCase().includes(filter.toLowerCase()));
-      setLeaderss(filtered);
+      setSearchData(filtered);
+      setActivePage(1);
+      setIsLboardLoading(false);
     }
   }
 
@@ -247,8 +323,47 @@ function Leaderboard() {
     prlinks = [];
     setOpen(false);
   };
+
+  const handlePageChange = (pageNumber) => {
+    console.log(`active page is ${pageNumber}`);
+    setActivePage(pageNumber);
+  }
+
+  useEffect(()=>{
+    if(((activePage-1)*50)+50<searchData.length){
+      setLeaderss(searchData.slice((activePage-1)*50, ((activePage-1)*50)+50));
+    } else{
+      setLeaderss(searchData.slice((activePage-1)*50));
+    }
+    
+  }, [activePage, searchData])
+
   return (
     <>
+      {
+        isLoading && 
+        <div className="loader-div">
+          <div className="overlay dark:bg-darkmode_gray-0"></div>
+          <div className="loader-group-container">
+            <div className="loader-group dark:bg-black">
+              <Spinner
+                className="loader"
+                thickness='6px'
+                speed='0.65s'
+                emptyColor='gray.200'
+                color='orange.500'
+                size='xl'
+              />
+              <span className="loading-msg dark:text-white">{loadingMsg}</span>
+            </div>
+          </div>
+        </div>}
+      {
+        showConfetti && 
+        <Confetti
+          className="fullscreen"
+        />
+      }
       <div className="container transition-colors mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-10 lg:px-20 2xl:px-32 dark:bg-darkmode_gray-0 dark:transition-colors " style={{margin:"auto"}}>
         <div className="items-center justify-center">
           <div className="font-sans text-center text-2xl font-extrabold">
@@ -265,34 +380,62 @@ function Leaderboard() {
           <div className="py-5 px-0 xl:pb-12 xl:px-24 xl:pt-0 text-center">
             <div className="flex md:flex-row justify-between gap-y-1 gap-x-1 md:gap-x-2 items-center my-10">
               <div className="bg-white shadow-2xl dark:bg-black rounded-md px-0 sm:px-3 py-2 md:px-16 lg:py-4 relative inline-block w-28 md:w-auto">
-                <img
+                {(totalData[1] === undefined) && 
+                  <>
+                    <SkeletonCircle className="skeleton-circle-md" />
+                    <SkeletonText mt='4' noOfLines={1} spacing='4' />
+                  </>
+                }
+                {totalData[1] !== undefined && <><img
                   className="w-12 md:w-16 lg:w-24 rounded-full m-auto inline-block object-cover bg-white"
                   src={totalData[1] !== undefined ? totalData[1].avatar_url : null}
                 />
                   <FontAwesomeIcon className="invisible lg:visible w-8 h-8 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-amber-300 inline-block" icon={faGithub} size="2x" />
                 <h3 className="text-black dark:text-primary_orange-0 font-semibold mt-2 text-xs sm:text-sm md:text-md">
                   2. {totalData[1] !== undefined ? totalData[1].login : null}
-                </h3>
+                </h3></>}
               </div>
               <div className="bg-white shadow-2xl dark:bg-black rounded-md px-0 sm:px-3 py-2 md:px-16 lg:py-4  relative inline-block w-28 md:w-auto">
-                <img
-                  className="w-12 md:w-16 lg:w-40 rounded-full m-auto bg-white"
-                  src={totalData[0] !== undefined ? totalData[0].avatar_url : null}
-                />
-                <FontAwesomeIcon className="invisible lg:visible w-10 h-10 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-cyan-200 inline-block" icon={faGithub} size="3x" />
-                <h3 className="text-black dark:text-primary_orange-0 font-semibold mt-4 text-xs sm:text-sm md:text-md">
-                  1. {totalData[0] !== undefined ? totalData[0].login : null}
-                </h3>
+
+                {(totalData[0] === undefined) && 
+                  <>
+                    <SkeletonCircle className="skeleton-circle-lg" />
+                    <SkeletonText mt='4' noOfLines={1} spacing='4' />
+                  </>
+                }
+
+                {
+                  totalData[0] !== undefined && 
+                  <>
+                    <img
+                      className="w-12 md:w-16 lg:w-40 rounded-full m-auto bg-white"
+                      src={totalData[0] !== undefined ? totalData[0].avatar_url : null}
+                    />
+                    <FontAwesomeIcon className="invisible lg:visible w-10 h-10 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-cyan-200 inline-block" icon={faGithub} size="3x" />
+                    <h3 className="text-black dark:text-primary_orange-0 font-semibold mt-4 text-xs sm:text-sm md:text-md">
+                      1. {totalData[0] !== undefined ? totalData[0].login : null}
+                    </h3>
+                  </>
+                }
               </div>
               <div className="bg-white shadow-2xl dark:bg-black rounded-md px-0 sm:px-3 py-2 md:px-16 lg:py-4 relative inline-block w-28 md:w-auto">
-                <img
-                  className="w-12 md:w-16 lg:w-24 rounded-full m-auto bg-white"
-                  src={totalData[2] !== undefined ? totalData[2].avatar_url : null}
-                />
-                <FontAwesomeIcon className="invisible lg:visible w-8 h-8 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-zinc-100 inline-block" icon={faGithub} size="2x" />
-                <h3 className="text-black dark:text-primary_orange-0 font-semibold mt-2 text-xs sm:text-sm md:text-md">
-                  3. {totalData[2] !== undefined ? totalData[2].login : null}
-                </h3>
+                {(totalData[2] === undefined) && 
+                    <>
+                      <SkeletonCircle className="skeleton-circle-md" />
+                      <SkeletonText mt='4' noOfLines={1} spacing='4' />
+                    </>
+                }
+                {totalData[2] !== undefined &&
+                <>
+                  <img
+                    className="w-12 md:w-16 lg:w-24 rounded-full m-auto bg-white"
+                    src={totalData[2] !== undefined ? totalData[2].avatar_url : null}
+                  />
+                  <FontAwesomeIcon className="invisible lg:visible w-8 h-8 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-zinc-100 inline-block" icon={faGithub} size="2x" />
+                  <h3 className="text-black dark:text-primary_orange-0 font-semibold mt-2 text-xs sm:text-sm md:text-md">
+                    3. {totalData[2] !== undefined ? totalData[2].login : null}
+                  </h3>
+                </>}
               </div>
             </div>
 
@@ -302,7 +445,7 @@ function Leaderboard() {
                   <div className="input-group relative flex flex-wrap items-stretch w-full mb-4 justify-end">
                     <div className="relative flex search-container">
                       <input onChange={(e)=>{setFilter(e.target.value)}} type="search" className="form-control relative flex-auto min-w-0 block px-3 py-1.5 text-base dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-600 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-400 focus:outline-none dark:placeholder-neutral-300" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" onKeyUp={(e) => {e.key === "Enter" ? filterData() : ""}} />
-                      <span className="search-count dark:text-neutral-300">{leaderss.length}</span>
+                      <span className="search-count dark:text-neutral-300">{searchData.length}</span>
                     </div>
                     <button onClick={()=>{filterData()}} className="btn inline-block px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center" type="button" id="button-addon2" style={{padding: "10px 18px", maxWidth: "50px", width: "20%"}}>
                       <svg className="w-4 fill-neutral-600 hover:fill-neutral-800 dark:fill-neutral-300 dark:hover:fill-neutral-100" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -315,7 +458,8 @@ function Leaderboard() {
             </div>
             <div className="bg-sky-100 dark:bg-orange-200 px-1.5 py-1.5 rounded-md mb-3">
               <p className="text-sky-700 dark:text-orange-900 text-sm">
-                The leaderboard was last updated on: <b>{lastupdated}</b>
+                {isLoading === false && lastupdated !== "" && <>The leaderboard was last updated on: <b>{lastupdated}</b></>}
+                {isLoading === false && lastupdated === null && <>The server is updating. Please comeback after 5-10 mins</>}
               </p>
             </div>
 
@@ -336,6 +480,8 @@ function Leaderboard() {
                       ))}
                     </div>
                   </div>
+                  {!isLboardLoading &&
+                  <>
                   <div className="table-row-group">
                     {rows.map((row, i) => {
                       return (
@@ -355,9 +501,7 @@ function Leaderboard() {
                                   className="table-cell px-4 py-2 bg-orange-50 text-black  dark:bg-neutral-900 dark:text-white font-medium"
                                   key={column.id}
                                   align={column.align}
-                                  onClick={() => {
-                                    handleClickOpen(rows.indexOf(row));
-                                  }}
+                                  style={{verticalAlign: "middle"}}
                                 >
                                   {column.id === "avatar" ? (
                                     <img
@@ -367,16 +511,37 @@ function Leaderboard() {
                                   ) : column.id === "position" ? (
                                     row.rank
                                   ) : column.id === "username" ? (
-                                    <div className="flex relative left-0 md:left-12 lg:left-32">
+                                    <div className="flex relative left-6 md:left-12 lg:left-24">
                                     <FontAwesomeIcon  className="mr-5" icon={faGithub} size="2x" />
                                       <a
                                         href={value[1]}
-                                        className="no-underline"
+                                        target="_blank"
+                                        className="no-underline username"
+                                        style={{alignSelf : "center", cursor: "pointer"}} rel="noreferrer"
                                       >
                                         {value[0]}
                                       </a>
                                     </div>
-                                  ) : (
+                                  )  : column.id === "viewBtn" ? (
+                                    <button
+                                      onClick={() => {
+                                        handleClickOpen(rows.indexOf(row));
+                                      }}
+                                      color="primary"
+                                      className="view-btn"
+                                      style={{
+                                        background: "#FA6329",
+                                        border: "none",
+                                        padding: "5px 12px",
+                                        color: "white",
+                                        borderRadius: 5,
+                                        cursor: "pointer",
+                                        fontSize: "17px"
+                                      }}
+                                    >
+                                      <FontAwesomeIcon icon={faList} />
+                                    </button>
+                                  )  : (
                                     value
                                   )}
                                 </div>
@@ -397,9 +562,6 @@ function Leaderboard() {
                                   className="table-cell px-4 py-2 bg-leaderboardbg-0 text-black dark:bg-black dark:text-white font-medium"
                                   key={column.id}
                                   align={column.align}
-                                  onClick={() => {
-                                    handleClickOpen(rows.indexOf(row));
-                                  }}
                                 >
                                   {column.id === "avatar" ? (
                                     <img
@@ -409,15 +571,35 @@ function Leaderboard() {
                                   ) : column.id === "position" ? (
                                     row.rank
                                   ) : column.id === "username" ? (
-                                    <div className="flex relative left-0 md:left-12 lg:left-32">
+                                    <div className="flex relative left-6 md:left-12 lg:left-24">
                                     <FontAwesomeIcon  className="mr-5" icon={faGithub} size="2x" />
                                       <a
                                         href={value[1]}
-                                        className="no-underline"
+                                        className="no-underline username"
+                                        style={{alignSelf : "center"}}
                                       >
                                         {value[0]}
                                       </a>
                                     </div>
+                                  ) : column.id === "viewBtn" ? (
+                                    <button
+                                      onClick={() => {
+                                        handleClickOpen(rows.indexOf(row));
+                                      }}
+                                      color="primary"
+                                      className="view-btn"
+                                      style={{
+                                        background: "#FA6329",
+                                        border: "none",
+                                        padding: "5px 12px",
+                                        color: "white",
+                                        borderRadius: 5,
+                                        cursor: "pointer",
+                                        fontSize: "17px"
+                                      }}
+                                    >
+                                      <FontAwesomeIcon icon={faList} />
+                                    </button>
                                   ) : (
                                     value
                                   )}
@@ -430,16 +612,42 @@ function Leaderboard() {
                       );
                     })}
                   </div>
+                </>}
                 </div>
-              </div>
+                {isLboardLoading && 
+                      <Stack style={{marginTop: "10px"}}>
+                        <Skeleton height='40px' />
+                        <Skeleton height='40px' />
+                        <Skeleton height='40px' />
+                        <Skeleton height='40px' />
+                      </Stack>
+                  }
+                </div>
+                <div className="pagination-holder">
+                      <Pagination
+                        innerClass={theme==='dark'?"dark-theme pagination":"pagination"}
+                        itemClass="page-item"
+                        linkClass="page-link"
+                        activePage={activePage}
+                        activeClass="active-page"
+                        itemsCountPerPage={50}
+                        totalItemsCount={searchData.length}
+                        pageRangeDisplayed={width<600 ? 3 : 5}
+                        onChange={(e)=>{
+                          console.log(e)
+                          handlePageChange(e)
+                        }}
+                      />
+                    </div>
             {/* </Paper> */}
             <Dialog
               open={open}
               onClose={handleClose}
               aria-labelledby="alert-dialog-slide-title"
               aria-describedby="alert-dialog-slide-description"
+              className={theme==='dark'?"dark-modal":""}
             >
-              <div className="flex m-0 py-4 px-6 font-medium text-lg leading-relaxed" id="alert-dialog-slide-title">
+              <div className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed" id="alert-dialog-slide-title">
                 {login + "'s Stats"}
               </div>
               <div className="flex-auto py-2 px-6 overflow-y-auto">
@@ -451,31 +659,28 @@ function Leaderboard() {
                       className="w-12 rounded-full xl:w-24"
                     />
                     <p
-                      className="w-24 rounded-full xl:w-36 p-3 text-center"
-                      style={{
-                        backgroundColor: "#ebfaeb",
-                        marginLeft: 20,
-                        fontSize: 25,
-                      }}
+                      className="dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score"
                     >
                       🏆 {score}
                     </p>
                   </div>
-                  <div style={{ marginTop: 30 }}>List Of PRs: </div>
-                  {links}
+                  <div className="dark:text-white" style={{ marginTop: 30 }}>List Of PRs: </div>
+                  {links.length !== 0 && links.map((link) => <a className="pr-links" href={link} key={link}>{link}</a>)}
                 </div>
               </div>
               <div className="flex px-2 py-2 items-center justify-end">
                 <button
                   onClick={handleClose}
                   color="primary"
+                  className="close-btn"
                   style={{
                     background: "#FA6329",
                     border: "none",
-                    padding: 15,
+                    padding: "10px 20px",
                     color: "white",
                     borderRadius: 5,
                     cursor: "pointer",
+                    fontSize: "18px"
                   }}
                 >
                   Close

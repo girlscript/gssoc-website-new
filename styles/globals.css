@@ -175,7 +175,7 @@ html {
   justify-content: flex-end;
 }
 
-/* Blog Slider  */
+/* Blog Slider Start */
 
 .carousel-wrapper {
   height: 600px;
@@ -246,6 +246,171 @@ html {
   opacity: 1;
 } 
 
+/* Blog Slider End  */
+
+.loader-div{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 13;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #f1f5f9;
+  z-index: 13;
+  opacity: 0.8;
+}
+
+.loader-group-container{
+  position: absolute;
+  top: 38vh;
+  z-index: 13;
+  opacity: 1;
+  width: 100%;
+  align-items: center;
+}
+
+.loader-group{
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  padding: 0 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+.fullscreen{
+  position:fixed;
+  z-index: 13;
+  height: 100vh;
+  width: 96vw;
+  margin: 0 2vw; 
+}
+
+.table-cell{
+  vertical-align: middle;
+}
+
+.loader{
+  height: 4rem !important;
+  width: 4rem !important;
+}
+
+.loading-msg{
+  color: black;
+  margin-top: 20px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.skeleton-circle-lg{
+  height: 160px !important;
+  width: 160px !important;
+  margin: auto;
+}
+
+.skeleton-circle-md{
+  height: 80px !important;
+  width: 80px !important;
+  margin: auto;
+}
+
+.pr-links{
+  color:#2563eb;
+  opacity: 0.9;
+}
+.dark-modal .pr-links{
+  color: #dbeafe;
+}
+
+.pr-links:hover{
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.close-btn:hover, .view-btn:hover{
+  background-color: #fa500c !important;
+}
+
+.dark-modal .MuiDialog-paper{
+  background-color: #303030;
+  background-color: black;
+}
+
+.modal-score{
+  background-color: #ebfaeb;
+  margin-left: 20px;
+  font-size: 22px;
+}
+
+.username:hover{
+  text-decoration: underline;
+}
+
+.pagination-holder{
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  height: 50px;
+}
+
+.pagination{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  width:fit-content;
+  position:absolute;
+  right:0;
+  background-color: #f3f4f6;
+  padding: 5px;
+  border-radius: 100px;
+  transition: all 0.5s ease-in-out 0s;
+}
+.dark-theme.pagination{
+  background-color: #171717;
+}
+.pagination .page-item{
+  height: 2.2rem;
+  width: 2.4rem;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: all 0.5s ease-in-out 0s;
+}
+.pagination .page-item:last-child{
+  border-right: none;
+}
+.dark-theme.pagination .page-item.active-page{
+  background-color: #525252;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.pagination .page-item.active-page{
+  background-color: #d1d5db;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.dark-theme.pagination .page-item .page-link{
+  color: white;
+}
+
+.pagination .page-link{
+  font-weight: bolder;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out 0s;
+}
+
 /* media queries for the date part of chrono */
 @media screen and (max-width: 600px) {
   .css-1blinku-TitleWrapper {
@@ -253,6 +418,13 @@ html {
     font-size: xx-small !important;
     text-align: left !important;
     /* font-weight: bold !important; */
+  }
+  .pagination{
+    padding: 0;
+  }
+  .pagination .page-item{
+    height:35px;
+    width: 30px;
   }
 }
 
@@ -269,11 +441,41 @@ html {
     max-width: 200px;
     width: 80%;
   }
+  .loader-group{
+    height: 150px;
+    width: 150px;
+  }
+  
+  .table-cell{
+    vertical-align: middle;
+  }
+  
+  .loader{
+    height: 3rem !important;
+    width: 3rem !important;
+  }
+  
+  .loading-msg{
+    color: black;
+    margin-top: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .skeleton-circle-lg, .skeleton-circle-md{
+    height: 65px !important;
+    width: 65px !important;
+  }
 }
 
 @media screen and (max-width: 400px){
   .search-container{
     max-width: unset;
     width: 80%;
+  }
+  .skeleton-circle-lg, .skeleton-circle-md{
+    height: 54px !important;
+    width: 54px !important;
   }
 }
