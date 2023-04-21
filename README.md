@@ -1,7 +1,7 @@
 ![GSSoC Logo Light](https://user-images.githubusercontent.com/63473496/213306239-9e8fc317-ce2f-4127-8bfe-17f5df06ee99.png#gh-light-mode-only)
 ![GSSoC Logo Dark](https://user-images.githubusercontent.com/63473496/213306279-338f7ce9-9a9f-4427-8c2a-3e344874498f.png#gh-dark-mode-only)
 
-# Official website repository for the GirlScript Summer of Code 2022 (GSSoC'22)
+# Official website repository for the GirlScript Summer of Code 2023 (GSSoC'23)
 
 GirlScript Summer Of Code is a three-month-long Open-Source Program conducted every summer by the Girlscript Foundation.  
 With constant efforts, participants contribute to numerous projects under the extreme guidance of skilled mentors over these months. With such exposure, students begin to contribute to real-world projects from the comfort of their homes. GirlScript Summer Of Code has witnessed active participation over the years, and the 2023 edition aims to carry the legacy with a promising impact.
