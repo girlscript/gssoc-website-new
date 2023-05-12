@@ -71,14 +71,12 @@ The website was designed to support both light and dark themes. It reads the cur
 ### Light Mode  
 
 <details> <summary>Toggle me to Preview!</summary>
-![image](https://user-images.githubusercontent.com/83456083/236680082-9182439e-633a-4269-a5bb-9720c87a57b2.png) 
 <img alt="image" src="https://user-images.githubusercontent.com/83456083/236680082-9182439e-633a-4269-a5bb-9720c87a57b2.png">
 </details>
 
 ### Dark Mode  
 
 <details> <summary>Toggle me to Preview!</summary>
-![image](https://user-images.githubusercontent.com/83456083/236680214-b1f29e4a-bf08-496e-bbb3-8776c9f1c8cf.png)
 <img alt="image" src="https://user-images.githubusercontent.com/83456083/236680214-b1f29e4a-bf08-496e-bbb3-8776c9f1c8cf.png">
 </details>
 
