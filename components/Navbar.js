@@ -30,10 +30,10 @@ export const Navbar = () => {
 
 	return (
 		<>
-			<nav className="flex items-center transition-colors  bg-white drop-shadow-xl p-1 justify-center mb-10 dark:bg-black dark:text-white dark:transition-colors sticky top-0 z-10">
+			<nav className="flex items-center flex-wrap transition-colors  bg-white drop-shadow-xl p-1 justify-center mb-10 dark:bg-black dark:text-white dark:transition-colors sticky top-0 z-10">
 				<Link href="/">
 					<a className="inline-flex items-center p-2 mr-4 ">
-						<span className="text-xl text-orange font-bold uppercase tracking-wide  ml-8">
+						<span className="text-xl text-orange font-bold uppercase tracking-wide ml-2  sm:ml-8">
 							{/* <img
                 src="https://user-images.githubusercontent.com/64256342/151362487-b8574a92-6d37-418b-8c97-03ba3470f4fa.png"
                 alt=""
@@ -59,7 +59,7 @@ export const Navbar = () => {
 					</a>
 				</Link>
 
-				<div className="lg:hidden ml-auto mr-1 ">
+				<div className="lg:hidden cursor-pointer ml-auto mr-1 ">
 					<Tooltip label="Change Theme" placement="bottom">
 						<div>
 							<ThemeChanger />
@@ -96,7 +96,7 @@ export const Navbar = () => {
 						<Link href="/">
 							<a
 								className="
-                text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+                text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 							>
 								ABOUT
@@ -105,7 +105,7 @@ export const Navbar = () => {
 						<Link href="/project">
 							<a
 								className="
-                text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+                text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 							>
 								PROJECT
@@ -114,7 +114,7 @@ export const Navbar = () => {
 						<Link href="/#Sponsors">
 							<a
 								className="
-                text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+                text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 							>
 								SPONSORS
@@ -133,7 +133,7 @@ export const Navbar = () => {
 						<Link href="/faq">
 							<a
 								className="
-               text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+               text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 							>
 								FAQ
@@ -142,7 +142,7 @@ export const Navbar = () => {
 						<Link href="/team">
 							<a
 								className="
-               text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+               text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 							>
 								TEAM
@@ -151,7 +151,7 @@ export const Navbar = () => {
 						<Link href="/blog">
 							<a
 								className="
-               text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+               text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 							>
 								BLOG
@@ -160,7 +160,7 @@ export const Navbar = () => {
 						<a
 							href="#Contact"
 							className="
-              text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
+              text-grey-800 w-full lg:w-fit  text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black
               "
 						>
 							CONTACT
@@ -168,7 +168,7 @@ export const Navbar = () => {
 						<div className="lg:inline-flex lg:w-auto w-full px-2 text-center rounded link link-underline link-underline-black mr-3.5">
 							<MoreMenu />
 						</div>
-						<div className="hidden lg:block">
+						<div className="hidden cursor-pointer lg:block">
 							<Tooltip label="Change Theme" placement="bottom">
 								<div>
 									<ThemeChanger />
