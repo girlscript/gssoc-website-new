@@ -34,12 +34,6 @@ export const Navbar = () => {
 				<Link href="/">
 					<a className="inline-flex items-center p-2 mr-4 ">
 						<span className="text-xl text-orange font-bold uppercase tracking-wide ml-2  sm:ml-8">
-							{/* <img
-                src="https://user-images.githubusercontent.com/64256342/151362487-b8574a92-6d37-418b-8c97-03ba3470f4fa.png"
-                alt=""
-                width="36"
-                height="36"
-              /> */}
 							{theme === "light" ? (
 								<img
 									style={{ width: "200px" }}
