@@ -576,7 +576,6 @@ export default function Home() {
 					</div>
 				</div>
 
-				{/* Slider */}
 				<div className="mb-20">
 					<Slider />
 				</div>

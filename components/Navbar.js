@@ -46,7 +46,8 @@ export const Navbar = () => {
 									style={{ width: "200px" }}
 									id="Learn_more"
 									src="./GS_logo_White.svg"
-									alt="GSSoC logo dark"
+									alt="GSSoC 
+                  logo dark"
 								/>
 							)}
 						</span>
