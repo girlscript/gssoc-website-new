@@ -11,7 +11,7 @@ function Schedule() {
             Schedule{" "}
           </span>
           <span className="md:dark:bg-darkmode_gray-0 lg:bg-white pr-10 py-5">
-            of GSSoC 2022!
+            of GSSoC 2023!
           </span>
         </h1>
         <div data-aos="zoom-out" className="container">
