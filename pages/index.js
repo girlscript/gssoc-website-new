@@ -122,7 +122,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div data-aos="fade-down" className="hero__image hidden md:block">
+          <div data-aos="fade-down" className="hero__image hidden lg:block">
             <Tilt
               className="Tilt"
               options={{ max: 25 }}
