@@ -16,6 +16,7 @@ import ThemeChanger from "../components/Toggler";
 import Card from "../components/homepage/Card";
 import Slider from "../components/homepage/Slider";
 import SocialFollow from "../components/homepage/SocialFollow";
+import Image from '../public/GSSoC_Schedule_Light_Mode.png'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -610,13 +611,13 @@ export default function Home() {
             <img
               id="Learn_more"
               className="mb-10"
-              src="https://user-images.githubusercontent.com/83456083/236680082-9182439e-633a-4269-a5bb-9720c87a57b2.png"
+              src="/GSSoC_Schedule_Light_Mode.png"
             />
           ) : (
             <img
               id="Learn_more"
               className="mb-10"
-              src="https://user-images.githubusercontent.com/83456083/236680214-b1f29e4a-bf08-496e-bbb3-8776c9f1c8cf.png"
+              src="/GSSoC_Schedule_Dark_Mode.png"
             />
           )}
         </div>

@@ -91,6 +91,13 @@
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/Aman-Manwani">
+            <img src="https://avatars.githubusercontent.com/u/104587833?v=4" width="100;" alt="Aman-Manwani"/>
+            <br />
+            <sub><b>AMAN MANWANI</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/mhdamaan79">
             <img src="https://avatars.githubusercontent.com/u/118375524?v=4" width="100;" alt="mhdamaan79"/>
             <br />
