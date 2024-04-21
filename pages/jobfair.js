@@ -55,22 +55,22 @@ function Faq() {
                 <div className="w-3/4 flex justify-between items-center rounded-2xl flex-wrap mb-24 bg-[#FFECDE] dark:bg-[#1A1A1B]">
                     <div className="dark:bg-black rounded-2xl basis-full p-6 md:basis-6/12 md:order-last lg:basis-1/2 lg:order-last relative">
                         <div className="text-black dark:text-white font-semibold text-4xl 2.25rem 3rem mb-5 font-sans">
-                            About <span className="text-primary_orange-0">GirlScript Summer of Code 2023 </span>
+                            About <span className="text-primary_orange-0">GirlScript Summer of Code 2024 </span>
                             Job Fair
                         </div>
                         <p className="dark:text-white font-serif text-1xl p-2 text-black-100">
-                            At GSSoC 2023 Job Fair, we believe in inclusivity and diversity. That&apos;s why the event is open to all students from different academic backgrounds.
+                            At GSSoC 2024 Job Fair, we believe in inclusivity and diversity. That&apos;s why the event is open to all students from different academic backgrounds.
                             Whether you&apos;re a tech nerd, a creative genius, a marketing maven, or a business aficionado, there are opportunities waiting for you.
                             Don&apos;t miss this extraordinary opportunity to kickstart your career in the technology world.
 
                         </p>
                         <p className="dark:text-white font-serif font-bold text-1xl p-2 text-black-100">
-                            Register for the GSSoC 2023 Job Fair and open doors to limitless possibilities.
+                            Register for the GSSoC 2024 Job Fair and open doors to limitless possibilities.
                         </p>
 
                         <button className="mt-10">
                             <a
-                                href="https://forms.gle/8K4K3zqUK1KJbqQPA"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLScl2zoD7dOYnftAc9csfY4SD72WJbM1c0XMWAq-4Z7X5k45NA/viewform"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-primary_orange-0 text-white font-bold py-2 px-4 rounded-full mt-10"

@@ -98,7 +98,7 @@ const Footer = () => {
                 <p className="text-black">
                   &copy;{" "}
                   <strong>
-                    2023 GirlScript Foundation. Made with 🖤️ by GirlScript
+                    2024 GirlScript Foundation. Made with 🖤️ by GirlScript
                     India. All rights reserved.
                   </strong>
                 </p>
