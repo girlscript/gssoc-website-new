@@ -1,0 +1,237 @@
+[
+    {
+        "Name": "Anubha Maneshwar",
+        "Designation": "Founder & CEO, GirlScript Foundation",
+        "Image": "https://user-images.githubusercontent.com/63473496/152328358-1a556faf-f644-463c-bdfb-99bc0b28e366.png",
+        "GitHub": "https://github.com/anubhamane",
+        "Twitter": "https://twitter.com/anubhamane",
+        "LinkedIn": "https://www.linkedin.com/in/anubhamane/"
+    },
+    {
+        "Name": "Mohit Varu",
+        "Designation": "MD, GirlScript Foundation",
+        "Image": "https://raw.githubusercontent.com/girlscript/GirlScript-Summer-of-Code/master/images/team/2020/mohit.jpg",
+        "GitHub": "",
+        "Twitter": "https://twitter.com/13_Saanjh",
+        "LinkedIn": "https://www.linkedin.com/in/mohitvaru/"
+    },
+    {
+        "Name": "Suvraneel Bhuin",
+        "Email": "bsuvraneel@gmail.com",
+        "Designation": "GirlScript Summer of Code'23 Advisor",
+        "Image": "https://github.com/Suvraneel.png",
+        "GitHub": "https://github.com/Suvraneel",
+        "Twitter": "https://twitter.com/SuvraneelB",
+        "LinkedIn": "https://www.linkedin.com/in/suvraneel"
+    },
+    {
+        "Name": "Sanjay Viswanathan",
+        "Designation": "Program Manager",
+        "Image": "https://private-user-images.githubusercontent.com/30715153/324188915-96928dea-2350-4f20-9851-01df8fd5e114.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODYwNzcsIm5iZiI6MTcxMzc4NTc3NywicGF0aCI6Ii8zMDcxNTE1My8zMjQxODg5MTUtOTY5MjhkZWEtMjM1MC00ZjIwLTk4NTEtMDFkZjhmZDVlMTE0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDExMzYxN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhZTAzM2IxNDkzMmMzYjAzZTQ1ZjgyMTAwYjNmOTllMTczNzJmMGI2YWZmZGYwY2MxNTg1M2IwYTNjMjllNWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.1kxoRXZZCXKEeyNNcU_mHD1ZZssxiz8U1LwZuVZ2mLk",
+        "GitHub": "https://github.com/sanjay-kv",
+        "Twitter": "https://twitter.com/sanjay_kv",
+        "LinkedIn": "https://www.linkedin.com/in/sanjay-k-v/"
+    },
+    {
+        "Name": "Arushi Garg",
+        "Designation": "Program Manager",
+        "Image": "https://private-user-images.githubusercontent.com/87575658/324194062-da38aefd-2f8e-431c-a5a9-85264c92a15a.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODY1MDUsIm5iZiI6MTcxMzc4NjIwNSwicGF0aCI6Ii84NzU3NTY1OC8zMjQxOTQwNjItZGEzOGFlZmQtMmY4ZS00MzFjLWE1YTktODUyNjRjOTJhMTVhLmpwZWc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMTQzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01NGVhMjE5OWZiMzEyYjQzMjUyMTZkYzUxMzFkNGNkOTQ0MWRhNmY1ODZjMjhhODNjNDFlMzVhYjg3MzM5MjE4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.-_TZzeowM4hhR04Pn6AHh6U8ChbZQplLBXpK5sGnWa0",
+        "GitHub": "https://github.com/072arushi",
+        "Twitter": "https://twitter.com/ArushiSpeaks105",
+        "LinkedIn": "https://www.linkedin.com/in/arushi-garg105"
+    },
+    {
+        "Name": "Shatakshi Chaudhari",
+        "Designation": "Program Manager",
+        "Image": "https://private-user-images.githubusercontent.com/105285127/324246600-49ed5ed4-2b0e-471f-88f1-600d9736d850.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODY1MDUsIm5iZiI6MTcxMzc4NjIwNSwicGF0aCI6Ii8xMDUyODUxMjcvMzI0MjQ2NjAwLTQ5ZWQ1ZWQ0LTJiMGUtNDcxZi04OGYxLTYwMGQ5NzM2ZDg1MC5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDQyMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA0MjJUMTE0MzI1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9OGQyMjE0MmEzMGY3Y2IyY2MwMzZlZDk0ZDFmYjRmMWEzNmRmMzI5YjY1ZTc2YTg5NzM1ZDBmYzVhNzE3YjUxMiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.Y2lvC9RyuzyxFf-9koXqgbDDF5mctX89oDGr7bX2iww",
+        "GitHub": "https://github.com/shatakshichaudhari",
+        "LinkedIn": "https://www.linkedin.com/in/shatakshi-chaudhari-707b1b236/"
+    },
+    {
+        "Name": "Aishal Gupta",
+        "Designation": "Program Manager",
+        "Image": "https://private-user-images.githubusercontent.com/99723773/324190292-2c8972c3-4d22-47f8-8594-b03630a94cdb.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODY4NDAsIm5iZiI6MTcxMzc4NjU0MCwicGF0aCI6Ii85OTcyMzc3My8zMjQxOTAyOTItMmM4OTcyYzMtNGQyMi00N2Y4LTg1OTQtYjAzNjMwYTk0Y2RiLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDExNDkwMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZlZTJlZGUyMDIwODA2M2VmY2FjMzlkZTM3NDI5ZWE2MDhkMzdiMTRjYjQ5Mjk0YzM3NGZmOTRmOGJhYTMxMTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.-Sg2ShVZqZZwCAqMz7f5dzQs5hH3bqck4ssZNbfB5IQ",
+        "GitHub": "https://github.com/aishalxgupta",
+        "Twitter": "https://twitter.com/AishalGupta",
+        "LinkedIn": "https://www.linkedin.com/in/aishal-gupta/"
+    },
+    {
+        "Name": "Aditi",
+        "Designation": "Leaderboard Specialist",
+        "Image": "https://private-user-images.githubusercontent.com/139113957/324192007-3bcaf0e2-4a00-44bd-88ff-23446d6d1a6e.JPG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODcyNzEsIm5iZiI6MTcxMzc4Njk3MSwicGF0aCI6Ii8xMzkxMTM5NTcvMzI0MTkyMDA3LTNiY2FmMGUyLTRhMDAtNDRiZC04OGZmLTIzNDQ2ZDZkMWE2ZS5KUEc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMTU2MTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZDhjMDgxMjNhNDNhMWI2MDZmNWNmYzc2MjcxOWM3ZTJkNmU0MGYzNDkyYjQ3YTc5M2RhZWYxNDRlZDMyYjJhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.VFimbKXxXpFFD0Lb6N2oFvCwK3-pereCycJQI17mPcA",
+        "GitHub": "https://github.com/Aditii-03",
+        "Twitter": "https://twitter.com/Aditiii_03",
+        "LinkedIn": "www.linkedin.com/in/aditi-35507925b"
+    },
+    {
+        "Name": "Prabhat Singh",
+        "Designation": "Leaderboard Specialist",
+        "Image": "https://private-user-images.githubusercontent.com/84136891/324190521-c6c4e82a-cce1-462e-8ec6-ad6eb940bc0a.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODc1ODcsIm5iZiI6MTcxMzc4NzI4NywicGF0aCI6Ii84NDEzNjg5MS8zMjQxOTA1MjEtYzZjNGU4MmEtY2NlMS00NjJlLThlYzYtYWQ2ZWI5NDBiYzBhLmpwZWc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjAxMjdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01Y2NiMjEyMjE1MGY5MjQxNzdiNDI5NzhlMWU2MmRmOTU3Mzk1ZTc3YzAwNDMwNDE2OWVmNzgyNWY4ZDQxZTM2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.VncsvGd9BWgbxyb18gw_G8DmZDxtfLd_PEPc1p8KYPk",
+        "GitHub": "https://github.com/prabhat-3",
+        "LinkedIn": "https://www.linkedin.com/in/prabhat3/"
+    },
+    {
+        "Name": "Inam Yadav",
+        "Designation": "Leaderboard Specialist",
+        "Image": "https://private-user-images.githubusercontent.com/127117868/324233330-ff2b38db-1acd-4841-baa0-f856ea6db333.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODc3NzksIm5iZiI6MTcxMzc4NzQ3OSwicGF0aCI6Ii8xMjcxMTc4NjgvMzI0MjMzMzMwLWZmMmIzOGRiLTFhY2QtNDg0MS1iYWEwLWY4NTZlYTZkYjMzMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjA0MzlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kNmNlYTljOWNjN2VkYzIzMzkzNDJiN2ViNjU0OWU1OGUwZTgzNDZiODJmYTM5NTNmY2FlNGE0MWI3NWExZjI0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.QBJdJ7xspRKsgdlQY8zLgGqnMYpG43OxBmHNF3aidQQ",
+        "GitHub": "https://github.com/INam1995",
+        "Twitter": "https://twitter.com/in_nuu",
+        "LinkedIn": "https://www.linkedin.com/in/inam-yadav-b4a984260/"
+    },
+    {
+        "Name": "Shristy Joshi Thakur",
+        "Designation": "Web developer",
+        "Image": "https://private-user-images.githubusercontent.com/90794215/324193339-a00895e8-9dd9-4b3c-9071-9e2613ee2ca2.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODgyMDAsIm5iZiI6MTcxMzc4NzkwMCwicGF0aCI6Ii85MDc5NDIxNS8zMjQxOTMzMzktYTAwODk1ZTgtOWRkOS00YjNjLTkwNzEtOWUyNjEzZWUyY2EyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDEyMTE0MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJmMzUxMjYzMGRiNzI2ZTI3YjYyY2E2M2IxOGE3NGQ3MWQyOWMyMjg2NzAwNTdjNmYyYWU0YTg2OWEzNzNkYzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.A3kJpSYR1s8R_7_mHRNrl07LQUtAVF8pDF2_7SqsQaY",
+        "GitHub": "https://github.com/hustler0109",
+        "Twitter": "https://twitter.com/ShristyJoshiTk",
+        "LinkedIn": "https://www.linkedin.com/in/shristy-joshi-thakur-828597201/"
+    },
+    {
+        "Name": "Prince Gupta",
+        "Designation": "Web developer",
+        "Image": "https://private-user-images.githubusercontent.com/125169311/324191558-dde7a2f6-992d-418d-ad74-f3a7aeb44d8b.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODgxMTQsIm5iZiI6MTcxMzc4NzgxNCwicGF0aCI6Ii8xMjUxNjkzMTEvMzI0MTkxNTU4LWRkZTdhMmY2LTk5MmQtNDE4ZC1hZDc0LWYzYTdhZWI0NGQ4Yi5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDQyMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA0MjJUMTIxMDE0WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9OTA0NDY4ZGU2ZTYzMmEyNGY3YTlhMTZhNWRlOGE1NmFmMDM1NjNkYzVkYzM5YzQ2NDRkYmEzNzdjOTA5YzRmZCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.KoMushYxllc6LUcQhZqFIR0VNPeGqIt_mUGknDw-R7M",
+        "GitHub": "https://github.com/Princegupta101",
+        "Twitter": "https://twitter.com/PrinceG68048211",
+        "LinkedIn": "https://www.linkedin.com/in/prince-gupta-0201b824b/"
+    },
+    {
+        "Name": "Hemant Kumar",
+        "Designation": "Web developer",
+        "Image": "https://private-user-images.githubusercontent.com/115487745/324195083-79edc256-0e57-456f-bbb8-14a12a091b7e.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODgyMDAsIm5iZiI6MTcxMzc4NzkwMCwicGF0aCI6Ii8xMTU0ODc3NDUvMzI0MTk1MDgzLTc5ZWRjMjU2LTBlNTctNDU2Zi1iYmI4LTE0YTEyYTA5MWI3ZS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjExNDBaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNzViYzM2Y2JiZDVhMmRkNmZkMDc4YTA4ZmEyNjYxMWEyMDBmMjM1ZDA1YjQyNzFjOGIyYzM2MDVlOGZhNTgwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.zgPJ7Aq7XtcEaMeqEKAf8XEf1LKiNfnnLMpqNTbKo8I",
+        "GitHub": "https://github.com/HemantKr071",
+        "Twitter": "https://x.com/Hemant_Kr_071?t=Xusk9n28chgubLLz1sxXgw&s=09",
+        "LinkedIn": "https://www.linkedin.com/in/hemant-kumar-b1b7a023b"
+    },
+    {
+        "Name": "Neetu Yadav",
+        "Designation": "Public Relations Officer",
+        "Image": "https://private-user-images.githubusercontent.com/155386347/324193645-f2b6a5af-018a-4545-8b05-c52fe4fd05c0.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODg3ODksIm5iZiI6MTcxMzc4ODQ4OSwicGF0aCI6Ii8xNTUzODYzNDcvMzI0MTkzNjQ1LWYyYjZhNWFmLTAxOGEtNDU0NS04YjA1LWM1MmZlNGZkMDVjMC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjIxMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNzY4OTYyOTYxNmJmZDY5NzMxYzBiZDgyOTFkNzc0MzA4NjJhYWQzNzQ0ZmEwMTE3NDA0YzMwNzVmMDYxNjQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.mFpK804QWRGjxFcvtQGK1wU3e9MW0buZXeTWHVaUhiw",
+        "GitHub": "https://github.com/neetuyadav23",
+        "LinkedIn": "https://www.linkedin.com/in/neetu-y-760450215/"
+    },
+    {
+        "Name": "Aditi Dahake",
+        "Designation": "Public Relations Officer",
+        "Image": "https://private-user-images.githubusercontent.com/143285815/324195146-d34ca56d-1d6d-46b9-8455-d25fa1c20aa1.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODkwNjgsIm5iZiI6MTcxMzc4ODc2OCwicGF0aCI6Ii8xNDMyODU4MTUvMzI0MTk1MTQ2LWQzNGNhNTZkLTFkNmQtNDZiOS04NDU1LWQyNWZhMWMyMGFhMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjI2MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNzBjZDk0Yjk0MDZiZDU1NWE2MjYyYTZiOTNjYzVjOTI5OGRjZTQwMTFmYzM5ZmY0NjI3NWQwMGMzMWEzYzRiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ODg6z0hvAruJORKHub7daERNfTGeI94HDLZK9WNSiZE",
+        "GitHub": "https://github.com/aditidahake",
+        "LinkedIn": "https://www.linkedin.com/in/aaditi-dahake-7a0362241/"
+    },
+    {
+        "Name": "Suhani Parmar",
+        "Designation": "Community Moderator",
+        "Image": "https://private-user-images.githubusercontent.com/124229698/324192038-03eac38e-1338-41dd-8af8-2fef7aea7b53.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODkwNjgsIm5iZiI6MTcxMzc4ODc2OCwicGF0aCI6Ii8xMjQyMjk2OTgvMzI0MTkyMDM4LTAzZWFjMzhlLTEzMzgtNDFkZC04YWY4LTJmZWY3YWVhN2I1My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjI2MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OGUxOGM1NzA3M2QwYjdiYzU0MTM0MzRiZGZlODllYzNjOGI1NTQwYTkyNDMyMDhlMTE3MjZlMjgyYzBmZmJmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.XTiXyjGnSPL4-TqEemOfAdXj8V6tSRbGCRUecIfAbJ8",
+        "GitHub": "https://github.com/Suhaniparmar",
+        "Twitter": "https://twitter.com/ParmarSuhani64",
+        "LinkedIn": "https://www.linkedin.com/in/suhani-parmar-315a93252/"
+    },
+    {
+        "Name": "SAKSHAM SHANDILYA",
+        "Designation": "Community Moderator",
+        "Image": "https://private-user-images.githubusercontent.com/90836873/324193501-125ea520-4490-4eaa-81a4-ec8e4c838da6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODkwNjgsIm5iZiI6MTcxMzc4ODc2OCwicGF0aCI6Ii85MDgzNjg3My8zMjQxOTM1MDEtMTI1ZWE1MjAtNDQ5MC00ZWFhLTgxYTQtZWM4ZTRjODM4ZGE2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDEyMjYwOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY2ZTgzZjFjNTc2NzlmYTVlYTZkODkyYmQyN2E5ODg1N2YxYzI1Mzc3Mjg2ZWM0YWYwOGI4MzJhMDc0MzA0NTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.GRGUxM4ci1ZiIWNXGSN0SPe0-doR7boisFvFcLda9Sw",
+        "GitHub": "https://github.com/SakshamShandilya",
+        "Twitter": "https://twitter.com/saksham140023",
+        "LinkedIn": "https://www.linkedin.com/in/shandilya-saksham-full-stack-developer"
+    },
+
+    {
+        "Name": "Somya Sharma",
+        "Designation": "Community Moderator",
+        "Image": "https://private-user-images.githubusercontent.com/106001286/324192336-aabc910e-ff3f-4b8d-9214-bf3a4b76c28a.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODk2MDgsIm5iZiI6MTcxMzc4OTMwOCwicGF0aCI6Ii8xMDYwMDEyODYvMzI0MTkyMzM2LWFhYmM5MTBlLWZmM2YtNGI4ZC05MjE0LWJmM2E0Yjc2YzI4YS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjM1MDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iOTkzMjIyYTc0ZmFmZTQzYzlmMzlmM2I1NmUxOTAzMzE1YzFmYWE1MDVkODNhMzM1MjhhNWNiZjc5OTA4NzE1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.RO6Xehga1HI5O414CGpWpLEnae7dw4d8jMmo4lNdFck",
+        "GitHub": "https://github.com/Somya2010",
+        "Twitter": "https://twitter.com/SomyaSh42022767",
+        "LinkedIn": "https://www.linkedin.com/in/somya-sharma-b5ba01229"
+    },
+    {
+        "Name": "Suraj Ojha",
+        "Designation": "Content Writer",
+        "Image": "https://private-user-images.githubusercontent.com/90503155/324199065-1b344b91-2877-4388-9120-9b5b6baa5c9a.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODk2MDgsIm5iZiI6MTcxMzc4OTMwOCwicGF0aCI6Ii85MDUwMzE1NS8zMjQxOTkwNjUtMWIzNDRiOTEtMjg3Ny00Mzg4LTkxMjAtOWI1YjZiYWE1YzlhLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDEyMzUwOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA1Zjg1ZTQ4YzUwYmJhNGUyNmJiZWE5MzM3YTQwYzk4OGM0YjE1MzMxMzE2NmM1ZDg1MTQzMmQ5ZTJkNThlM2UmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.T0g1VA0SBat6nk2XxlrykTUfTtK9QPze0rkb-aMtFio",
+        "GitHub": "https://github.com/surajojha668",
+        "Twitter": "https://x.com/whyfore_?s=09",
+        "LinkedIn": "https://www.linkedin.com/in/suraj-ojha-49287a21b"
+    },
+    {
+        "Name": "Shatakshi Gaur",
+        "Designation": "Content Writer",
+        "Image": "https://private-user-images.githubusercontent.com/95231359/324193113-2db4245d-dc72-4463-9e17-caccbe366a83.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3ODk2MDgsIm5iZiI6MTcxMzc4OTMwOCwicGF0aCI6Ii85NTIzMTM1OS8zMjQxOTMxMTMtMmRiNDI0NWQtZGM3Mi00NDYzLTllMTctY2FjY2JlMzY2YTgzLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDEyMzUwOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA2NzhlOTE3NjU0ZDA1ZmVjMTlmYTBlNTFiNmVhNzQxYWYxYzYwNDkyY2VmYzc2OTgwYTc1MDhhOWRkODFmNmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.VcTmCNuTU2Eo5L0mLauszg-etvoVU70jUMf_3bepxeE",
+        "GitHub": "https://github.com/shatakshigaur",
+        "LinkedIn": "https://www.linkedin.com/in/shatakshi-gaur-5b2b55104/"
+    },
+    {
+        "Name": "Priya Chakraborty",
+        "Designation": "Content core team member",
+        "Image": "https://private-user-images.githubusercontent.com/89004448/324195832-e4ed5d28-5578-4452-8843-44ba01b72080.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTAxOTMsIm5iZiI6MTcxMzc4OTg5MywicGF0aCI6Ii84OTAwNDQ0OC8zMjQxOTU4MzItZTRlZDVkMjgtNTU3OC00NDUyLTg4NDMtNDRiYTAxYjcyMDgwLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDEyNDQ1M1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThmYWEyZjIwZmY5MmU2NGI2NjkzNzU2NGFmZTJkMmZmMWYzNGZmMjdiMzRlMjI5YzA5YmE2ZGNiOGRhZDk4NjcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.tgvBL_3-_RdwC6igoLfmuIXl_o2P5iEQZDB1_JHLMbc",
+        "GitHub": "https://github.com/Priyachakraborty",
+        "Twitter": "https://twitter.com/PriyaCh74879052",
+        "LinkedIn": "https://www.linkedin.com/in/priya-chakraborty/"
+    },
+    {
+        "Name": "Surbhi Verma",
+        "Designation": "Sponsorship Core",
+        "Image": "https://private-user-images.githubusercontent.com/122688766/324197360-151fcb74-c24b-42fe-8ded-df7d345ad21c.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTAxOTMsIm5iZiI6MTcxMzc4OTg5MywicGF0aCI6Ii8xMjI2ODg3NjYvMzI0MTk3MzYwLTE1MWZjYjc0LWMyNGItNDJmZS04ZGVkLWRmN2QzNDVhZDIxYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjQ0NTNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NjM0NzA3NTE3Nzc4OWQ4MDBmNmZlNjA2OGEyZjI0MWFmZjY5YzdiNDc5M2MyYTcxYzEzYjA4N2YzMGRmZmMyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.JmbT4aDXmHAElQWqPl4Yr8Ey8pEyiGV_5iscTQc-BHI",
+        "GitHub": "https://github.com/internallylose",
+        "Twitter": "https://twitter.com/surbhi1906verma",
+        "LinkedIn": "https://www.linkedin.com/in/surbhi-verma-a1321025a"
+    },
+    {
+        "Name": "Tamanna",
+        "Designation": "Sponsorship Core",
+        "Image": "https://private-user-images.githubusercontent.com/139467054/324196598-93e80657-7071-4ff1-8429-fbb5358cc1ea.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTAxOTMsIm5iZiI6MTcxMzc4OTg5MywicGF0aCI6Ii8xMzk0NjcwNTQvMzI0MTk2NTk4LTkzZTgwNjU3LTcwNzEtNGZmMS04NDI5LWZiYjUzNThjYzFlYS5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDQyMiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA0MjJUMTI0NDUzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MTlhZjRiYWE4MWY1NjcyN2M1NTI2MWM2NTMzODI0ZTQwODQ3ZjZiNmM3YzdhMzdjNDVjZWM5NzFiYzExMjkwYiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.G0OOlM9WcpGcLxuYXKAbF3KUhwGaRSm_1J4LZSecyc4",
+        "GitHub": "https://github.com/Tamtu55",
+        "LinkedIn": "https://www.linkedin.com/in/tamanna-a91496263"
+    },
+    {
+        "Name": "Subroto Banerjee",
+        "Designation": "Sponsorship",
+        "Image": "https://private-user-images.githubusercontent.com/117584718/324190905-da179f32-6af0-44eb-a895-6842b2e88c82.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTEyMjQsIm5iZiI6MTcxMzc5MDkyNCwicGF0aCI6Ii8xMTc1ODQ3MTgvMzI0MTkwOTA1LWRhMTc5ZjMyLTZhZjAtNDRlYi1hODk1LTY4NDJiMmU4OGM4Mi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMzAyMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OGZlMmVlNGYzZWVkYjY5ODM5MjUzOGY2NDY0NWM4Y2JhYWYyOTkxYzUwNDA2N2JjOTYxNjg5YWUxZDBhMzYyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.tDZ4RxIZKAfU26y10_y2G16DVMAxblxGB2FtDvh2R5Y",
+        "GitHub": "https://github.com/TeeWrath",
+        "Twitter": "https://twitter.com/Subroto0108",
+        "LinkedIn": "https://www.linkedin.com/in/subroto-banerjee-70983b214/"
+    },
+    {
+        "Name": "Anshika Saini",
+        "Designation": "Sponsorship Core",
+        "Image": "https://private-user-images.githubusercontent.com/143860130/324195879-39b10522-de72-4b9f-aa5b-1cb73f9eb5f5.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTA1OTIsIm5iZiI6MTcxMzc5MDI5MiwicGF0aCI6Ii8xNDM4NjAxMzAvMzI0MTk1ODc5LTM5YjEwNTIyLWRlNzItNGI5Zi1hYTViLTFjYjczZjllYjVmNS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjUxMzJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hZjdmNTRiODg1NDYxZTM1ZTRlNDQwZGNmMTA5YjBmOWRmYjRkZDc2NTZkMzYwNzgxM2UwMThhOWNmYjBhNmZlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.9hwbPC1OuA3ENLOUj5ncIBPuD4knyOlPjcW-B_YRFZ8",
+        "GitHub": "https://github.com/Anshikaa-Saini",
+        "LinkedIn": "https://www.linkedin.com/in/anshika-saini-a01345260"
+    }, 
+    {
+        "Name": "Parshwa Salot",
+        "Designation": "Graphic Designer",
+        "Image": "https://private-user-images.githubusercontent.com/118764375/324192338-c4e2c9b7-1a74-43c7-b26b-17bfac2d241f.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTA1OTIsIm5iZiI6MTcxMzc5MDI5MiwicGF0aCI6Ii8xMTg3NjQzNzUvMzI0MTkyMzM4LWM0ZTJjOWI3LTFhNzQtNDNjNy1iMjZiLTE3YmZhYzJkMjQxZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMjUxMzJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jZTRhNDllOTQ4ZDc0YmJiODYwN2Y3MGNkOWNlN2FjYjFiNzg2N2Y1OGUzOTJjYjNhMWExN2ExOTk0YzJkMTgxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.tlslMcadL6vwdCd1j3dZQnFT3_cUiSLMjKd7oUu_t5A",
+        "GitHub": "https://github.com/parshwasalot",
+        "Twitter": "https://twitter.com/parshwasalot",
+        "LinkedIn": "https://www.linkedin.com/in/parshwasalot"
+    },
+    {
+        "Name": "Jeevana Maradana",
+        "Designation": "Graphic Designer",
+        "Image": "https://private-user-images.githubusercontent.com/152767489/324196400-33103d4c-bef6-48b7-b432-93c270896124.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTEyMjQsIm5iZiI6MTcxMzc5MDkyNCwicGF0aCI6Ii8xNTI3Njc0ODkvMzI0MTk2NDAwLTMzMTAzZDRjLWJlZjYtNDhiNy1iNDMyLTkzYzI3MDg5NjEyNC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMzAyMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01YjNjZDkyZjdjNjVlN2M1ZDRjNWJhMDZjOTg2YjI1YmZjOTUzMjFlMWU3NmY1N2ZhOWIyYzZkMjUyOTMzN2VjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.tFH4jHMopwhpF3JFo7klaIlEvDbiu-68Oap8KeXmZjI",
+        "GitHub": "https://github.com/Jeevana52",
+        "Twitter": "https://twitter.com/jeevana_19",
+        "LinkedIn": "https://www.linkedin.com/in/jeevana123/"
+    },
+    {
+        "Name": "Shubhangi Chandra",
+        "Designation": "Graphic Designer",
+        "Image": "https://private-user-images.githubusercontent.com/137085193/324247247-50efecdb-9e8d-44c9-85c5-519843748e70.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTEyMjQsIm5iZiI6MTcxMzc5MDkyNCwicGF0aCI6Ii8xMzcwODUxOTMvMzI0MjQ3MjQ3LTUwZWZlY2RiLTllOGQtNDRjOS04NWM1LTUxOTg0Mzc0OGU3MC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMzAyMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MzA4YjIwMTU5ZjBmNmNlY2NkMWYzYmYwNDZhNWQ4ZTNkMWViMjEwNWQyYjU1NzdlYzE3MWM0NDBlYmU2MWNkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.XxZPiM_cs7zvNYAKLZBNPkkwCojKmu6xnfLxCefmXwk",
+        "GitHub": "https://github.com/Shubhangi1-chandra",
+        "Twitter": "https://twitter.com/ChandraC11568",
+        "LinkedIn": "https://www.linkedin.com/in/shubhangi-chandra-79b034251/"
+    },
+    {
+        "Name": "Sneha Kumari",
+        "Designation": "Discord Manager",
+        "Image": "https://private-user-images.githubusercontent.com/95492939/324227362-a8c633aa-272e-4685-94ee-f0b57c63cbad.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTE4ODQsIm5iZiI6MTcxMzc5MTU4NCwicGF0aCI6Ii85NTQ5MjkzOS8zMjQyMjczNjItYThjNjMzYWEtMjcyZS00Njg1LTk0ZWUtZjBiNTdjNjNjYmFkLmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDIyVDEzMTMwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY2M2QxZjE3YmFhYzdkMWJmOWIwMDQwOWQxYThjZmRkNjI2ZDZjNDM1MGM5Y2FhNjUzODU0M2FiNjViOTY5ZjUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.k5tInz9Ef2HfafrqzmxL_-epKPYeXBCF27eEq_XCwjg",
+        "GitHub": "https://github.com/Snehsk",
+        "Twitter": "https://twitter.com/SnehaKumariSk1",
+        "LinkedIn": "https://www.linkedin.com/in/sneha-kumari1/"
+    },
+    {
+        "Name": "Hemant Panwar",
+        "Designation": "Discord Manager",
+        "Image": "https://private-user-images.githubusercontent.com/131635107/324201391-85c0747b-7368-4d4e-9ef4-d156d27a0d78.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTM3OTE4ODQsIm5iZiI6MTcxMzc5MTU4NCwicGF0aCI6Ii8xMzE2MzUxMDcvMzI0MjAxMzkxLTg1YzA3NDdiLTczNjgtNGQ0ZS05ZWY0LWQxNTZkMjdhMGQ3OC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQyMlQxMzEzMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yODk3YjIxMGJhMWFjZTgxNjhmNTU4MDIyZGQyZjliMzM5ZjY3YjRjODhlMGE1MTlhZGYwMDVjZDc3MGFkNjA1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.XHSsk2k5USfFOoZ93F6XluDN5IeGSseEFWy54vHCDMg",
+        "GitHub": "https://github.com/Hemantlohar",
+        "Twitter": "https://twitter.com/_Hemant_lohar_",
+        "LinkedIn": "https://www.linkedin.com/in/hemant-lohar-40195317a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
+]
