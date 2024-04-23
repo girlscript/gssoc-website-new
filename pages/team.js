@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Box, Skeleton, SkeletonCircle, Spacer } from "@chakra-ui/react";
 import Head from "next/head";
+import React, { useState, useEffect } from "react";
+
+import { Box, Skeleton, SkeletonCircle, Spacer } from "@chakra-ui/react";
 
 const Team = () => {
   const [users, setUsers] = useState([]);
@@ -14,14 +15,14 @@ const Team = () => {
   useEffect(() => {
     var customQuery = window.location.href.split("#")[1]; // Direct link to /team#20XX
     // Note - Only change 2022 with current year of GSSoC
-    customQuery ? getUsers(customQuery) : getUsers("2023");
+    customQuery ? getUsers(customQuery) : getUsers("2024");
   }, []);
 
   return (
     <>
       <Head>
         <title>
-          Team | GirlScript Summer of Code 2023 | GirlScript Foundation India
+          Team | GirlScript Summer of Code 2024 | GirlScript Foundation India
         </title>
         <meta name="description" content="GirlScript Summer of Code Team" />
         {/* <link
@@ -36,12 +37,20 @@ const Team = () => {
             <h1>Team </h1>
           </p>
           <p className=" text-primary_orange-0">
-            2023 Team is here to make your journey memorable!
+            2024 Team is here to make your journey memorable!
           </p>
         </p>
       </div>
       <Spacer mt={10} />
       <div className="flex flex-row justify-center flex-wrap items-center gap-5">
+        <a>
+          <button
+            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg text-white dark:text-black font-medium hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4 rounded md:text-2xl md:py-6"
+            onClick={() => getUsers(2024)}
+          >
+            2024
+          </button>
+        </a>
         <a>
           <button
             className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg text-white dark:text-black font-medium hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4 rounded md:text-2xl md:py-6"

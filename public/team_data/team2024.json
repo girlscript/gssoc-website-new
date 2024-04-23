@@ -1,0 +1,237 @@
+[
+    {
+        "Name": "Anubha Maneshwar",
+        "Designation": "Founder & CEO, GirlScript Foundation",
+        "Image": "https://user-images.githubusercontent.com/63473496/152328358-1a556faf-f644-463c-bdfb-99bc0b28e366.png",
+        "GitHub": "https://github.com/anubhamane",
+        "Twitter": "https://twitter.com/anubhamane",
+        "LinkedIn": "https://www.linkedin.com/in/anubhamane/"
+    },
+    {
+        "Name": "Mohit Varu",
+        "Designation": "MD, GirlScript Foundation",
+        "Image": "https://raw.githubusercontent.com/girlscript/GirlScript-Summer-of-Code/master/images/team/2020/mohit.jpg",
+        "GitHub": "",
+        "Twitter": "https://twitter.com/13_Saanjh",
+        "LinkedIn": "https://www.linkedin.com/in/mohitvaru/"
+    },
+    {
+        "Name": "Suvraneel Bhuin",
+        "Email": "bsuvraneel@gmail.com",
+        "Designation": "GirlScript Summer of Code'23 Advisor",
+        "Image": "https://github.com/Suvraneel.png",
+        "GitHub": "https://github.com/Suvraneel",
+        "Twitter": "https://twitter.com/SuvraneelB",
+        "LinkedIn": "https://www.linkedin.com/in/suvraneel"
+    },
+    {
+        "Name": "Sanjay Viswanathan",
+        "Designation": "Program Manager",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/30715153/324188915-96928dea-2350-4f20-9851-01df8fd5e114.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080047Z&X-Amz-Expires=300&X-Amz-Signature=a7a9161924c8ba952eb54917cf835c3fb508120b11c8fc139bd99137ac7314c1&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/sanjay-kv",
+        "Twitter": "https://twitter.com/sanjay_kv",
+        "LinkedIn": "https://www.linkedin.com/in/sanjay-k-v/"
+    },
+    {
+        "Name": "Arushi Garg",
+        "Designation": "Program Manager",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/87575658/324194062-da38aefd-2f8e-431c-a5a9-85264c92a15a.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080152Z&X-Amz-Expires=300&X-Amz-Signature=64b67d04a99603e1e0b55109e542b4caea0cb09483939adac8f03274c72842ab&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/072arushi",
+        "Twitter": "https://twitter.com/ArushiSpeaks105",
+        "LinkedIn": "https://www.linkedin.com/in/arushi-garg105"
+    },
+    {
+        "Name": "Shatakshi Chaudhari",
+        "Designation": "Program Manager",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/105285127/324246600-49ed5ed4-2b0e-471f-88f1-600d9736d850.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080244Z&X-Amz-Expires=300&X-Amz-Signature=02e4369d1f35a62de2246209503f51d28ba89a269495d605053b0fc2c352fdd3&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/shatakshichaudhari",
+        "LinkedIn": "https://www.linkedin.com/in/shatakshi-chaudhari-707b1b236/"
+    },
+    {
+        "Name": "Aishal Gupta",
+        "Designation": "Program Manager",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/99723773/324190292-2c8972c3-4d22-47f8-8594-b03630a94cdb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080333Z&X-Amz-Expires=300&X-Amz-Signature=672a8ee0a4d8acc991cf205f935a3133a420cf04e2e0de6f7690dc86da16f8a8&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/aishalxgupta",
+        "Twitter": "https://twitter.com/AishalGupta",
+        "LinkedIn": "https://www.linkedin.com/in/aishal-gupta/"
+    },
+    {
+        "Name": "Aditi",
+        "Designation": "Leaderboard Specialist",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/139113957/324192007-3bcaf0e2-4a00-44bd-88ff-23446d6d1a6e.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080425Z&X-Amz-Expires=300&X-Amz-Signature=8b107c5b3944da263c4b2ab32140e002c047686fa3140071e7708fc5471282cf&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Aditii-03",
+        "Twitter": "https://twitter.com/Aditiii_03",
+        "LinkedIn": "www.linkedin.com/in/aditi-35507925b"
+    },
+    {
+        "Name": "Prabhat Singh",
+        "Designation": "Leaderboard Specialist",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/84136891/324190521-c6c4e82a-cce1-462e-8ec6-ad6eb940bc0a.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T083943Z&X-Amz-Expires=300&X-Amz-Signature=e7495f2ec272afc3e5bfe8fb8221823ea2feb7cbd0242494ce9ad7a25e94f05e&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/prabhat-3",
+        "LinkedIn": "https://www.linkedin.com/in/prabhat3/"
+    },
+    {
+        "Name": "Inam Yadav",
+        "Designation": "Leaderboard Specialist",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/127117868/324233330-ff2b38db-1acd-4841-baa0-f856ea6db333.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080620Z&X-Amz-Expires=300&X-Amz-Signature=2e57db42dabfab6e84fc969959837d67d7b470b639ed6a2f000365a484e22a6e&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/INam1995",
+        "Twitter": "https://twitter.com/in_nuu",
+        "LinkedIn": "https://www.linkedin.com/in/inam-yadav-b4a984260/"
+    },
+    {
+        "Name": "Prince Gupta",
+        "Designation": "Web developer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/125169311/324191558-dde7a2f6-992d-418d-ad74-f3a7aeb44d8b.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080811Z&X-Amz-Expires=300&X-Amz-Signature=3e5bf801e3abb09a06ae6996ff5200f9ec6ccda036b1f5b618470d2e7d28d3f9&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Princegupta101",
+        "Twitter": "https://twitter.com/PrinceG68048211",
+        "LinkedIn": "https://www.linkedin.com/in/prince-gupta-0201b824b/"
+    },
+    {
+        "Name": "Shristy Joshi Thakur",
+        "Designation": "Web developer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/90794215/324193339-a00895e8-9dd9-4b3c-9071-9e2613ee2ca2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T080705Z&X-Amz-Expires=300&X-Amz-Signature=3be04b04bf5c71808e549e714b39c9964596f10a95bb4d45b7cc40dbf86f98b0&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/hustler0109",
+        "Twitter": "https://twitter.com/ShristyJoshiTk",
+        "LinkedIn": "https://www.linkedin.com/in/shristy-joshi-thakur-828597201/"
+    },
+    {
+        "Name": "Hemant Kumar",
+        "Designation": "Web developer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/115487745/324195083-79edc256-0e57-456f-bbb8-14a12a091b7e.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T083813Z&X-Amz-Expires=300&X-Amz-Signature=a02aa5466c681f7921c428619f76cfcb50fadd14bd9dcec25a34f8ef02cca9ac&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/HemantKr071",
+        "Twitter": "https://x.com/Hemant_Kr_071?t=Xusk9n28chgubLLz1sxXgw&s=09",
+        "LinkedIn": "https://www.linkedin.com/in/hemant-kumar-b1b7a023b"
+    },
+    {
+        "Name": "Neetu Yadav",
+        "Designation": "Public Relations Officer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/155386347/324193645-f2b6a5af-018a-4545-8b05-c52fe4fd05c0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T084052Z&X-Amz-Expires=300&X-Amz-Signature=40335b73805a0abe9f94200514d677ef953038f981de55bb21c49bd3b6f703e6&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/neetuyadav23",
+        "LinkedIn": "https://www.linkedin.com/in/neetu-y-760450215/"
+    },
+    {
+        "Name": "Aditi Dahake",
+        "Designation": "Public Relations Officer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/143285815/324195146-d34ca56d-1d6d-46b9-8455-d25fa1c20aa1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T084209Z&X-Amz-Expires=300&X-Amz-Signature=fbb044c6a7e820ce379f7b1f13140c1d4f344332e4a1f6be15ca0f1a2567914f&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/aditidahake",
+        "LinkedIn": "https://www.linkedin.com/in/aaditi-dahake-7a0362241/"
+    },
+    {
+        "Name": "Suhani Parmar",
+        "Designation": "Community Moderator",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/124229698/324192038-03eac38e-1338-41dd-8af8-2fef7aea7b53.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T084909Z&X-Amz-Expires=300&X-Amz-Signature=65951e9839751a53eb954dc38e759e6c557a1fa6264974e43dbd05fa164331d8&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Suhaniparmar",
+        "Twitter": "https://twitter.com/ParmarSuhani64",
+        "LinkedIn": "https://www.linkedin.com/in/suhani-parmar-315a93252/"
+    },
+    {
+        "Name": "SAKSHAM SHANDILYA",
+        "Designation": "Community Moderator",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/90836873/324193501-125ea520-4490-4eaa-81a4-ec8e4c838da6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T085126Z&X-Amz-Expires=300&X-Amz-Signature=b8e655396e9a690e270a181f2ffd0e1637c1ca3b81a6b48e2ad105179561e65a&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/SakshamShandilya",
+        "Twitter": "https://twitter.com/saksham140023",
+        "LinkedIn": "https://www.linkedin.com/in/shandilya-saksham-full-stack-developer"
+    },
+
+    {
+        "Name": "Somya Sharma",
+        "Designation": "Community Moderator",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/106001286/324192336-aabc910e-ff3f-4b8d-9214-bf3a4b76c28a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T085251Z&X-Amz-Expires=300&X-Amz-Signature=6923fd89b22d38f2cf32ac295ec8ca002acbe5a96028d9e7074ea0dcadafdb99&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Somya2010",
+        "Twitter": "https://twitter.com/SomyaSh42022767",
+        "LinkedIn": "https://www.linkedin.com/in/somya-sharma-b5ba01229"
+    },
+    {
+        "Name": "Suraj Ojha",
+        "Designation": "Content Writer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/90503155/324199065-1b344b91-2877-4388-9120-9b5b6baa5c9a.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T085441Z&X-Amz-Expires=300&X-Amz-Signature=5249d5adf99300c8b9ab535985b7e75807392fc0cd5532e4cac39fd59aca14cc&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/surajojha668",
+        "Twitter": "https://x.com/whyfore_?s=09",
+        "LinkedIn": "https://www.linkedin.com/in/suraj-ojha-49287a21b"
+    },
+    {
+        "Name": "Shatakshi Gaur",
+        "Designation": "Content Writer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/95231359/324193113-2db4245d-dc72-4463-9e17-caccbe366a83.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T091113Z&X-Amz-Expires=300&X-Amz-Signature=e4decf0f0f8a74ad35c7821c2f75e5d681ba60fd02e107b16892a6e00273024f&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/shatakshigaur",
+        "LinkedIn": "https://www.linkedin.com/in/shatakshi-gaur-5b2b55104/"
+    },
+    {
+        "Name": "Priya Chakraborty",
+        "Designation": "Content core team member",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/89004448/324195832-e4ed5d28-5578-4452-8843-44ba01b72080.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T091000Z&X-Amz-Expires=300&X-Amz-Signature=578e0ae59e2916c3e772a950606ba6836fbb916129fb04235e35c2fc788e28e9&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Priyachakraborty",
+        "Twitter": "https://twitter.com/PriyaCh74879052",
+        "LinkedIn": "https://www.linkedin.com/in/priya-chakraborty/"
+    },
+    {
+        "Name": "Surbhi Verma",
+        "Designation": "Sponsorship Core",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/122688766/324197360-151fcb74-c24b-42fe-8ded-df7d345ad21c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T090909Z&X-Amz-Expires=300&X-Amz-Signature=0e85dba39dad6bee5ae54613b5ac0f0e71a65e6bcb29e72a9db0f4709b06ba9c&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/internallylose",
+        "Twitter": "https://twitter.com/surbhi1906verma",
+        "LinkedIn": "https://www.linkedin.com/in/surbhi-verma-a1321025a"
+    },
+    {
+        "Name": "Tamanna",
+        "Designation": "Sponsorship Core",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/139467054/324196598-93e80657-7071-4ff1-8429-fbb5358cc1ea.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T090135Z&X-Amz-Expires=300&X-Amz-Signature=1121fe2eb42ffc451f3ded4485046e83b6410012fcb6f36727a309b6ce507e93&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Tamtu55",
+        "LinkedIn": "https://www.linkedin.com/in/tamanna-a91496263"
+    },
+    {
+        "Name": "Subroto Banerjee",
+        "Designation": "Sponsorship",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/117584718/324190905-da179f32-6af0-44eb-a895-6842b2e88c82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T090227Z&X-Amz-Expires=300&X-Amz-Signature=15f172e8da69f9fe79871afc3ff4ec62aa51c2fa03fc1f35c3ae027dd73aed58&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/TeeWrath",
+        "Twitter": "https://twitter.com/Subroto0108",
+        "LinkedIn": "https://www.linkedin.com/in/subroto-banerjee-70983b214/"
+    },
+    {
+        "Name": "Anshika Saini",
+        "Designation": "Sponsorship Core",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/143860130/324195879-39b10522-de72-4b9f-aa5b-1cb73f9eb5f5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T090630Z&X-Amz-Expires=300&X-Amz-Signature=b92db10b8f2f2c880335a1b5460cfd8abaaf19ceeae8b60de04e615fd0d64be8&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Anshikaa-Saini",
+        "LinkedIn": "https://www.linkedin.com/in/anshika-saini-a01345260"
+    }, 
+    {
+        "Name": "Parshwa Salot",
+        "Designation": "Graphic Designer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/118764375/324192338-c4e2c9b7-1a74-43c7-b26b-17bfac2d241f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T082411Z&X-Amz-Expires=300&X-Amz-Signature=a9bb1380ab0cd00f837ad54cf70520f0b1ed91ac2dcfcd9b08d1331f8d88f563&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/parshwasalot",
+        "Twitter": "https://twitter.com/parshwasalot",
+        "LinkedIn": "https://www.linkedin.com/in/parshwasalot"
+    },
+    {
+        "Name": "Jeevana Maradana",
+        "Designation": "Graphic Designer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/152767489/324196400-33103d4c-bef6-48b7-b432-93c270896124.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T082452Z&X-Amz-Expires=300&X-Amz-Signature=1e48da19af23e6d26e28de646896aa750111e256650ebf38eb618ad09ae387b3&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Jeevana52",
+        "Twitter": "https://twitter.com/jeevana_19",
+        "LinkedIn": "https://www.linkedin.com/in/jeevana123/"
+    },
+    {
+        "Name": "Shubhangi Chandra",
+        "Designation": "Graphic Designer",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/137085193/324247247-50efecdb-9e8d-44c9-85c5-519843748e70.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T082544Z&X-Amz-Expires=300&X-Amz-Signature=628694d670806de0321c8fdd0465743732c516d4aa05a266e70528620fd8ed95&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Shubhangi1-chandra",
+        "Twitter": "https://twitter.com/ChandraC11568",
+        "LinkedIn": "https://www.linkedin.com/in/shubhangi-chandra-79b034251/"
+    },
+    {
+        "Name": "Sneha Kumari",
+        "Designation": "Discord Manager",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/95492939/324227362-a8c633aa-272e-4685-94ee-f0b57c63cbad.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T082627Z&X-Amz-Expires=300&X-Amz-Signature=5acad45d3a019a2e07f0b43fe23c1c7c606ba334066a156644317f87f9eb02b3&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Snehsk",
+        "Twitter": "https://twitter.com/SnehaKumariSk1",
+        "LinkedIn": "https://www.linkedin.com/in/sneha-kumari1/"
+    },
+    {
+        "Name": "Hemant Panwar",
+        "Designation": "Discord Manager",
+        "Image": "https://github-production-user-asset-6210df.s3.amazonaws.com/131635107/324201391-85c0747b-7368-4d4e-9ef4-d156d27a0d78.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240423%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240423T082714Z&X-Amz-Expires=300&X-Amz-Signature=0917946eaf15f071fcdc96bd40fc2c764a224d7c096460a46b8acc2a7978fc26&X-Amz-SignedHeaders=host&actor_id=125169311&key_id=0&repo_id=784305672",
+        "GitHub": "https://github.com/Hemantlohar",
+        "Twitter": "https://twitter.com/_Hemant_lohar_",
+        "LinkedIn": "https://www.linkedin.com/in/hemant-lohar-40195317a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
+]
