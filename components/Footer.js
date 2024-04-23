@@ -27,7 +27,7 @@ const Footer = () => {
                   </h6>
                   <div>
                     <a
-                      href="https://linktr.ee/GSSoC22"
+                      href="https://www.linkedin.com/company/girlscriptsoc/about/?viewAsMember=true"
                       className="font-normal text-black py-1 block hover:underline"
                     >
                       Contact Us
@@ -65,7 +65,7 @@ const Footer = () => {
                       Uplift Project
                     </a>
                     <a
-                      href="https://summit.girlscript.tech/"
+                      href="https://www.linkedin.com/company/gssummit2021/?originalSubdomain=in"
                       className="font-normal text-black py-1 block hover:underline"
                     >
                       GirlScript India Summit
@@ -82,7 +82,7 @@ const Footer = () => {
                 help beginners in technology. Be a part, spread knowledge {"& "}
                 happiness.
               </h5>
-              <a href="https://www.girlscript.tech/home">
+              <a href="https://www.linkedin.com/company/girlscript-foundation/?originalSubdomain=in">
                 <button className="bg-black text-white hover:bg-slate-800 rounded py-2 px-4 md:px-12 transition-colors duration-300">
                   Explore
                 </button>

@@ -238,7 +238,7 @@ export default function Home() {
           <div className="pr-4 font-semibold pt-3 rounded-lg lg:my-4 lg:px-2 lg:py-10 ">
             <div className="dark:bg-black  dark:transition-colors bg-stone-50 shadow-lg rounded-lg my-1 px-1 w-64 sm:w-fit">
               <h1 className="mt-8 pt-6 pl-8 text-3xl xl:text-4xl text-primary_orange-0 3rem 3rem ">
-                GSSoC 2024
+                GSSoC 2023
               </h1>
               <div className="pl-8 text-2xl text-primary_orange-0 1.5rem 2rem ">
                 {" "}
