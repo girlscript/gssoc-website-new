@@ -1,13 +1,14 @@
+import Link from "next/link";
 import { Fragment } from "react";
+
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import Link from "next/link";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const MoreMenu = () => {
+const MoreMenu = ({ handleClick }) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -35,6 +36,7 @@ const MoreMenu = () => {
               <Menu.Item>
                 {({ active }) => (
                   <a
+                  onClick={handleClick}
                     className={classNames(
                       active
                         ? "hover:text-primary_orange-0 dark:hover:text-primary_orange-0 dark:text-white"
@@ -51,6 +53,7 @@ const MoreMenu = () => {
               <Menu.Item>
                 {({ active }) => (
                   <a
+                  onClick={handleClick}
                     className={classNames(
                       active
                         ? "hover:text-primary_orange-0 dark:hover:text-primary_orange-0 dark:text-white"
@@ -73,6 +76,7 @@ const MoreMenu = () => {
                         : "hover:text-primary_orange-0 dark:text-white",
                       "block px-4 py-2 text-sm cursor-pointer"
                     )}
+                    onClick={handleClick}
                   >
                     EVENTS
                   </a>
@@ -106,6 +110,7 @@ const MoreMenu = () => {
                         : "hover:text-primary_orange-0 dark:text-white",
                       "block px-4 py-2 text-sm cursor-pointer"
                     )}
+                    onClick={handleClick}
                   >
                     VERIFY CERTIFICATIONS
                   </a>

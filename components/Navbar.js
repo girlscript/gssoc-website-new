@@ -1,7 +1,9 @@
-import { Tooltip } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+
+import { Tooltip } from "@chakra-ui/react";
+
 import MoreMenu from "./MoreMenu";
 import ThemeChanger from "./Toggler";
 
@@ -84,17 +86,17 @@ export const Navbar = () => {
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center content-center items-start  flex flex-col lg:h-auto mr-3.5">
             <Link href="/">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
+              <a   onClick={handleClick} className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
                 ABOUT
               </a>
             </Link>
             <Link href="/project">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2  text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
+              <a   onClick={handleClick} className="lg:inline-flex lg:w-auto w-full px-3 py-2  text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
                 PROJECT
               </a>
             </Link>
             <Link href="/#Sponsors">
-              <a
+              <a  onClick={handleClick}
                 className="lg:inline-flex lg:w-auto w-full px-3 py-2 mr-30 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black"
               >
                 SPONSORS
@@ -105,8 +107,8 @@ export const Navbar = () => {
                 SCHEDULE
               </a>
             </Link> */}
-            <Link href="/leaderboard">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
+            <Link href="/leaderboard" >
+              <a  onClick={handleClick}  className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
                 LEADERBOARD
               </a>
             </Link>
@@ -121,23 +123,23 @@ export const Navbar = () => {
               </a>
             </Link>
             <Link href="/team">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
+              <a   onClick={handleClick} className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
                 TEAM
               </a>
             </Link>
             <Link href="/blog">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
+              <a   onClick={handleClick} className="lg:inline-flex lg:w-auto w-full px-3 py-2 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black">
                 BLOG
               </a>
             </Link>
-            <a
+            <a  onClick={handleClick}
               href="#Contact"
               className="lg:inline-flex lg:w-auto w-full px-3 py-2 mr-30 text-center rounded text-grey-800 text-1xl font-medium mr-3.5 hover:text-primary_orange-0 dark:hover:text-primary_orange-0 hover:text-lg transition-all link link-underline link-underline-black"
             >
               CONTACT
             </a>
-            <div className="lg:inline-flex lg:w-auto w-full px-2 text-center rounded link link-underline link-underline-black mr-3.5">
-              <MoreMenu />
+            <div   className="lg:inline-flex lg:w-auto w-full px-2 text-center rounded link link-underline link-underline-black mr-3.5">
+              <MoreMenu handleClick={handleClick} />
             </div>
             <div className="hidden lg:block">
               <Tooltip label="Change Theme" placement="bottom">
