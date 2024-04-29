@@ -26,12 +26,11 @@ const Footer = () => {
                     ABOUT GSSOC
                   </h6>
                   <div>
-                    <a
-                      href="https://www.linkedin.com/company/girlscriptsoc/about/?viewAsMember=true"
-                      className="font-normal text-black py-1 block hover:underline"
-                    >
-                      Contact Us
-                    </a>
+                    <Link href="/contact">
+                      <span className="font-normal text-black py-1 hover:underline block cursor-pointer">
+                        Contact Us
+                      </span>
+                    </Link>
                     {/* <a
                       href="#"
                       className="font-normal text-black py-1 block hover:underline"
@@ -39,11 +38,9 @@ const Footer = () => {
                       Past Programs
                     </a> */}
                     <Link href="/codeofconduct">
-                    <a
-                      className="font-normal text-black py-1 block hover:underline"
-                    >
-                      Code of Conduct
-                    </a>
+                      <a className="font-normal text-black py-1 block hover:underline">
+                        Code of Conduct
+                      </a>
                     </Link>
                   </div>
                 </div>
