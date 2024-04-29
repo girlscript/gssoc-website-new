@@ -48,17 +48,17 @@
     </td></tr>
 <tr>
     <td align="center">
-        <a href="https://github.com/Anubhavdevv">
-            <img src="https://avatars.githubusercontent.com/u/72249059?v=4" width="100;" alt="Anubhavdevv"/>
-            <br />
-            <sub><b>Anubhav</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/Princegupta101">
             <img src="https://avatars.githubusercontent.com/u/125169311?v=4" width="100;" alt="Princegupta101"/>
             <br />
             <sub><b>Prince Gupta</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Anubhavdevv">
+            <img src="https://avatars.githubusercontent.com/u/72249059?v=4" width="100;" alt="Anubhavdevv"/>
+            <br />
+            <sub><b>Anubhav</b></sub>
         </a>
     </td>
     <td align="center">
@@ -134,6 +134,13 @@
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/kpriyanshu2003">
+            <img src="https://avatars.githubusercontent.com/u/109672617?v=4" width="100;" alt="kpriyanshu2003"/>
+            <br />
+            <sub><b>Kumar Priyanshu</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/singodiyashubham87">
             <img src="https://avatars.githubusercontent.com/u/93720428?v=4" width="100;" alt="singodiyashubham87"/>
             <br />
@@ -167,15 +174,15 @@
             <br />
             <sub><b>Sanjay Viswanathan</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/isayakmondal">
             <img src="https://avatars.githubusercontent.com/u/51121313?v=4" width="100;" alt="isayakmondal"/>
             <br />
             <sub><b>Sayak Mondal ⚡</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/hustler0109">
             <img src="https://avatars.githubusercontent.com/u/90794215?v=4" width="100;" alt="hustler0109"/>
