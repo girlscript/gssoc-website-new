@@ -27,7 +27,7 @@
     {  
         "Name": "Sanjay Viswanathan",  
         "Designation": "Program Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Sanjay%20KV.png?raw=true",  
+        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Sanjay%20Viswanathan.jpg?raw=true",  
         "GitHub": "https://github.com/sanjay-kv",  
         "Twitter": "https://twitter.com/sanjay_kv",  
         "LinkedIn": "https://www.linkedin.com/in/sanjay-k-v/"  
@@ -50,7 +50,7 @@
     {  
         "Name": "Aishal Gupta",  
         "Designation": "Program Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Aishal%20Gupta.jpg?raw=true",  
+        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/AishalGupta.jpg?raw=true",  
         "GitHub": "https://github.com/aishalxgupta",  
         "Twitter": "https://twitter.com/AishalGupta",  
         "LinkedIn": "https://www.linkedin.com/in/aishal-gupta/"  
@@ -233,6 +233,17 @@
         "Twitter": "https://twitter.com/ChandraC11568",  
         "LinkedIn": "https://www.linkedin.com/in/shubhangi-chandra-79b034251/"  
     },  
+
+    {  
+        "Name": "Nehal Fathema",  
+        "Designation": "UI/UX Designer",  
+        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Nehal%20Fathema.jpg?raw=true",  
+        "GitHub": "https://github.com/nehal-5",  
+        "Twitter": "https://twitter.com/FathemaNehal",  
+        "LinkedIn": "https://www.linkedin.com/in/nehal-fathema/"  
+    },  
+
+
     {  
         "Name": "Sneha Kumari",  
         "Designation": "Discord Manager",  
