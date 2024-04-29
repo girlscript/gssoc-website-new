@@ -32,14 +32,14 @@ function Contact() {
   return (
     <div className="grid place-content-center">
       <>
-        <div className="text-[#FF7F0D]  text-center">
+        <div className="text-[#FF7F0D] text-center">
           <h1 className="text-4xl font-bold my-2">Contact Us</h1>
           <span className="font-medium my-2">
             Any questions or remarks? Just write us a message!
           </span>
         </div>
-        <div className="bg-white p-3 gap-10 shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg flex items-center justify-between my-10">
-          <div className="relative border">
+        <div className="bg-white p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
+          <div className="relative">
             <div className="absolute top-10 z-10 left-0">
               <Image
                 src="/GS_logo_contact.svg"
@@ -94,10 +94,10 @@ function Contact() {
             </div>
           </div>
           <form
-            className="bg-white w-full text-black  mr-3"
+            className="bg-white w-full text-black mr-3 px-5 md:px-0"
             onSubmit={(e) => handleSubmit(e)}
           >
-            <div className="flex items-center justify-between my-4 gap-10">
+            <div className="md:flex items-center justify-between gap-10">
               <Input
                 text="First Name"
                 type="text"
@@ -115,7 +115,7 @@ function Contact() {
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
               />
             </div>
-            <div className="flex items-center justify-between gap-10 my-4">
+            <div className="md:flex items-center justify-between gap-10">
               <Input
                 text="Email"
                 type="email"
@@ -139,12 +139,11 @@ function Contact() {
               text="Message"
               type="textarea"
               placeholder="Enter your message..."
-              className="my-4"
               value={data.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
             />
             {/* TODO : Add Validation before Submitting */}
-            <div className="text-right my-4">
+            <div className="text-center md:text-right my-4">
               <button
                 className="bg-black text-white rounded-md px-8 py-3 text-sm hover:bg-slate-800 transition duration-300"
                 type="submit"
