@@ -38,16 +38,18 @@ function Contact() {
             Any questions or remarks? Just write us a message!
           </span>
         </div>
-        <div className="bg-white p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
+        <div className="bg-white dark:bg-gray-800 p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
           <div className="relative">
-            <div className="absolute top-10 z-10 left-0">
-              <Image
-                src="/GS_logo_contact.svg"
-                alt="GS Logo"
-                width={600}
-                height={100}
-              />
-              <div className="pl-10 text-white">
+            <div className="md:absolute top-10 z-10 left-0">
+              <div className="w-full py-6 md:py-0 bg-[#FF7F0D] md:bg-transparent rounded-lg">
+                <Image
+                  src="/GS_logo_contact.svg"
+                  alt="GS Logo"
+                  width={600}
+                  height={100}
+                />
+              </div>
+              <div className="pl-10 hidden md:block text-white">
                 <span className="text-2xl font-semibold">
                   Contact Information
                 </span>
@@ -56,7 +58,7 @@ function Contact() {
                   Say something to start a live chat
                 </span>
               </div>
-              <div className="text-white ml-10 mt-10">
+              <div className="text-black dark:text-white md:text-white ml-10 mt-5 flex flex-col gap-4">
                 <Link href="tel:+918999917506">
                   <div className="flex items-center gap-2 cursor-pointer">
                     <TelePhone /> +91 8999917506
@@ -72,13 +74,15 @@ function Contact() {
                 </div>
               </div>
             </div>
-            <Image
-              src="/GSSoC_Contact_BG.svg"
-              alt="Contact Us"
-              height={850}
-              width={650}
-            />
-            <div className="absolute bottom-5 left-5 z-10 flex gap-3 items-center">
+            <div className="hidden md:block">
+              <Image
+                src="/GSSoC_Contact_BG.svg"
+                alt="Contact Us"
+                height={850}
+                width={650}
+              />
+            </div>
+            <div className="hidden md:flex absolute bottom-5 left-5 z-10 gap-3 items-center">
               <Link href="https://facebook.com">
                 <Facebook />
               </Link>
@@ -94,7 +98,7 @@ function Contact() {
             </div>
           </div>
           <form
-            className="bg-white w-full text-black mr-3 px-5 md:px-0"
+            className=" w-full text-black mr-3 px-5 md:px-0 mt-16 md:mt-0"
             onSubmit={(e) => handleSubmit(e)}
           >
             <div className="md:flex items-center justify-between gap-10">
@@ -145,7 +149,7 @@ function Contact() {
             {/* TODO : Add Validation before Submitting */}
             <div className="text-center md:text-right my-4">
               <button
-                className="bg-black text-white rounded-md px-8 py-3 text-sm hover:bg-slate-800 transition duration-300"
+                className="bg-black dark:text-[#FF7F0D] text-white rounded-md px-8 py-3 text-sm hover:bg-slate-800 transition duration-300"
                 type="submit"
               >
                 Send Message

@@ -3,10 +3,10 @@ import React from "react";
 function Input({ text, type, placeholder, className, value, onChange }) {
   return (
     <div className={`${className} group my-4`}>
-      <span className="text-sm text-[#8d8d8d] group-focus-within:text-black transition-all duration-200">
+      <span className="text-sm text-[#8d8d8d] group-focus-within:text-black dark:group-focus-within:text-white transition-all duration-200 dark:text-[#FF7F0D]">
         {text}
       </span>
-      <div className="border-b focus-within:border-black transition-all duration-200">
+      <div className="border-b focus-within:border-black dark:group-focus-within:text-white dark:border-white transition-all duration-200">
         {type !== "textarea" ? (
           <input
             type={type}
