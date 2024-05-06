@@ -1,12 +1,12 @@
 const items = [
   {
-    title: "19th February 2022",
+    title: "5th May 2024",
     poster:
-      "https://user-images.githubusercontent.com/63473496/159970986-f0fceac6-f866-4a5e-89d5-0f86cbe206d2.png",
-    maintitle: "Conversation with Mr. Santosh Yadav",
-    rec_link: "https://twitter.com/i/spaces/1YqGopXoyNaJv?s=20",
-    info: "We were joined by GitHub Star Mr. Santosh Yadav through Twitter Spaces as we dived into the conversations about open-source. Further we also conducted a QnA session for all the attendees regarding his journey in tech and the forthcoming GirlScript Summer of Code’22.",
-    medium: "Twitter",
+      "https://raw.githubusercontent.com/girlscript/gssoc-website-new/main/public/327992121-2df7a26e-44bf-4e97-8670-0bac03e3596a.jpg",
+    maintitle: "Conversation with Yati Padia",
+    rec_link: "https://www.youtube.com/live/A7PchMiBeN4?si=EXJh3N80y3q1Zqfr",
+    info: "We were joined by Yati Padia as we dived into the conversations about open-source.",
+    medium: "Youtube",
     fmt:"image",
   },
   {
