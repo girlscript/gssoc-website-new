@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 import ContactFormEmail from '../../../components/contact-from-mail';
 
-const apiKey = process.env.NEXT_PUBLIC_RESEND_API_KEY;
+const apiKey = "re_cX3wkkam_PwexuwaiCTmbPSnZguqUn4ec";
 const resend = new Resend(apiKey);
 
 export default async function handler(req, res) {
