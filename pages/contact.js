@@ -1,8 +1,8 @@
+import axios from 'axios';
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-import { sendEmail } from "../pages/api/email/sendMail.js";
 import Email from "../components/IconAssets/Email";
 import Facebook from "../components/IconAssets/Facebook";
 import Instagram from "../components/IconAssets/Instagram";
@@ -29,7 +29,7 @@ function Contact() {
     e.preventDefault();
     try {
       console.log(data);
-      const result = await sendEmail(data);
+    const result=  await axios.post('/api/email/send-email', data);
       if (result.error) {
         console.error(result.error);
         return;

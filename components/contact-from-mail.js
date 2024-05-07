@@ -13,14 +13,12 @@ export default function ContactFormEmail({
   return (
     <Html>
       <Head />
-      <Preview>New message from your portfolio site</Preview>
+      <Preview>New message from your Website</Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
             <Section className="bg-white borderBlack my-10 px-10 py-4 rounded-md">
-              <Heading className="leading-tight">
-                You received the following message from the contact form
-              </Heading>
+            <Text><strong className=" text-lg  justify-center text-red-400">    You received the following message from the contact form</strong></Text>   
               <Text><strong>Name:</strong> {firstName} {lastName}</Text>
               <Text><strong>Email:</strong> {email}</Text>
               <Text><strong>Phone Number:</strong> {phoneNumber}</Text>
