@@ -1,17 +1,19 @@
+import axios from 'axios';
 import Image from "next/image";
-import React from "react";
-import Input from "../components/Input";
 import Link from "next/link";
-import TelePhone from "../components/IconAssets/TelePhone";
+import React, { useState } from "react";
+
 import Email from "../components/IconAssets/Email";
-import Location from "../components/IconAssets/Location";
 import Facebook from "../components/IconAssets/Facebook";
 import Instagram from "../components/IconAssets/Instagram";
 import LinkedIn from "../components/IconAssets/LinkedIn";
+import Location from "../components/IconAssets/Location";
+import TelePhone from "../components/IconAssets/TelePhone";
 import Twitter from "../components/IconAssets/Twitter";
+import Input from "../components/Input";
 
 function Contact() {
-  const [data, setData] = React.useState({
+  const [data, setData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -23,10 +25,27 @@ function Contact() {
     setData({ ...data, [field]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async(e) => {
     e.preventDefault();
-    console.log(data);
-    alert("Message Sent!");
+    try {
+      console.log(data);
+    const result=  await axios.post('/api/email/send-email', data);
+      if (result.error) {
+        console.error(result.error);
+        return;
+      }
+      alert('Message Sent!');
+      setData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('An error occurred while sending the email');
+    }
   };
 
   return (
@@ -99,7 +118,7 @@ function Contact() {
           </div>
           <form
             className=" w-full text-black mr-3 px-5 md:px-0 mt-16 md:mt-0"
-            onSubmit={(e) => handleSubmit(e)}
+            onSubmit={ handleSubmit}
           >
             <div className="md:flex items-center justify-between gap-10">
               <Input
@@ -139,13 +158,16 @@ function Contact() {
                 }
               />
             </div>
-            <Input
-              text="Message"
-              type="textarea"
-              placeholder="Enter your message..."
-              value={data.message}
-              onChange={(e) => handleInputChange("message", e.target.value)}
-            />
+            
+          <textarea
+            text="Message"
+            className="w-full my-3 rounded-lg dark:text-white  p-4  "
+            placeholder="Enter your message..."
+            value={data.message}
+            required
+            maxLength={5000}
+            onChange={(e) => handleInputChange("message", e.target.value)}
+          />
             {/* TODO : Add Validation before Submitting */}
             <div className="text-center md:text-right my-4">
               <button

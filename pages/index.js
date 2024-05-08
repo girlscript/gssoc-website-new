@@ -103,14 +103,14 @@ export default function Home() {
               <span className="text-primary_orange-0">#OpenSource &nbsp;</span>
               program by GirlScript Foundation.
               <br />
-              <b> 5th May - 10th August 2024 </b>
+              <b> 10th May - 10th August 2024 </b>
             </div>
 {/* 
             <div className="ring mb-4 ring-primary_orange-0 text-white ring-offset-4 ring-offset-white dark:ring-offset-darkmode_gray-0 rounded-2xl w-full h-20 flex items-center justify-center drop-shadow-2xl">
               <h2 className="font-serif text-center font-medium text-2xl 1.5rem 2rem text-black dark:text-white"><b>GSSoC&apos;24 Job Fair</b> is coming soon!</h2>
             </div> */}
             <div className="flex items-center mt-2 mb-10 md:mb-52 lg:mb-56">
-              <a className="" href="https://swiy.co/contributors">
+              <a className="" href="https://docs.google.com/forms/d/e/1FAIpQLScl2zoD7dOYnftAc9csfY4SD72WJbM1c0XMWAq-4Z7X5k45NA/viewform">
                 <button
                   id="CTA-button"
                   data-aos="fade-down"
