@@ -74,63 +74,57 @@ const Project = () => {
               <h1 className="text-primary_orange-0">Projects&nbsp;</h1>
               <h1>-&nbsp;GSSOC&apos;{year} </h1>
             </p>
-            <div className="flex object-right">
-              {theme === "light" ? (
-                <div className="border-b-2">
-                  <Search2Icon color="black" />
-                </div>
-              ) : (
-                <div className="border-b-2">
-                  <Search2Icon color="white" />
-                </div>
-              )}
+            <div className="flex object-right border-b-2 items-center">
+              <Search2Icon color={theme === "light" ? "black" : "white"} />
               <input
-                className="px-3 py-1 border-b-2 bg-transparent outline-none dark:text-white text-black"
+                className="px-3 py-1 bg-transparent outline-none dark:text-white text-black"
                 type="search"
-                placeholder="Filter by Tech Stack..."
+                placeholder="Search projects..."
                 name="search"
                 id="search"
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
+                onChange={(event) => setSearchTerm(event.target.value)}
               />
             </div>
           </div>
         </div>
         <Spacer mt={16} />
         <div className="flex flex-row justify-center flex-wrap items-center gap-5">
-          <a>
-            <button
-              className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-              onClick={() => {getProjects2024();setYear("24")}}
-            >
-              2024
-            </button>
-          </a>
-          <a>
-            <button
-              className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-              onClick={() => {getProjects2023();setYear("23")}}
-            >
-              2023
-            </button>
-          </a>
-          <a>
-            <button
-              className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-              onClick={() => {getProjects2022();setYear("22")}}
-            >
-              2022
-            </button>
-          </a>
-          <a>
-            <button
-              className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg  dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-              onClick={() => {getProjects2021();setYear("21")}}
-            >
-              2021
-            </button>
-          </a>
+          <button
+            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
+            onClick={() => {
+              getProjects2024();
+              setYear("24");
+            }}
+          >
+            2024
+          </button>
+          <button
+            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
+            onClick={() => {
+              getProjects2023();
+              setYear("23");
+            }}
+          >
+            2023
+          </button>
+          <button
+            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
+            onClick={() => {
+              getProjects2022();
+              setYear("22");
+            }}
+          >
+            2022
+          </button>
+          <button
+            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg  dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
+            onClick={() => {
+              getProjects2021();
+              setYear("21");
+            }}
+          >
+            2021
+          </button>
         </div>
         {data.length > 1 && (
           <div>
@@ -144,15 +138,16 @@ const Project = () => {
               {data
                 .sort(() => 0.5 - Math.random())
                 .filter((curElem, i) => {
-                  if (searchTerm == "") {
-                    return curElem;
-                  } else if (
+                  if (searchTerm == "") return curElem;
+                  if (
                     curElem.technology_used
                       .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    curElem.project_name
+                      .toLowerCase()
                       .includes(searchTerm.toLowerCase())
-                  ) {
+                  )
                     return curElem;
-                  }
                 })
                 .map((curElem, i) => {
                   return (
@@ -224,7 +219,6 @@ const Project = () => {
             </div>
           </div>
         )}
-
         <br />
         <br />
       </section>
