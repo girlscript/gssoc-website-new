@@ -24,7 +24,7 @@ function Cards(props) {
                 {props.btntext}
               </button>
             ) : (
-              <button className="dark:text-black bg-gradient-to-b from-slate-600 to-orange-400 text-white w-full font-bold py-3 px-5 rounded mb-3">
+              <button className="dark:text-black bg-gradient-to-b from-primary_orange-0 to-orange-600 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-white w-full font-bold py-3 px-5 rounded mb-3">
                 {props.btntext}
               </button>
             )}
