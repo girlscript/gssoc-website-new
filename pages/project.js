@@ -194,16 +194,18 @@ const Project = () => {
                                 .sort((a, b) => a.length - b.length)
                                 .map((techStk, k) => {
                                   return (
-                                    <button
-                                      className="bg-orange-50 dark:hover:bg-slate-700 dark:bg-stone-800 rounded-2xl w-full py-1
+                                    techStk && (
+                                      <button
+                                        className="bg-orange-50 dark:hover:bg-slate-700 dark:bg-stone-800 rounded-2xl w-full py-1
                                       text-orange-600 drop-shadow-md font-semibold"
-                                      key={k}
-                                      onClick={() => {
-                                        setSearchTerm(techStk.trim());
-                                      }}
-                                    >
-                                      {techStk.trim()}
-                                    </button>
+                                        key={k}
+                                        onClick={() => {
+                                          setSearchTerm(techStk.trim());
+                                        }}
+                                      >
+                                        {techStk.trim()}
+                                      </button>
+                                    )
                                   );
                                 })}
                             </SimpleGrid>
