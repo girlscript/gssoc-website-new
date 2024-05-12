@@ -8,7 +8,7 @@ export const projectTags = [
   { title: "Firebase", count: 8 },
   { title: "Node", count: 7 },
   { title: "MongoDB", count: 7 },
-  { title: "Tailwind CSS", count: 6 },
+  { title: "Tailwind", count: 6 },
   { title: "Flutter", count: 6 },
   { title: "Solidity", count: 4 },
   { title: "Express", count: 4 },
