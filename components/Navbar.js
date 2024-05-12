@@ -32,7 +32,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center transition-colors flex-wrap bg-white drop-shadow-xl p-1 justify-center mb-10 dark:bg-black dark:text-white dark:transition-colors sticky top-0 z-10">
+      <nav className="flex items-center  flex-wrap bg-white drop-shadow-xl p-1 justify-center mb-10 dark:bg-[#000117] dark:text-white  sticky top-0 z-10">
         <Link href="/">
           <a className="inline-flex items-center p-2 mr-4 ">
             <span className="text-xl text-orange font-bold uppercase tracking-wide  ml-8">
