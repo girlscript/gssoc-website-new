@@ -2,10 +2,17 @@ import { Search2Icon } from "@chakra-ui/icons";
 import { SimpleGrid, Spacer } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ProjectModal from "../components/ProjectModal";
 import { projectData } from "./api/projectsData";
 import SearchTags from "../components/SearchTags";
+
+const projectLinks = {
+  2024: "https://opensheet.elk.sh/1JiqHjGyf43NNkou4PBe7WT4KEyueuFJct2p322nNMNw/JSON",
+  2023: "https://opensheet.elk.sh/1v7VqK6i_xJK4nJ6GKzoeafwrnlJR8Y5-8v0Qfsh3gqo/Shortlisted",
+  2022: "https://opensheet.elk.sh/1OC5gOWCpUrDXI8HAPEM9iOohoznBfAVF9d-rSMO7FXM/JSON_EndPoint",
+  2021: projectData,
+};
 
 const Project = () => {
   // const [data, setData] = useState(projectData);
@@ -15,35 +22,19 @@ const Project = () => {
   const [year, setYear] = useState("24");
   const { theme } = useTheme();
 
-  const getProjects2024 = async () => {
-    const response = await fetch(
-      "https://opensheet.elk.sh/1JiqHjGyf43NNkou4PBe7WT4KEyueuFJct2p322nNMNw/JSON"
-    );
-    setData(await response.json());
-  };
-
-  const getProjects2022 = async () => {
-    const response = await fetch(
-      "https://opensheet.elk.sh/1OC5gOWCpUrDXI8HAPEM9iOohoznBfAVF9d-rSMO7FXM/JSON_EndPoint"
-    );
-    setData(await response.json());
-  };
-
-  const getProjects2023 = async () => {
-    const response = await fetch(
-      "https://opensheet.elk.sh/1v7VqK6i_xJK4nJ6GKzoeafwrnlJR8Y5-8v0Qfsh3gqo/Shortlisted"
-    );
-    setData(await response.json());
-  };
-
-  const getProjects2021 = async () => {
-    setData(projectData);
-  };
+  const getProjects = useCallback(async (year) => {
+    if (year === "2021") {
+      setData(projectLinks[year]);
+    } else {
+      const response = await fetch(projectLinks[year]);
+      setData(await response.json());
+    }
+    setYear(year.substring(2));
+  }, []);
 
   useEffect(() => {
     setMounted(true);
-    getProjects2024();
-    setYear("24");
+    getProjects("2024");
   }, []);
 
   if (!mounted) return null;
@@ -89,43 +80,21 @@ const Project = () => {
         </div>
         <Spacer mt={16} />
         <div className="flex flex-row justify-center flex-wrap items-center gap-5">
-          <button
-            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-            onClick={() => {
-              getProjects2024();
-              setYear("24");
-            }}
-          >
-            2024
-          </button>
-          <button
-            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-            onClick={() => {
-              getProjects2023();
-              setYear("23");
-            }}
-          >
-            2023
-          </button>
-          <button
-            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-            onClick={() => {
-              getProjects2022();
-              setYear("22");
-            }}
-          >
-            2022
-          </button>
-          <button
-            className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg  dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
-            onClick={() => {
-              getProjects2021();
-              setYear("21");
-            }}
-          >
-            2021
-          </button>
+          {Object.keys(projectLinks)
+            .reverse()
+            .map((year) => {
+              return (
+                <button
+                  key={year}
+                  className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg dark:text-black rounded-b-md hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md text-white font-bold px-10 py-3 rounded md:text-2xl md:py-4"
+                  onClick={() => getProjects(year)}
+                >
+                  {year}
+                </button>
+              );
+            })}
         </div>
+        {}
         {data.length > 1 && (
           <div>
             <Spacer mt={10} mb={10} />
