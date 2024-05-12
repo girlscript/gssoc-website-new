@@ -134,6 +134,13 @@
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/kartikmehta18">
+            <img src="https://avatars.githubusercontent.com/u/125860170?v=4" width="100;" alt="kartikmehta18"/>
+            <br />
+            <sub><b>Kartik Mehta</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/sanjay-kv">
             <img src="https://avatars.githubusercontent.com/u/30715153?v=4" width="100;" alt="sanjay-kv"/>
             <br />
@@ -167,15 +174,15 @@
             <br />
             <sub><b>Jyotirmoy Bandyopadhyaya [Bravo68]</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/nehal-5">
             <img src="https://avatars.githubusercontent.com/u/130452338?v=4" width="100;" alt="nehal-5"/>
             <br />
             <sub><b>Albert_5</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Ardent10">
             <img src="https://avatars.githubusercontent.com/u/73132031?v=4" width="100;" alt="Ardent10"/>
@@ -202,13 +209,6 @@
             <img src="https://avatars.githubusercontent.com/u/112793075?v=4" width="100;" alt="palakag29"/>
             <br />
             <sub><b>Palakag29</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/mhdamaan79">
-            <img src="https://avatars.githubusercontent.com/u/118375524?v=4" width="100;" alt="mhdamaan79"/>
-            <br />
-            <sub><b>Mohd Amaan</b></sub>
         </a>
     </td>
     <td align="center">
