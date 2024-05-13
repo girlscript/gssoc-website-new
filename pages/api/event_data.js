@@ -2,12 +2,12 @@ const items = [
   {
     title: "5th May 2024",
     poster:
-      "https://raw.githubusercontent.com/girlscript/gssoc-website-new/main/public/327992121-2df7a26e-44bf-4e97-8670-0bac03e3596a.jpg",
+      "https://www.youtube.com/embed/A7PchMiBeN4",
     maintitle: "Conversation with Yati Padia",
     rec_link: "https://www.youtube.com/live/A7PchMiBeN4?si=EXJh3N80y3q1Zqfr",
     info: "We were joined by Yati Padia as we dived into the conversations about open-source.",
     medium: "Youtube",
-    fmt:"image",
+    fmt:"video",
   },
   {
     title: "9th May 2024",
