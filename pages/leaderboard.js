@@ -16,6 +16,8 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
 import Head from "next/head";
+import Image from "next/image";
+import { Tooltip } from "react-tooltip";
 import React, { useCallback, useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import Pagination from "react-js-pagination";
@@ -35,6 +37,44 @@ const columns = [
     label: "Score",
     minWidth: 100,
     align: "right",
+  },
+  {
+    id: "badge",
+    label: "",
+    minWidth: 100,
+    align: "right",
+    badges: {
+      60: {
+        name: "Explorer Badge",
+        badge: "./badges/1.png",
+        content:
+          "Congratulations! You've unlocked the Explorer Badge for reaching 60 points. Keep exploring and discovering new horizons!",
+      },
+      140: {
+        name: "Adventurer Badge",
+        badge: "./badges/2.png",
+        content:
+          "You're now an Adventurer! With 140 points, you've proven your knack for navigating through challenges. Keep journeying forward!",
+      },
+      200: {
+        name: "Trailblazer Badge",
+        badge: "./badges/3.png",
+        content:
+          "Blaze your trail! You've earned the Trailblazer Badge by amassing 200 points. Your determination and courage inspire us all!",
+      },
+      300: {
+        name: "Summit Seeker Badge",
+        badge: "./badges/4.png",
+        content:
+          "You've conquered mountains! With 300 points, you've earned the Summit Seeker Badge. Keep climbing to new heights!",
+      },
+      500: {
+        name: "Champion Badge",
+        badge: "./badges/5.png",
+        content:
+          "A true champion! With 500 points, you've reached the pinnacle of success and earned the Champion Badge. Keep aiming high and inspiring others!",
+      },
+    },
   },
   {
     id: "viewBtn",
@@ -550,6 +590,43 @@ function Leaderboard() {
                                         >
                                           <FontAwesomeIcon icon={faList} />
                                         </button>
+                                      ) : column.id === "badge" ? (
+                                        <div>
+                                          <Image
+                                            src={
+                                              row["score"] >= 500
+                                                ? column.badges[500].badge
+                                                : row["score"] >= 300
+                                                ? column.badges[300].badge
+                                                : row["score"] >= 200
+                                                ? column.badges[200].badge
+                                                : row["score"] >= 140
+                                                ? column.badges[140].badge
+                                                : row["score"] >= 60 ?
+                                                  column.badges[60].badge : "data:"
+                                            }
+                                            width={75}
+                                            height={75}
+                                            id={`badge-${i}`}
+                                          />
+                                          <Tooltip
+                                            anchorSelect={`#badge-${i}`}
+                                            place="right"
+                                          >
+                                            {
+                                              row["score"] >= 500
+                                              ? column.badges[500].name
+                                              : row["score"] >= 300
+                                              ? column.badges[300].name
+                                              : row["score"] >= 200
+                                              ? column.badges[200].name
+                                              : row["score"] >= 140
+                                              ? column.badges[140].name
+                                              : row["score"] >= 60 &&
+                                                column.badges[60].name
+                                            }
+                                          </Tooltip>
+                                        </div>
                                       ) : (
                                         value
                                       )}
@@ -613,6 +690,43 @@ function Leaderboard() {
                                         >
                                           <FontAwesomeIcon icon={faList} />
                                         </button>
+                                      ) : column.id === "badge" ? (
+                                        <div>
+                                          <Image
+                                            src={
+                                              row["score"] >= 500
+                                                ? column.badges[500].badge
+                                                : row["score"] >= 300
+                                                ? column.badges[300].badge
+                                                : row["score"] >= 200
+                                                ? column.badges[200].badge
+                                                : row["score"] >= 140
+                                                ? column.badges[140].badge
+                                                : row["score"] >= 60 ?
+                                                  column.badges[60].badge : "data:"
+                                            }
+                                            width={75}
+                                            height={75}
+                                            id={`badge-${i}`}
+                                          />
+                                          <Tooltip
+                                            anchorSelect={`#badge-${i}`}
+                                            place="right"
+                                          >
+                                            {
+                                              row["score"] >= 500
+                                              ? column.badges[500].name
+                                              : row["score"] >= 300
+                                              ? column.badges[300].name
+                                              : row["score"] >= 200
+                                              ? column.badges[200].name
+                                              : row["score"] >= 140
+                                              ? column.badges[140].name
+                                              : row["score"] >= 60 &&
+                                                column.badges[60].name
+                                            }
+                                          </Tooltip>
+                                        </div>
                                       ) : (
                                         value
                                       )}
