@@ -17,7 +17,7 @@ function Faq() {
         <>
             <Head>
                 <title>
-                    Job Fair | GirlScript Summer of Code 2023 | GirlScript Foundation India
+                    Job Fair | GirlScript Summer of Code 2024 | GirlScript Foundation India
                 </title>
                 <meta name="description" content="Job Fair of GirlScript Summer of Code" />
             </Head>

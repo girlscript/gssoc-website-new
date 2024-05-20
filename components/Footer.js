@@ -10,7 +10,7 @@ const Footer = () => {
               {/* <h4 className="text-white text-2xl font-medium mb-4">
                 Made with ❤️ by GirlScript India
   </h4>*/}
-              <Link href="https://girlscript.tech/">
+              <Link href="https://gssoc.girlscript.tech/contact">
                 <img
                   className="cursor-pointer"
                   src="./GS_Foundation_logo_Black.svg"

@@ -6,7 +6,7 @@ function schedule() {
     <div>
       <Head>
         <title>
-          Schedule | GirlScript Summer of Code 2023 | GirlScript Foundation India
+          Schedule | GirlScript Summer of Code 2024 | GirlScript Foundation India
         </title>
         <meta
           name="description"

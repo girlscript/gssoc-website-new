@@ -50,7 +50,7 @@ const Cert = () => {
     <>
       <Head>
         <title>
-          Verify Certifications | GirlScript Summer of Code 2023 | GirlScript
+          Verify Certifications | GirlScript Summer of Code 2024 | GirlScript
           Foundation India
         </title>
         <meta

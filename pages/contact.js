@@ -101,31 +101,19 @@ function Contact() {
                 width={650}
               />
             </div>
-            <div className="flex flex-row  md:flex-row md:absolute md:bottom-5 md:left-9 md:z-1 md:gap-3 md:items-center  ">
-              <a
-                href="https://www.facebook.com/girlscriptsoc/"
-                className="cursor-pointer"
-              >
+               <div className="flex flex-row  md:flex-row md:absolute md:bottom-5 md:left-9 md:z-1 md:gap-3 md:items-center  ">
+              <a href="https://www.facebook.com/girlscriptsoc/" className="cursor-pointer">
                 <Facebook />
               </a>
-              <a
-                href="https://www.instagram.com/girlscriptsummerofcode/?hl=en"
-                className="cursor-pointer"
-              >
+             <a href="https://www.instagram.com/girlscriptsummerofcode/?hl=en" className="cursor-pointer">
                 <Instagram />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/girlscriptsoc/mycompany/"
-                className="cursor-pointer"
-              >
+             </a>
+              <a href="https://www.linkedin.com/company/girlscriptsoc/mycompany/" className="cursor-pointer">
                 <LinkedIn />
               </a>
-              <a
-                href="https://twitter.com/girlscriptsoc"
-                className="cursor-pointer"
-              >
+             <a href="https://twitter.com/girlscriptsoc" className="cursor-pointer">
                 <Twitter />
-              </Link>
+              </a>
             </div>
           </div>
           <form

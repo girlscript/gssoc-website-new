@@ -9,7 +9,7 @@ function Faq() {
     <>
       <Head>
         <title>
-          FAQs | GirlScript Summer of Code 2023 | GirlScript Foundation India
+          FAQs | GirlScript Summer of Code 2024 | GirlScript Foundation India
         </title>
         <meta name="description" content="FAQs of GirlScript Summer of Code" />
       </Head>
