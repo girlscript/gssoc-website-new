@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -25,26 +25,26 @@ function Contact() {
     setData({ ...data, [field]: value });
   };
 
-  const handleSubmit =async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       console.log(data);
-    const result=  await axios.post('/api/email/send-email', data);
+      const result = await axios.post("/api/email/send-email", data);
       if (result.error) {
         console.error(result.error);
         return;
       }
-      alert('Message Sent!');
+      alert("Message Sent!");
       setData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        message: '',
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
       });
     } catch (error) {
-      console.error('Error sending email:', error);
-      alert('An error occurred while sending the email');
+      console.error("Error sending email:", error);
+      alert("An error occurred while sending the email");
     }
   };
 
@@ -101,24 +101,36 @@ function Contact() {
                 width={650}
               />
             </div>
-            <div className="hidden md:flex absolute bottom-5 left-5 z-10 gap-3 items-center">
-              <Link href="https://facebook.com">
+            <div className="flex flex-row  md:flex-row md:absolute md:bottom-5 md:left-9 md:z-1 md:gap-3 md:items-center  ">
+              <a
+                href="https://www.facebook.com/girlscriptsoc/"
+                className="cursor-pointer"
+              >
                 <Facebook />
-              </Link>
-              <Link href="https://instagram.com">
+              </a>
+              <a
+                href="https://www.instagram.com/girlscriptsummerofcode/?hl=en"
+                className="cursor-pointer"
+              >
                 <Instagram />
-              </Link>
-              <Link href="https://linkedi.com">
+              </a>
+              <a
+                href="https://www.linkedin.com/company/girlscriptsoc/mycompany/"
+                className="cursor-pointer"
+              >
                 <LinkedIn />
-              </Link>
-              <Link href="https://x.com">
+              </a>
+              <a
+                href="https://twitter.com/girlscriptsoc"
+                className="cursor-pointer"
+              >
                 <Twitter />
               </Link>
             </div>
           </div>
           <form
             className=" w-full text-black mr-3 px-5 md:px-0 mt-16 md:mt-0"
-            onSubmit={ handleSubmit}
+            onSubmit={handleSubmit}
           >
             <div className="md:flex items-center justify-between gap-10">
               <Input
@@ -158,16 +170,15 @@ function Contact() {
                 }
               />
             </div>
-            
-          <textarea
-            text="Message"
-            className="w-full my-3 rounded-lg dark:text-white  p-4  "
-            placeholder="Enter your message..."
-            value={data.message}
-            required
-            maxLength={5000}
-            onChange={(e) => handleInputChange("message", e.target.value)}
-          />
+
+            <textarea
+              className="w-full my-3 rounded-lg dark:text-white  p-4  "
+              placeholder="Enter your message..."
+              value={data.message}
+              required
+              maxLength={5000}
+              onChange={(e) => handleInputChange("message", e.target.value)}
+            />
             {/* TODO : Add Validation before Submitting */}
             <div className="text-center md:text-right my-4">
               <button

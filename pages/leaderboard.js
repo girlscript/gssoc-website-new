@@ -9,11 +9,9 @@ import {
   SkeletonText,
   Spinner,
   Stack,
-  useDisclosure
-} from '@chakra-ui/react';
-import {
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
+  useDisclosure,
+} from "@chakra-ui/react";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
@@ -163,7 +161,7 @@ function Leaderboard() {
           let blacklist = ["raj03kumar", "chinmoy12c", "nidhi-rathore"];
           const rankedData = data.leaderboard
             .filter((usr) => {
-              return (blacklist.includes(usr.login) === false);
+              return blacklist.includes(usr.login) === false;
             })
             .map((contributorData, idx) => ({
               ...contributorData,
@@ -204,7 +202,7 @@ function Leaderboard() {
     );
   }
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   let prlinks = [];
   let handleClickOpen = (num) => {
     onOpen(true);
@@ -475,7 +473,7 @@ function Leaderboard() {
                       <div
                         className="table-cell font-serif px-4 py-4 bg-black text-white dark:bg-primary_orange-0 dark:text-black"
                         key={column.id}
-                        align={column.align}
+                        // align={column.align}
                         style={{ minWidth: column.minWidth }}
                       >
                         {column.label}
@@ -503,7 +501,7 @@ function Leaderboard() {
                                     <div
                                       className="table-cell px-4 py-2 bg-orange-50 text-black  dark:bg-neutral-900 dark:text-white font-medium"
                                       key={column.id}
-                                      align={column.align}
+                                      // align={column.align}
                                       style={{ verticalAlign: "middle" }}
                                     >
                                       {column.id === "avatar" ? (
@@ -572,7 +570,7 @@ function Leaderboard() {
                                     <div
                                       className="table-cell px-4 py-2 bg-leaderboardbg-0 text-black dark:bg-black dark:text-white font-medium"
                                       key={column.id}
-                                      align={column.align}
+                                      // align={column.align}
                                     >
                                       {column.id === "avatar" ? (
                                         <img
@@ -657,128 +655,144 @@ function Leaderboard() {
                 }}
               />
             </div>
-            {theme==="dark"?
-            (<Modal
-              isOpen={isOpen}
-              onClose={handleClose}
-              size="xl"
-              aria-labelledby="alert-dialog-slide-title"
-              aria-describedby="alert-dialog-slide-description"
-              backgroundColor='#000'
-            >
-              <ModalOverlay/>
-              <ModalContent backgroundColor='#000000'>
-              <ModalHeader 
-                className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed"
-                id="alert-dialog-slide-title"
+            {theme === "dark" ? (
+              <Modal
+                isOpen={isOpen}
+                onClose={handleClose}
+                size="xl"
+                aria-labelledby="alert-dialog-slide-title"
+                aria-describedby="alert-dialog-slide-description"
+                backgroundColor="#000"
               >
-                {login + "'s Stats"}
-              </ModalHeader>
-              <ModalBody>
-              <div className="flex-auto py-2 px-6 overflow-y-auto">
-                <div id="alert-dialog-slide-description">
-                  <div style={{ display: "flex", alignItems: "center",}}>
-                    <img
-                      alt="Suvraneel Bhuin"
-                      src={avatar}
-                      className="w-12 rounded-full xl:w-24"
-                    />
-                    <p className="dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score">
-                      🏆 {score}
-                    </p>
-                  </div>
-                  <div style={{ marginTop: 30, fontWeight: "bolder", color: "white"}}>
-                    List Of PRs:{" "}
-                  </div>
-                  {links.length !== 0 &&
-                    links.map((link) => (
-                      <a className="pr-links text-white" href={link} key={link}>
-                        {link}
-                      </a>
-                    ))}
-                </div>
-              </div>
-              <div className="flex px-2 py-2 items-center justify-end">
-                <button
-                  onClick={handleClose}
-                  color="primary"
-                  className="close-btn"
-                  style={{
-                    background: "#FA6329",
-                    border: "none",
-                    padding: "10px 20px",
-                    color: "white",
-                    borderRadius: 5,
-                    cursor: "pointer",
-                    fontSize: "18px",
-                  }}
-                >
-                  Close
-                </button>
-              </div>
-              </ModalBody>
-              </ModalContent>
-            </Modal>):
-            (<Modal
-              isOpen={isOpen}
-              onClose={handleClose}
-              size="xl"
-              aria-labelledby="alert-dialog-slide-title"
-              aria-describedby="alert-dialog-slide-description"
-            >
-              <ModalOverlay />
-              <ModalContent>
-              <ModalHeader 
-                className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed"
-                id="alert-dialog-slide-title"
+                <ModalOverlay />
+                <ModalContent backgroundColor="#000000">
+                  <ModalHeader
+                    className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed"
+                    id="alert-dialog-slide-title"
+                  >
+                    {login + "'s Stats"}
+                  </ModalHeader>
+                  <ModalBody>
+                    <div className="flex-auto py-2 px-6 overflow-y-auto">
+                      <div id="alert-dialog-slide-description">
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            alt="Suvraneel Bhuin"
+                            src={avatar}
+                            className="w-12 rounded-full xl:w-24"
+                          />
+                          <p className="dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score">
+                            🏆 {score}
+                          </p>
+                        </div>
+                        <div
+                          style={{
+                            marginTop: 30,
+                            fontWeight: "bolder",
+                            color: "white",
+                          }}
+                        >
+                          List Of PRs:{" "}
+                        </div>
+                        {links.length !== 0 &&
+                          links.map((link) => (
+                            <a
+                              className="pr-links text-white"
+                              href={link}
+                              key={link}
+                            >
+                              {link}
+                            </a>
+                          ))}
+                      </div>
+                    </div>
+                    <div className="flex px-2 py-2 items-center justify-end">
+                      <button
+                        onClick={handleClose}
+                        color="primary"
+                        className="close-btn"
+                        style={{
+                          background: "#FA6329",
+                          border: "none",
+                          padding: "10px 20px",
+                          color: "white",
+                          borderRadius: 5,
+                          cursor: "pointer",
+                          fontSize: "18px",
+                        }}
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
+            ) : (
+              <Modal
+                isOpen={isOpen}
+                onClose={handleClose}
+                size="xl"
+                aria-labelledby="alert-dialog-slide-title"
+                aria-describedby="alert-dialog-slide-description"
               >
-                {login + "'s Stats"}
-              </ModalHeader>
-              <ModalBody>
-              <div className="flex-auto py-2 px-6 overflow-y-auto">
-                <div id="alert-dialog-slide-description">
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <img
-                      alt="Suvraneel Bhuin"
-                      src={avatar}
-                      className="w-12 rounded-full xl:w-24"
-                    />
-                    <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score">
-                      🏆 {score}
-                    </p>
-                  </div>
-                  <div style={{ marginTop: 30, fontWeight: "bolder" }}>
-                    List Of PRs:{" "}
-                  </div>
-                  {links.length !== 0 &&
-                    links.map((link) => (
-                      <a className="pr-links text-black" href={link} key={link}>
-                        {link}
-                      </a>
-                    ))}
-                </div>
-              </div>
-              <div className="flex px-2 py-2 items-center justify-end">
-                <button
-                  onClick={handleClose}
-                  color="primary"
-                  className="close-btn"
-                  style={{
-                    background: "#FA6329",
-                    border: "none",
-                    padding: "10px 20px",
-                    color: "white",
-                    borderRadius: 5,
-                    cursor: "pointer",
-                    fontSize: "18px",
-                  }}
-                >
-                  Close
-                </button>
-              </div>
-              </ModalBody>
-              </ModalContent>
-            </Modal>)}
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader
+                    className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed"
+                    id="alert-dialog-slide-title"
+                  >
+                    {login + "'s Stats"}
+                  </ModalHeader>
+                  <ModalBody>
+                    <div className="flex-auto py-2 px-6 overflow-y-auto">
+                      <div id="alert-dialog-slide-description">
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            alt="Suvraneel Bhuin"
+                            src={avatar}
+                            className="w-12 rounded-full xl:w-24"
+                          />
+                          <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score">
+                            🏆 {score}
+                          </p>
+                        </div>
+                        <div style={{ marginTop: 30, fontWeight: "bolder" }}>
+                          List Of PRs:{" "}
+                        </div>
+                        {links.length !== 0 &&
+                          links.map((link) => (
+                            <a
+                              className="pr-links text-black"
+                              href={link}
+                              key={link}
+                            >
+                              {link}
+                            </a>
+                          ))}
+                      </div>
+                    </div>
+                    <div className="flex px-2 py-2 items-center justify-end">
+                      <button
+                        onClick={handleClose}
+                        color="primary"
+                        className="close-btn"
+                        style={{
+                          background: "#FA6329",
+                          border: "none",
+                          padding: "10px 20px",
+                          color: "white",
+                          borderRadius: 5,
+                          cursor: "pointer",
+                          fontSize: "18px",
+                        }}
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </ModalBody>
+                </ModalContent>
+              </Modal>
+            )}
           </div>
         </div>
       </div>
