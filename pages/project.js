@@ -128,7 +128,7 @@ const Project = () => {
                     >
                       <div className="shadow dark:bg-black rounded-lg">
                         <div
-                          className="overflow-y-clip rounded-lg h-fit md:h-80 
+                          className="overflow-y-clip dark:bg-[#000117] rounded-lg h-fit md:h-80 
                     w-80 flex flex-col justify-start 
                     shadow-lg shadow-black-200 relative"
                         >
@@ -165,8 +165,8 @@ const Project = () => {
                                   return (
                                     techStk && (
                                       <button
-                                        className="bg-orange-50 dark:hover:bg-slate-700 dark:bg-stone-800 rounded-2xl w-full py-1
-                                      text-orange-600 drop-shadow-md font-semibold"
+                                        className=" m-* p-1 bg-orange-50 dark:hover:bg-transparent dark:bg-stone-800   py-1 
+                                      text-orange-600 drop-shadow-md font-normal"
                                         key={k}
                                         onClick={() => {
                                           setSearchTerm(techStk.trim());
