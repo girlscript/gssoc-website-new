@@ -4,7 +4,7 @@ function info() {
     <div>
       <Head>
         <title>
-        How GSSoC Works? | GirlScript Summer of Code 2023 | GirlScript Foundation India
+        How GSSoC Works? | GirlScript Summer of Code 2024 | GirlScript Foundation India
         </title>
         <meta name="description" content="GirlScript Summer of Code Certificates" />
       </Head>

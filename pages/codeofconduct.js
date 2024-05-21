@@ -6,7 +6,7 @@ const Content = () => {
     <>
       <Head>
         <title>
-          Code of Conduct | GirlScript Summer of Code 2023 | GirlScript
+          Code of Conduct | GirlScript Summer of Code 2024 | GirlScript
           Foundation India
         </title>
         <meta

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -25,26 +25,26 @@ function Contact() {
     setData({ ...data, [field]: value });
   };
 
-  const handleSubmit =async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       console.log(data);
-    const result=  await axios.post('/api/email/send-email', data);
+      const result = await axios.post("/api/email/send-email", data);
       if (result.error) {
         console.error(result.error);
         return;
       }
-      alert('Message Sent!');
+      alert("Message Sent!");
       setData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phoneNumber: '',
-        message: '',
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        message: "",
       });
     } catch (error) {
-      console.error('Error sending email:', error);
-      alert('An error occurred while sending the email');
+      console.error("Error sending email:", error);
+      alert("An error occurred while sending the email");
     }
   };
 
@@ -118,7 +118,7 @@ function Contact() {
           </div>
           <form
             className=" w-full text-black mr-3 px-5 md:px-0 mt-16 md:mt-0"
-            onSubmit={ handleSubmit}
+            onSubmit={handleSubmit}
           >
             <div className="md:flex items-center justify-between gap-10">
               <Input
@@ -158,16 +158,15 @@ function Contact() {
                 }
               />
             </div>
-            
-          <textarea
-            text="Message"
-            className="w-full my-3 rounded-lg dark:text-white  p-4  "
-            placeholder="Enter your message..."
-            value={data.message}
-            required
-            maxLength={5000}
-            onChange={(e) => handleInputChange("message", e.target.value)}
-          />
+
+            <textarea
+              className="w-full my-3 rounded-lg dark:text-white  p-4  "
+              placeholder="Enter your message..."
+              value={data.message}
+              required
+              maxLength={5000}
+              onChange={(e) => handleInputChange("message", e.target.value)}
+            />
             {/* TODO : Add Validation before Submitting */}
             <div className="text-center md:text-right my-4">
               <button

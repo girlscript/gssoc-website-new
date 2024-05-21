@@ -46,7 +46,7 @@ const Project = () => {
     <>
       <Head>
         <title>
-          Projects | GirlScript Summer of Code 2023 | GirlScript Foundation
+          Projects | GirlScript Summer of Code 2024 | GirlScript Foundation
           India
         </title>
         <meta
