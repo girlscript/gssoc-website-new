@@ -254,7 +254,7 @@ export default function Home() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={17000} /> : null}+
+                            {isVisible ? <CountUp end={27000} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -271,7 +271,7 @@ export default function Home() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={135} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={200} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
@@ -308,7 +308,7 @@ export default function Home() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={13000} /> : null}+
+                            {isVisible ? <CountUp end={17000} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -325,7 +325,7 @@ export default function Home() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={14} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={20} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
@@ -341,7 +341,7 @@ export default function Home() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={100} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={205} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
