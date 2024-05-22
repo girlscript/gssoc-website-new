@@ -30,7 +30,7 @@ const items = [
     fmt:"video",
   },
   {
-    title: "10th May 2024",
+    title: "16th May 2024",
     poster:
       "https://www.youtube.com/embed/wtwVsHCsQSU",
     maintitle: `Build User Centric Project: Live Session by Daksh Jain`,
