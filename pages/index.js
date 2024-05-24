@@ -238,7 +238,7 @@ export default function Home() {
           <div className="pr-4 font-semibold pt-3 rounded-lg lg:my-4 lg:px-2 lg:py-10 ">
             <div className="dark:bg-black  dark:transition-colors bg-stone-50 shadow-lg rounded-lg my-1 px-1 w-64 sm:w-fit">
               <h1 className="mt-8 pt-6 pl-8 text-3xl xl:text-4xl text-primary_orange-0 3rem 3rem ">
-                GSSoC 2023
+                GSSoC 2024
               </h1>
               <div className="pl-8 text-2xl text-primary_orange-0 1.5rem 2rem ">
                 {" "}
@@ -254,7 +254,7 @@ export default function Home() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={17000} /> : null}+
+                            {isVisible ? <CountUp end={27000} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -271,7 +271,7 @@ export default function Home() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={135} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={200} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
@@ -308,7 +308,7 @@ export default function Home() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={13000} /> : null}+
+                            {isVisible ? <CountUp end={17000} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -325,7 +325,7 @@ export default function Home() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={14} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={20} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
@@ -341,7 +341,7 @@ export default function Home() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={100} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={205} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>

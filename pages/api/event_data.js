@@ -29,6 +29,16 @@ const items = [
     medium: "Youtube",
     fmt:"video",
   },
+  {
+    title: "16th May 2024",
+    poster:
+      "https://www.youtube.com/embed/wtwVsHCsQSU",
+    maintitle: `Build User Centric Project: Live Session by Daksh Jain`,
+    rec_link: "https://www.youtube.com/live/wtwVsHCsQSU?si=tRLn7OFHi5346NhX",
+    info: "🔓 Unlock the Secrets to Building Projects People Love! 🚀",
+    medium: "Youtube",
+    fmt:"video",
+  },
 
   
 
