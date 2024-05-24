@@ -872,6 +872,7 @@ function Leaderboard() {
                                 badges.map((badge, i) => {
                                   return <Image
                                           src={badge.badge}
+                                          key={i}
                                           width={70}
                                           height={70}
                                           id={`badge-${i}-${i}`}
@@ -955,6 +956,7 @@ function Leaderboard() {
                                 badges.map((badge, i) => {
                                   return <Image
                                           src={badge.badge}
+                                          key={i}
                                           width={70}
                                           height={70}
                                           id={`badge-${i}-${i}`}
