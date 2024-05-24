@@ -81,17 +81,17 @@ const columns = [
       },
       1200: {
         score: 1200,
-        name: "1200 badge",
+        name: "Innovator Badge",
         badge: "./badges/6.png",
       },
       2500: {
         score: 2500,
-        name: "2500 badge",
+        name: "Conqurer Badge",
         badge: "./badges/7.png",
       },
       5500: {
         score: 5500,
-        name: "5500 badge",
+        name: "Legend Badge",
         badge: "./badges/8.png",
       }
     },
@@ -665,21 +665,21 @@ function Leaderboard() {
                                           >
                                             {
                                               row["score"] >= 5500 ? 
-                                              column.badges[5500].badge
+                                              column.badges[5500].name
                                               : row["score"] >= 2500
-                                              ? column.badges[2500].badge
+                                              ? column.badges[2500].name
                                               : row["score"] >= 1200
-                                              ? column.badges[1200].badge
+                                              ? column.badges[1200].name
                                               : row["score"] >= 500
-                                                ? column.badges[500].badge
+                                                ? column.badges[500].name
                                                 : row["score"] >= 300
-                                                ? column.badges[300].badge
+                                                ? column.badges[300].name
                                                 : row["score"] >= 200
-                                                ? column.badges[200].badge
+                                                ? column.badges[200].name
                                                 : row["score"] >= 140
-                                                ? column.badges[140].badge
+                                                ? column.badges[140].name
                                                 : row["score"] >= 60 ?
-                                                  column.badges[60].badge : "data:"
+                                                  column.badges[60].name : "data:"
                                             }
                                           </Tooltip>
                                         </div>
@@ -777,21 +777,21 @@ function Leaderboard() {
                                           >
                                             {
                                               row["score"] >= 5500 ? 
-                                              column.badges[5500].badge
+                                              column.badges[5500].name
                                               : row["score"] >= 2500
-                                              ? column.badges[2500].badge
+                                              ? column.badges[2500].name
                                               : row["score"] >= 1200
-                                              ? column.badges[1200].badge
+                                              ? column.badges[1200].name
                                               : row["score"] >= 500
-                                                ? column.badges[500].badge
+                                                ? column.badges[500].name
                                                 : row["score"] >= 300
-                                                ? column.badges[300].badge
+                                                ? column.badges[300].name
                                                 : row["score"] >= 200
-                                                ? column.badges[200].badge
+                                                ? column.badges[200].name
                                                 : row["score"] >= 140
-                                                ? column.badges[140].badge
+                                                ? column.badges[140].name
                                                 : row["score"] >= 60 ?
-                                                  column.badges[60].badge : "data:"
+                                                  column.badges[60].name : "data:"
                                             }
                                           </Tooltip>
                                         </div>
