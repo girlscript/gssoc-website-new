@@ -210,8 +210,7 @@ function Leaderboard() {
     // clearTimeout(timeout)
     // "https://gssoc23-leaderboard.onrender.com/OSLeaderboard" Original Source of fetching PRs
     fetch(
-      "https://raw.githubusercontent.com/girlscript/gssoc-website-new/main/pages/api/leaderboard23.json"
-      // "http://localhost:3000/OSLeaderboard"
+      "https://gssoc24-leaderboard-backend.onrender.com/OSLeaderboard"
     )
       .then((res) => {
         setLoadingMsg("Data received. Starting to populate.");
