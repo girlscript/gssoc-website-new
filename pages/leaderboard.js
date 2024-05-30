@@ -40,7 +40,7 @@ const columns = [
   },
   {
     id: "badge",
-    label: "",
+    label: "Badge",
     minWidth: 100,
     align: "right",
     badges: {
@@ -210,7 +210,7 @@ function Leaderboard() {
     // clearTimeout(timeout)
     // "https://gssoc23-leaderboard.onrender.com/OSLeaderboard" Original Source of fetching PRs
     fetch(
-      "https://gssoc24-leaderboard-backend.onrender.com/OSLeaderboard"
+      "https://gssoc24-leaderboard-backend-production-dfe3.up.railway.app/OSLeaderboard"
     )
       .then((res) => {
         setLoadingMsg("Data received. Starting to populate.");
@@ -237,7 +237,7 @@ function Leaderboard() {
               a.login < b.login
             );
           });
-          let blacklist = ["raj03kumar", "chinmoy12c", "nidhi-rathore"];
+          let blacklist = ["Asymtode712", "Hemu21", "suhanipaliwal"];
           const rankedData = data.leaderboard
             .filter((usr) => {
               return blacklist.includes(usr.login) === false;
