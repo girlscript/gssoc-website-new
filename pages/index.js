@@ -28,12 +28,13 @@ export default function Home() {
     setMounted(true);
   }, []);
   if (!mounted) return null;
-
+  const useDate=new Date;
+  let useYear= useDate.getFullYear();
   return (
     <div>
       <Head>
         <title>
-          GirlScript Summer of Code 2024 | GirlScript Foundation India
+          GirlScript Summer of Code {useYear} | GirlScript Foundation India
         </title>
         <meta name="GSSoC'24" content="GSSoC'24 is back!" />
         <link
@@ -93,7 +94,7 @@ export default function Home() {
           <div className="basis-1/2 relative">
             <div className="text-black dark:text-white text-6xl font-sans font-semibold 2.25rem 3rem mb-10">
               <span className="text-primary_orange-0">GSSoC </span>
-              2024
+              {useYear}
               <div className="mt-2">is here!</div>
             </div>
 
@@ -103,7 +104,7 @@ export default function Home() {
               <span className="text-primary_orange-0">#OpenSource &nbsp;</span>
               program by GirlScript Foundation.
               <br />
-              <b> 10th May - 10th August 2024 </b>
+              <b> 10th May - 10th August {useYear} </b>
             </div>
 {/* 
             <div className="ring mb-4 ring-primary_orange-0 text-white ring-offset-4 ring-offset-white dark:ring-offset-darkmode_gray-0 rounded-2xl w-full h-20 flex items-center justify-center drop-shadow-2xl">
@@ -230,8 +231,7 @@ export default function Home() {
               under the extreme guidance of skilled mentors over these months.
               With such exposure, students begin to contribute to real-world
               projects from the comfort of their homes. GirlScript Summer Of
-              Code has witnessed active participation over the years, and the
-              2024 edition aims to carry the legacy with a promising impact.
+              Code has witnessed active participation over the years, and the {useYear} edition aims to carry the legacy with a promising impact.
             </p>
           </div>
 
@@ -567,7 +567,7 @@ export default function Home() {
             <span className="text-primary_orange-0 text-4xl 2.25rem 3rem">
               Be a part of{" "}
             </span>
-            GSSoC 2024
+            GSSoC {useYear}
           </p>
           <div
             data-aos="flip-left"
@@ -627,8 +627,7 @@ export default function Home() {
       <div className="schedule__container flex flex-col items-center  mb-20  mx-5 md:mx-20  "> 
         <div className="schedule__overview  relative">
           <p className="font-sans font-semibold text-3xl ml-5 mb-4 dark:text-white">
-            <span className="text-primary_orange-0">Schedule</span> of GSSoC
-            2024!
+            <span className="text-primary_orange-0">Schedule</span> of GSSoC {useYear}!
           </p>
           {theme === "light" ? (
             <img
