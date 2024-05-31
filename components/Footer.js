@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const Footer = () => {
+  const useDate= new Date;
+  let useYear=useDate.getFullYear();
   return (
     <footer id="Contact">
       <div className="footer-2 bg-gradient-to-b from-[#FF8500] to-[#FF6701] pt-6 md:pt-8">
@@ -95,7 +97,7 @@ const Footer = () => {
                 <p className="text-black">
                   &copy;{" "}
                   <strong>
-                    2024 GirlScript Foundation. Made with 🖤️ by GirlScript
+                    {useYear} GirlScript Foundation. Made with 🖤️ by GirlScript
                     India. All rights reserved.
                   </strong>
                 </p>
