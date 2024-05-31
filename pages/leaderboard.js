@@ -237,11 +237,13 @@ function Leaderboard() {
               a.login < b.login
             );
           });
+          
           let blacklist = ["Asymtode712", "suhanipaliwal"];
+
           const rankedData = data.leaderboard
-            // .filter((usr) => {
-            //   return (blacklist.includes(usr.login) === false);
-            // })
+            .filter((usr) => {
+              return (blacklist.includes(usr.login) === false);
+            })
             .map((contributorData, idx) => ({
               ...contributorData,
               rank: idx + 1,
