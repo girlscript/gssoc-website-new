@@ -637,7 +637,8 @@ function Leaderboard() {
                                         </button>
                                       ) : column.id === "badge" ? (
                                         <div>
-                                          {/* optimise this */}
+                                          {row["score"] >= 60 && (
+                                            <>
                                           <Image
                                             src={
                                               row["score"] >= 5500 ? 
@@ -684,9 +685,11 @@ function Leaderboard() {
                                                   column.badges[60].name : "data:"
                                             }
                                           </Tooltip>
+                                          </>
+                                )}
                                         </div>
                                       ) : (
-                                        value
+                                        value 
                                       )}
                                     </div>
                                   );
@@ -750,6 +753,9 @@ function Leaderboard() {
                                         </button>
                                       ) : column.id === "badge" ? (
                                         <div>
+                                          {row["score"] >= 60 &&
+                                          (
+                                            <>
                                           <Image
                                             src={
                                               row["score"] >= 5500 ? 
@@ -796,6 +802,8 @@ function Leaderboard() {
                                                   column.badges[60].name : "data:"
                                             }
                                           </Tooltip>
+                                          </>
+                                )}
                                         </div>
                                       ) : (
                                         value
