@@ -40,7 +40,17 @@ const items = [
     fmt:"video",
   },
 
-  
+  {
+    title: "16th May 2024",
+    poster:
+      "https://www.youtube.com/embed/d2JLd2mhSfk",
+    maintitle: `Live Q&A with Program Managers | GSSOC'24`,
+    rec_link: "https://www.youtube.com/watch?v=d2JLd2mhSfk",
+    info: "Becoming a Top Contributor in GSSoC '24: Live Q&A Session 🚀",
+    medium: "Youtube",
+    fmt:"video",
+  },
+''
 
     
 ];
