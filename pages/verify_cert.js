@@ -10,6 +10,8 @@ const Certi_Comp = dynamic(() => import("../components/Certi_Comp"), {
   ssr: false,
 });
 
+const useDate= new Date;
+let useYear = useDate.getFullYear();
 const Cert = () => {
   const [Email, setEmail] = useState("");
   const [Name, setName] = useState("");
@@ -50,7 +52,7 @@ const Cert = () => {
     <>
       <Head>
         <title>
-          Verify Certifications | GirlScript Summer of Code 2023 | GirlScript
+          Verify Certifications | GirlScript Summer of Code {useYear} | GirlScript
           Foundation India
         </title>
         <meta
@@ -88,7 +90,7 @@ const Cert = () => {
           disabled={verified}
         ></input>
         <label className="text-black dark:text-primary_orange-0 font-semibold mt-3 text-lg">
-          Select Role in GSSoC 2023
+          Select Role in GSSoC {useYear}
         </label>
         <select
           className="text-primary_orange-0 dark:text-white font-semibold mt-2 text-xs sm:text-sm md:text-lg"
