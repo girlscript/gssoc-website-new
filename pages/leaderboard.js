@@ -16,6 +16,8 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
 import Head from "next/head";
+import Image from "next/image";
+import { Tooltip } from "react-tooltip";
 import React, { useCallback, useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import Pagination from "react-js-pagination";
@@ -35,6 +37,64 @@ const columns = [
     label: "Score",
     minWidth: 100,
     align: "right",
+  },
+  {
+    id: "badge",
+    label: "Badge",
+    minWidth: 100,
+    align: "right",
+    badges: {
+      60: {
+        score: 60,
+        name: "Explorer Badge",
+        badge: "./badges/1.png",
+        content:
+          "Congratulations! You've unlocked the Explorer Badge for reaching 60 points. Keep exploring and discovering new horizons!",
+      },
+      140: {
+        score: 140,
+        name: "Adventurer Badge",
+        badge: "./badges/2.png",
+        content:
+          "You're now an Adventurer! With 140 points, you've proven your knack for navigating through challenges. Keep journeying forward!",
+      },
+      200: {
+        score: 200,
+        name: "Trailblazer Badge",
+        badge: "./badges/3.png",
+        content:
+          "Blaze your trail! You've earned the Trailblazer Badge by amassing 200 points. Your determination and courage inspire us all!",
+      },
+      300: {
+        score: 300,
+        name: "Summit Seeker Badge",
+        badge: "./badges/4.png",
+        content:
+          "You've conquered mountains! With 300 points, you've earned the Summit Seeker Badge. Keep climbing to new heights!",
+      },
+      500: {
+        score: 500,
+        name: "Champion Badge",
+        badge: "./badges/5.png",
+        content:
+          "A true champion! With 500 points, you've reached the pinnacle of success and earned the Champion Badge. Keep aiming high and inspiring others!",
+      },
+      1200: {
+        score: 1200,
+        name: "Innovator Badge",
+        badge: "./badges/6.png",
+      },
+      2500: {
+        score: 2500,
+        name: "Conqurer Badge",
+        badge: "./badges/7.png",
+      },
+      5500: {
+        score: 5500,
+        name: "Legend Badge",
+        badge: "./badges/8.png",
+      }
+    },
   },
   {
     id: "viewBtn",
@@ -80,6 +140,7 @@ function Leaderboard() {
   let [leaderss, setLeaderss] = useState([]);
   let [searchData, setSearchData] = useState([]);
   let [links, setLinks] = useState([]);
+  let [badges, setBadges] = useState([]);
   let [login, setLogin] = useState("");
   let [score, setScore] = useState("");
   let [avatar, setAvatar] = useState("");
@@ -93,6 +154,7 @@ function Leaderboard() {
   const [activePage, setActivePage] = useState(1);
   const { height, width } = useWindowDimensions();
   let rows = [];
+
   function createData(
     username,
     avatar,
@@ -122,6 +184,23 @@ function Leaderboard() {
       rank,
     };
   }
+
+  function createBadgesList(score) {
+    const badgeColumn = columns.find(column => column.id === 'badge');
+    let badges = [];
+
+    for (const key in badgeColumn.badges) {
+      if (badgeColumn.badges.hasOwnProperty(key)) {
+        const badge = badgeColumn.badges[key];
+        if (score >= badge.score) {
+          badges.push(badge);
+        }
+      }
+    }
+
+    return badges
+  }
+
   useEffect(() => {
     setIsLoading(true);
     setIsLboardLoading(true);
@@ -131,7 +210,7 @@ function Leaderboard() {
     // clearTimeout(timeout)
     // "https://gssoc23-leaderboard.onrender.com/OSLeaderboard" Original Source of fetching PRs
     fetch(
-      "https://raw.githubusercontent.com/girlscript/gssoc-website-new/main/pages/api/leaderboard23.json"
+      "https://gssoc24-leaderboard-backend-production-dfe3.up.railway.app/OSLeaderboard"
     )
       .then((res) => {
         setLoadingMsg("Data received. Starting to populate.");
@@ -158,10 +237,12 @@ function Leaderboard() {
               a.login < b.login
             );
           });
-          let blacklist = ["raj03kumar", "chinmoy12c", "nidhi-rathore"];
+          
+          let blacklist = ["Asymtode712", "suhanipaliwal"];
+
           const rankedData = data.leaderboard
             .filter((usr) => {
-              return blacklist.includes(usr.login) === false;
+              return (blacklist.includes(usr.login) === false);
             })
             .map((contributorData, idx) => ({
               ...contributorData,
@@ -204,13 +285,17 @@ function Leaderboard() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   let prlinks = [];
+
   let handleClickOpen = (num) => {
     onOpen(true);
+
     for (let link in leaderss[num].pr_urls) {
       prlinks.push(leaderss[num].pr_urls[link] + "\n\n\n\n");
     }
+
     let unique = prlinks.filter((item, i, ar) => ar.indexOf(item) === i);
     setLinks(unique);
+    setBadges(createBadgesList(leaderss[num].score));
     // setLeveldata({
     //     level0: leaderss[num].level0,
     //     level1: leaderss[num].level1,
@@ -246,7 +331,7 @@ function Leaderboard() {
   };
 
   const handlePageChange = (pageNumber) => {
-    console.log(`active page is ${pageNumber}`);
+    // console.log(`active page is ${pageNumber}`);
     setActivePage(pageNumber);
   };
 
@@ -298,7 +383,7 @@ function Leaderboard() {
         <div className="items-center justify-center">
           <div className="font-sans text-center text-2xl font-extrabold">
             <div className="text-black dark:text-white text-4xl text center font-extrabold mb-10 underline underline-offset-4 decoration-primary_orange-0">
-              <span className="text-primary_orange-0"> GSSoC 2023 </span>
+              <span className="text-primary_orange-0"> GSSoC 2024 </span>
               Top Performers
             </div>
           </div>
@@ -461,6 +546,9 @@ function Leaderboard() {
                 {isLoading === false && lastupdated === null && (
                   <>The server is updating. Please comeback after 5-10 mins</>
                 )}
+                <a className="ml-2 underline hover:no-underline" href="https://github.com/GSSoC24/Contributor/discussions/288" target="_blank" rel="noreferrer" >
+                  More details about badges
+                </a>
               </p>
             </div>
 
@@ -487,7 +575,7 @@ function Leaderboard() {
                       {rows.map((row, i) => {
                         return (
                           // style = {{ display: rows.indexOf(row) === 0 || rows.indexOf(row) === 1 || rows.indexOf(row) === 2 ? "none" : null }
-                          <>
+                          <React.Fragment key={i}>
                             {i % 2 ? (
                               <div
                                 className="table-row"
@@ -550,8 +638,61 @@ function Leaderboard() {
                                         >
                                           <FontAwesomeIcon icon={faList} />
                                         </button>
+                                      ) : column.id === "badge" ? (
+                                        <div>
+                                          {row["score"] >= 60 && (
+                                            <>
+                                          <Image
+                                            src={
+                                              row["score"] >= 5500 ? 
+                                              column.badges[5500].badge
+                                              : row["score"] >= 2500
+                                              ? column.badges[2500].badge
+                                              : row["score"] >= 1200
+                                              ? column.badges[1200].badge
+                                              : row["score"] >= 500
+                                                ? column.badges[500].badge
+                                                : row["score"] >= 300
+                                                ? column.badges[300].badge
+                                                : row["score"] >= 200
+                                                ? column.badges[200].badge
+                                                : row["score"] >= 140
+                                                ? column.badges[140].badge
+                                                : row["score"] >= 60 ?
+                                                  column.badges[60].badge : "data:"
+                                            }
+                                            width={75}
+                                            height={75}
+                                            id={`badge-${i}`}
+                                          />
+                                          <Tooltip
+                                            anchorSelect={`#badge-${i}`}
+                                            place="right"
+                                          >
+                                            {
+                                              row["score"] >= 5500 ? 
+                                              column.badges[5500].name
+                                              : row["score"] >= 2500
+                                              ? column.badges[2500].name
+                                              : row["score"] >= 1200
+                                              ? column.badges[1200].name
+                                              : row["score"] >= 500
+                                                ? column.badges[500].name
+                                                : row["score"] >= 300
+                                                ? column.badges[300].name
+                                                : row["score"] >= 200
+                                                ? column.badges[200].name
+                                                : row["score"] >= 140
+                                                ? column.badges[140].name
+                                                : row["score"] >= 60 ?
+                                                  column.badges[60].name : "data:"
+                                            }
+                                          </Tooltip>
+                                          </>
+                                )}
+                                        </div>
                                       ) : (
-                                        value
+                                        value 
                                       )}
                                     </div>
                                   );
@@ -613,6 +754,60 @@ function Leaderboard() {
                                         >
                                           <FontAwesomeIcon icon={faList} />
                                         </button>
+                                      ) : column.id === "badge" ? (
+                                        <div>
+                                          {row["score"] >= 60 &&
+                                          (
+                                            <>
+                                          <Image
+                                            src={
+                                              row["score"] >= 5500 ? 
+                                              column.badges[5500].badge
+                                              : row["score"] >= 2500
+                                              ? column.badges[2500].badge
+                                              : row["score"] >= 1200
+                                              ? column.badges[1200].badge
+                                              : row["score"] >= 500
+                                                ? column.badges[500].badge
+                                                : row["score"] >= 300
+                                                ? column.badges[300].badge
+                                                : row["score"] >= 200
+                                                ? column.badges[200].badge
+                                                : row["score"] >= 140
+                                                ? column.badges[140].badge
+                                                : row["score"] >= 60 ?
+                                                  column.badges[60].badge : "data:"
+                                            }
+                                            width={75}
+                                            height={75}
+                                            id={`badge-${i}`}
+                                          />
+                                          <Tooltip
+                                            anchorSelect={`#badge-${i}`}
+                                            place="right"
+                                          >
+                                            {
+                                              row["score"] >= 5500 ? 
+                                              column.badges[5500].name
+                                              : row["score"] >= 2500
+                                              ? column.badges[2500].name
+                                              : row["score"] >= 1200
+                                              ? column.badges[1200].name
+                                              : row["score"] >= 500
+                                                ? column.badges[500].name
+                                                : row["score"] >= 300
+                                                ? column.badges[300].name
+                                                : row["score"] >= 200
+                                                ? column.badges[200].name
+                                                : row["score"] >= 140
+                                                ? column.badges[140].name
+                                                : row["score"] >= 60 ?
+                                                  column.badges[60].name : "data:"
+                                            }
+                                          </Tooltip>
+                                          </>
+                                )}
+                                        </div>
                                       ) : (
                                         value
                                       )}
@@ -621,7 +816,7 @@ function Leaderboard() {
                                 })}
                               </div>
                             )}
-                          </>
+                          </React.Fragment>
                         );
                       })}
                     </div>
@@ -650,7 +845,7 @@ function Leaderboard() {
                 totalItemsCount={searchData.length}
                 pageRangeDisplayed={width < 600 ? 3 : 5}
                 onChange={(e) => {
-                  console.log(e);
+                  // console.log(e);
                   handlePageChange(e);
                 }}
               />
@@ -659,7 +854,7 @@ function Leaderboard() {
               <Modal
                 isOpen={isOpen}
                 onClose={handleClose}
-                size="xl"
+                size="2xl"
                 aria-labelledby="alert-dialog-slide-title"
                 aria-describedby="alert-dialog-slide-description"
                 backgroundColor="#000"
@@ -675,16 +870,29 @@ function Leaderboard() {
                   <ModalBody>
                     <div className="flex-auto py-2 px-6 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                          <img
-                            alt="Suvraneel Bhuin"
-                            src={avatar}
-                            className="w-12 rounded-full xl:w-24"
-                          />
-                          <p className="dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score">
-                            🏆 {score}
-                          </p>
-                        </div>
+                      <div style={{ display: "flex", alignItems: "center" }}>
+                            <img
+                              alt="Suvraneel Bhuin"
+                              src={avatar}
+                              className="w-24 rounded-full xl:w-28"
+                            />
+                            <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
+                              🏆 {score}
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap pt-4 gap-2">
+                              {
+                                badges.map((badge, i) => {
+                                  return <Image
+                                          src={badge.badge}
+                                          key={i}
+                                          width={70}
+                                          height={70}
+                                          id={`badge-${i}-${i}`}
+                                        />
+                                })
+                              }
+                          </div>
                         <div
                           style={{
                             marginTop: 30,
@@ -744,18 +952,31 @@ function Leaderboard() {
                     {login + "'s Stats"}
                   </ModalHeader>
                   <ModalBody>
-                    <div className="flex-auto py-2 px-6 overflow-y-auto">
+                    <div className="flex-auto py-2 px-4 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                          <img
-                            alt="Suvraneel Bhuin"
-                            src={avatar}
-                            className="w-12 rounded-full xl:w-24"
-                          />
-                          <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white w-24 rounded-full xl:w-36 p-3 text-center modal-score">
-                            🏆 {score}
-                          </p>
-                        </div>
+                          <div style={{ display: "flex", alignItems: "center" }}>
+                            <img
+                              alt="Suvraneel Bhuin"
+                              src={avatar}
+                              className="w-24 rounded-full xl:w-28"
+                            />
+                            <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
+                              🏆 {score}
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap pt-4 gap-2">
+                              {
+                                badges.map((badge, i) => {
+                                  return <Image
+                                          src={badge.badge}
+                                          key={i}
+                                          width={70}
+                                          height={70}
+                                          id={`badge-${i}-${i}`}
+                                        />
+                                })
+                              }
+                          </div>
                         <div style={{ marginTop: 30, fontWeight: "bolder" }}>
                           List Of PRs:{" "}
                         </div>
