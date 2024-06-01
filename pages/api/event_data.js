@@ -50,7 +50,17 @@ const items = [
     medium: "Youtube",
     fmt:"video",
   },
-''
+
+  {
+    title: "31th May 2024",
+    poster:
+      "https://www.youtube.com/embed/7ANB2t_RQPg",
+    maintitle: `Leveraging Open Source with AWS by Dipali Kulshrestha`,
+    rec_link: "https://www.youtube.com/live/7ANB2t_RQPg?si=NKWU0u5tbSSR8S0T",
+    info: "Leveraging Open Source with AWS: Empowering Innovation and Scalability!🌐⚡",
+    medium: "Youtube",
+    fmt:"video",
+  },
 
     
 ];
