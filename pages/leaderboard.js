@@ -546,6 +546,9 @@ function Leaderboard() {
                 {isLoading === false && lastupdated === null && (
                   <>The server is updating. Please comeback after 5-10 mins</>
                 )}
+                <a className="ml-2 underline hover:no-underline" href="https://github.com/GSSoC24/Contributor/discussions/288" target="_blank" rel="noreferrer" >
+                  More details about badges
+                </a>
               </p>
             </div>
 
