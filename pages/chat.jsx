@@ -63,9 +63,104 @@ if (typeof window !== "undefined") {
 const db = getFirestore(app);
 const storage = getStorage(app);
 const sensitiveWords = [
-  "word1",
-  "word2",
-  // Add more sensitive words here
+  "abuse",
+  "adult",
+  "assault",
+  "attack",
+  "bomb",
+  "bully",
+  "cheat",
+  "crime",
+  "danger",
+  "death",
+  "divorce",
+  "drugs",
+  "fraud",
+  "hate",
+  "harass",
+  "hurt",
+  "illegal",
+  "kill",
+  "kidnap",
+  "lie",
+  "murder",
+  "nude",
+  "offend",
+  "pain",
+  "rape",
+  "robbery",
+  "scam",
+  "sex",
+  "suicide",
+  "terror",
+  "threat",
+  "trauma",
+  "vandalize",
+  "violence",
+  "weapon",
+  "abortion",
+  "alcohol",
+  "cancer",
+  "corruption",
+  "cult",
+  "death",
+  "disaster",
+  "disease",
+  "famine",
+  "fire",
+  "flood",
+  "gun",
+  "hazard",
+  "homeless",
+  "hostage",
+  "injury",
+  "kid",
+  "missing",
+  "poison",
+  "racism",
+  "riot",
+  "sadness",
+  "sick",
+  "smuggle",
+  "theft",
+  "torture",
+  "tragedy",
+  "war",
+  "abandon",
+  "addict",
+  "bankrupt",
+  "betray",
+  "bribe",
+  "chaos",
+  "collapse",
+  "conflict",
+  "controversy",
+  "crash",
+  "criticize",
+  "curse",
+  "debt",
+  "defraud",
+  "disrupt",
+  "embarrass",
+  "evict",
+  "expose",
+  "extort",
+  "fear",
+  "fraudulent",
+  "harm",
+  "hazardous",
+  "hostility",
+  "humiliate",
+  "infect",
+  "leak",
+  "malice",
+  "neglect",
+  "oppress",
+  "overdose",
+  "persecute",
+  "poverty",
+  "predator",
+  "prejudice",
 ];
 
 const ChatSystem = () => {
@@ -311,22 +406,11 @@ const ChatSystem = () => {
             </label>
             {file && (
               <Box ml={2} position="relative">
-                <Image
+                <img
                   src={URL.createObjectURL(file)}
                   alt="Uploaded File"
-                  boxSize="30px"
-                  objectFit="cover"
-                  borderRadius="sm"
+                  style={{ maxWidth: "100px" }}
                 />
-                <Text
-                  fontSize="xs"
-                  color="blue.500"
-                  position="absolute"
-                  bottom="-2"
-                  left="0"
-                >
-                  File ready to send
-                </Text>
               </Box>
             )}
             <IconButton
