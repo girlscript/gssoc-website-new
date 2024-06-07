@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/storage";
@@ -41,11 +41,21 @@ import {
 import { useToast } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane, faFileUpload } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPaperPlane,
+  faFileUpload,
+  faArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 // Initialize Firebase
 const firebaseConfig = {
-
+  apiKey: "AIzaSyDO-GZokfn_jamwH6kCaUCU2QsLdkHh1ko",
+  authDomain: "girlscript-d1844.firebaseapp.com",
+  projectId: "girlscript-d1844",
+  storageBucket: "girlscript-d1844.appspot.com",
+  messagingSenderId: "473207098715",
+  appId: "1:473207098715:web:c2117db27ea6d97502de7e",
+  measurementId: "G-6K54S7CXHE",
 };
 
 // Check if the Firebase app has already been initialized
@@ -171,6 +181,7 @@ const ChatSystem = () => {
   const [uploadProgress, setUploadProgress] = useState(0);
   const toast = useToast();
   const { colorMode, toggleColorMode } = useColorMode();
+  const messagesContainerRef = useRef(null);
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("createdAt"));
@@ -195,12 +206,21 @@ const ChatSystem = () => {
     if (storedDisplayName) {
       setUser({ displayName: storedDisplayName });
     } else {
-      const randomDisplayName = `User${Math.floor(Math.random() * 1000)}`;
+      const randomDisplayName = `GSSOC ${Math.floor(Math.random() * 1000)}`;
       setUser({ displayName: randomDisplayName });
       localStorage.setItem("displayName", randomDisplayName);
     }
   }, []);
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
+  const scrollToBottom = () => {
+    messagesContainerRef.current?.scrollTo({
+      top: messagesContainerRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newMessage.trim() || file) {
@@ -304,7 +324,14 @@ const ChatSystem = () => {
             onClick={toggleColorMode}
           />
         </Flex>
-        <Box overflowY="auto" maxH="500px" mb={4} w="100%">
+        <Box
+          overflowY="auto"
+          maxH="500px"
+          mb={4}
+          w="100%"
+          position="relative"
+          ref={messagesContainerRef}
+        >
           {messages.map((message) => (
             <VStack
               key={message.id}
@@ -373,7 +400,17 @@ const ChatSystem = () => {
             </VStack>
           ))}
         </Box>
-        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+        <Button onClick={scrollToBottom}>
+          <FontAwesomeIcon icon={faArrowDown} />
+        </Button>
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            width: "100%",
+            color: "#FF7A19",
+            backgroundColor: "#FF7A19",
+          }}
+        >
           <Flex direction={{ base: "row" }} align="center" wrap="nowrap">
             <Textarea
               value={newMessage}
@@ -386,6 +423,7 @@ const ChatSystem = () => {
               bg={colorMode === "light" ? "white" : "gray.700"}
               color={colorMode === "light" ? "black" : "white"}
               size={{ base: "sm", sm: "md" }}
+              style={{ borderColor: "#FF7A19" }}
             />
             <Input
               type="file"
@@ -400,6 +438,7 @@ const ChatSystem = () => {
                 icon={<FontAwesomeIcon icon={faFileUpload} />}
                 mr={{ base: 1, sm: 2 }}
                 mb={{ base: 0, sm: 0 }}
+                className=" bg-transparent"
                 aria-label="Upload Image"
                 size={{ base: "sm", sm: "md" }}
               />
@@ -416,7 +455,7 @@ const ChatSystem = () => {
             <IconButton
               type="submit"
               aria-label="Send"
-              colorScheme="blue"
+              colorScheme="black"
               icon={<FontAwesomeIcon icon={faPaperPlane} />}
               size={{ base: "sm", sm: "md" }}
             />
