@@ -36,7 +36,7 @@ const MoreMenu = ({ handleClick }) => {
               <Menu.Item>
                 {({ active }) => (
                   <a
-                  onClick={handleClick}
+                    onClick={handleClick}
                     className={classNames(
                       active
                         ? "hover:text-primary_orange-0 dark:hover:text-primary_orange-0 dark:text-white"
@@ -53,7 +53,7 @@ const MoreMenu = ({ handleClick }) => {
               <Menu.Item>
                 {({ active }) => (
                   <a
-                  onClick={handleClick}
+                    onClick={handleClick}
                     className={classNames(
                       active
                         ? "hover:text-primary_orange-0 dark:hover:text-primary_orange-0 dark:text-white"
@@ -113,6 +113,24 @@ const MoreMenu = ({ handleClick }) => {
                     onClick={handleClick}
                   >
                     VERIFY CERTIFICATIONS
+                  </a>
+                )}
+              </Menu.Item>
+            </Link>
+
+            <Link href="/chat">
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    onClick={handleClick}
+                    className={classNames(
+                      active
+                        ? "hover:text-primary_orange-0 dark:hover:text-primary_orange-0 dark:text-white"
+                        : "hover:text-primary_orange-0 dark:text-white",
+                      "block px-4 py-2 text-sm cursor-pointer"
+                    )}
+                  >
+                    CHAT WITH COMMUNITY
                   </a>
                 )}
               </Menu.Item>
