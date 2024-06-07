@@ -1,30 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
-import md5 from 'md5';
+import React, { useState, useEffect } from "react";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+import md5 from "md5";
 
 // Initialize Firebase
 firebase.initializeApp({
   // Your Firebase configuration goes here
 });
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+ 
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
 const ChatSystem = () => {
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = db.collection('messages').orderBy('createdAt').onSnapshot((snapshot) => {
-      const messagesData = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setMessages(messagesData);
-    });
+    const unsubscribe = db
+      .collection("messages")
+      .orderBy("createdAt")
+      .onSnapshot((snapshot) => {
+        const messagesData = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setMessages(messagesData);
+      });
 
     return unsubscribe;
   }, []);
@@ -45,16 +62,18 @@ const ChatSystem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newMessage.trim()) {
-      db.collection('messages').add({
+      db.collection("messages").add({
         text: newMessage,
         createdAt: new Date(),
         user: {
           uid: user.uid,
           displayName: user.displayName,
-          photoURL: `https://www.gravatar.com/avatar/${md5(user.email)}?d=identicon`,
+          photoURL: `https://www.gravatar.com/avatar/${md5(
+            user.email
+          )}?d=identicon`,
         },
       });
-      setNewMessage('');
+      setNewMessage("");
     }
   };
 
@@ -67,10 +86,12 @@ const ChatSystem = () => {
             <img
               src={message.user.photoURL}
               alt={message.user.displayName}
-              style={{ width: '30px', height: '30px', borderRadius: '50%' }}
+              style={{ width: "30px", height: "30px", borderRadius: "50%" }}
             />
             <span>{message.user.displayName}</span>
-            <span>{new Date(message.createdAt.seconds * 1000).toLocaleString()}</span>
+            <span>
+              {new Date(message.createdAt.seconds * 1000).toLocaleString()}
+            </span>
             <p>{message.text}</p>
           </div>
         ))}
