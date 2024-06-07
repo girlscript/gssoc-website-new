@@ -31,18 +31,27 @@ import {
   Divider,
   Progress,
   IconButton,
-  useColorMode, // Import useColorMode
+  useColorMode,
   Textarea,
+  AttachmentIcon,
   HStack,
   VStack,
   Spacer,
 } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane, faFileUpload } from "@fortawesome/free-solid-svg-icons";
 
 // Initialize Firebase
 const firebaseConfig = {
-  
+  apiKey: "AIzaSyDO-GZokfn_jamwH6kCaUCU2QsLdkHh1ko",
+  authDomain: "girlscript-d1844.firebaseapp.com",
+  projectId: "girlscript-d1844",
+  storageBucket: "girlscript-d1844.appspot.com",
+  messagingSenderId: "473207098715",
+  appId: "1:473207098715:web:c2117db27ea6d97502de7e",
+  measurementId: "G-6K54S7CXHE",
 };
 
 // Check if the Firebase app has already been initialized
@@ -72,7 +81,7 @@ const ChatSystem = () => {
   const [file, setFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const toast = useToast();
-  const { colorMode, toggleColorMode } = useColorMode(); // Destructure useColorMode
+  const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
     const q = query(collection(db, "messages"), orderBy("createdAt"));
@@ -91,6 +100,7 @@ const ChatSystem = () => {
   useEffect(() => {
     setUser({ displayName: `User${Math.floor(Math.random() * 1000)}` });
   }, []);
+
   useEffect(() => {
     const storedDisplayName = localStorage.getItem("displayName");
     if (storedDisplayName) {
@@ -101,6 +111,7 @@ const ChatSystem = () => {
       localStorage.setItem("displayName", randomDisplayName);
     }
   }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newMessage.trim() || file) {
@@ -181,20 +192,22 @@ const ChatSystem = () => {
 
   return (
     <Flex
-      h="100vh"
-      bg={colorMode === "light" ? "gray.100" : "gray.800"}
+      direction="column"
       align="center"
       justify="center"
+      h="120vh"
+      w="100%"
+      bg={colorMode === "light" ? "gray.100" : "gray.800"}
     >
       <Box
         bg={colorMode === "light" ? "white" : "gray.700"}
         borderRadius="md"
         boxShadow="md"
         p={6}
-        maxW="800px"
         w="100%"
+        maxW="90%" // Adjust the maximum width as needed
       >
-        <Flex justify="space-between" mb={4}>
+        <Flex justify="space-between" mb={4} align="center">
           <Heading size="lg">Community Chat</Heading>
           <IconButton
             aria-label="Toggle Color Mode"
@@ -202,7 +215,7 @@ const ChatSystem = () => {
             onClick={toggleColorMode}
           />
         </Flex>
-        <Box overflowY="auto" maxH="500px" mb={4}>
+        <Box overflowY="auto" maxH="500px" mb={4} w="100%">
           {messages.map((message) => (
             <VStack
               key={message.id}
@@ -261,16 +274,18 @@ const ChatSystem = () => {
             </VStack>
           ))}
         </Box>
-        <form onSubmit={handleSubmit}>
-          <Flex>
+        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+          <Flex direction={{ base: "column", sm: "row" }} align="center">
             <Textarea
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               placeholder="Type your message..."
               resize="none"
-              mr={2}
+              mr={{ base: 0, sm: 2 }}
+              mb={{ base: 2, sm: 0 }}
               bg={colorMode === "light" ? "white" : "gray.700"}
               color={colorMode === "light" ? "black" : "white"}
+              flex={1}
             />
             <Input
               type="file"
@@ -280,14 +295,17 @@ const ChatSystem = () => {
               id="file-input"
             />
             <label htmlFor="file-input">
-              <Button as="span" mr={2}>
-                Upload Image
-              </Button>
+              <IconButton
+                as="span"
+                icon={<FontAwesomeIcon icon={faFileUpload} />}
+                mr={{ base: 0, sm: 2 }}
+                mb={{ base: 2, sm: 0 }}
+                aria-label="Upload Image"
+              />
             </label>
-            <Spacer />
-            <Button type="submit" colorScheme="blue">
-              Send
-            </Button>
+            <IconButton type="submit" aria-label="Send" colorScheme="blue">
+              <FontAwesomeIcon icon={faPaperPlane} />
+            </IconButton>
           </Flex>
           {uploadProgress > 0 && (
             <Progress value={uploadProgress} max="100" mt={2} />
