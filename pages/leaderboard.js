@@ -238,7 +238,7 @@ function Leaderboard() {
             );
           });
           
-          let blacklist = ["Asymtode712", "suhanipaliwal"];
+          let blacklist = ["Asymtode712", "suhanipaliwal","Ajay-Dhangar"];
 
           const rankedData = data.leaderboard
             .filter((usr) => {
@@ -447,7 +447,7 @@ function Leaderboard() {
                       size="3x"
                     />
                     <h3 className="text-black dark:text-primary_orange-0 font-semibold mt-4 text-xs sm:text-sm md:text-md">
-                      1.{" "}
+                      1.
                       {totalData[0] !== undefined ? totalData[0].login : null}
                     </h3>
                   </>
@@ -492,6 +492,13 @@ function Leaderboard() {
                       <input
                         onChange={(e) => {
                           setFilter(e.target.value);
+                          // if (e.target.value === ""){
+                          //   filterData()
+                          // }
+                          // else{
+                          //   filterData()
+                          // }
+                            filterData()
                         }}
                         type="search"
                         className="form-control relative flex-auto min-w-0 block px-0.5 py-1.5 text-base dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-600 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-400 focus:outline-none dark:placeholder-neutral-300"
@@ -499,7 +506,7 @@ function Leaderboard() {
                         aria-label="Search"
                         aria-describedby="button-addon2"
                         onKeyUp={(e) => {
-                          e.key === "Enter" ? filterData() : "";
+                          e.key === "Enter" ? filterData() : filterData();
                         }}
                       />
                       <span className="search-count dark:text-neutral-300">
