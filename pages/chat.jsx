@@ -45,13 +45,7 @@ import { faPaperPlane, faFileUpload } from "@fortawesome/free-solid-svg-icons";
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDO-GZokfn_jamwH6kCaUCU2QsLdkHh1ko",
-  authDomain: "girlscript-d1844.firebaseapp.com",
-  projectId: "girlscript-d1844",
-  storageBucket: "girlscript-d1844.appspot.com",
-  messagingSenderId: "473207098715",
-  appId: "1:473207098715:web:c2117db27ea6d97502de7e",
-  measurementId: "G-6K54S7CXHE",
+
 };
 
 // Check if the Firebase app has already been initialized
@@ -98,7 +92,7 @@ const ChatSystem = () => {
   }, []);
 
   useEffect(() => {
-    setUser({ displayName: `User${Math.floor(Math.random() * 1000)}` });
+    setUser({ displayName: `GSSOC'${Math.floor(Math.random() * 1000)}` });
   }, []);
 
   useEffect(() => {
@@ -226,12 +220,22 @@ const ChatSystem = () => {
                   : "flex-start"
               }
             >
-              <HStack spacing={2}>
-                <Avatar
-                  src={message.user.photoURL}
-                  name={message.user.displayName}
-                  size="sm"
-                />
+              <HStack
+                spacing={2}
+                w="100%"
+                justify={
+                  message.user.displayName === user.displayName
+                    ? "flex-end"
+                    : "flex-start"
+                }
+              >
+                {message.user.displayName !== user.displayName && (
+                  <Avatar
+                    src={message.user.photoURL}
+                    name={message.user.displayName}
+                    size="sm"
+                  />
+                )}
                 <Box
                   bg={
                     message.user.displayName === user.displayName
@@ -275,17 +279,18 @@ const ChatSystem = () => {
           ))}
         </Box>
         <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-          <Flex direction={{ base: "column", sm: "row" }} align="center">
+          <Flex direction={{ base: "row" }} align="center" wrap="nowrap">
             <Textarea
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               placeholder="Type your message..."
               resize="none"
-              mr={{ base: 0, sm: 2 }}
-              mb={{ base: 2, sm: 0 }}
+              flex={1}
+              mr={{ base: 1, sm: 2 }}
+              mb={{ base: 0, sm: 0 }}
               bg={colorMode === "light" ? "white" : "gray.700"}
               color={colorMode === "light" ? "black" : "white"}
-              flex={1}
+              size={{ base: "sm", sm: "md" }}
             />
             <Input
               type="file"
@@ -298,14 +303,39 @@ const ChatSystem = () => {
               <IconButton
                 as="span"
                 icon={<FontAwesomeIcon icon={faFileUpload} />}
-                mr={{ base: 0, sm: 2 }}
-                mb={{ base: 2, sm: 0 }}
+                mr={{ base: 1, sm: 2 }}
+                mb={{ base: 0, sm: 0 }}
                 aria-label="Upload Image"
+                size={{ base: "sm", sm: "md" }}
               />
             </label>
-            <IconButton type="submit" aria-label="Send" colorScheme="blue">
-              <FontAwesomeIcon icon={faPaperPlane} />
-            </IconButton>
+            {file && (
+              <Box ml={2} position="relative">
+                <Image
+                  src={URL.createObjectURL(file)}
+                  alt="Uploaded File"
+                  boxSize="30px"
+                  objectFit="cover"
+                  borderRadius="sm"
+                />
+                <Text
+                  fontSize="xs"
+                  color="blue.500"
+                  position="absolute"
+                  bottom="-2"
+                  left="0"
+                >
+                  File ready to send
+                </Text>
+              </Box>
+            )}
+            <IconButton
+              type="submit"
+              aria-label="Send"
+              colorScheme="blue"
+              icon={<FontAwesomeIcon icon={faPaperPlane} />}
+              size={{ base: "sm", sm: "md" }}
+            />
           </Flex>
           {uploadProgress > 0 && (
             <Progress value={uploadProgress} max="100" mt={2} />
