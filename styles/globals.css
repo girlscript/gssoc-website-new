@@ -35,6 +35,8 @@ html {
 /* bg-gradient-to-b from-orange-600 to-primary_orange-0 */
 #CTA-button {
   transition: ease-in-out 1s;
+  margin-left: 10px;
+  
 }
 #CTA-button:hover {
   /* transform: scale(1.2, 1.2); */
