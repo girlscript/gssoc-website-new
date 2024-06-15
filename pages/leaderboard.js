@@ -238,7 +238,7 @@ function Leaderboard() {
             );
           });
           
-          let blacklist = ["Asymtode712", "suhanipaliwal","Ajay-Dhangar"];
+          let blacklist = ["Ajay-Dhangar"];
 
           const rankedData = data.leaderboard
             .filter((usr) => {
