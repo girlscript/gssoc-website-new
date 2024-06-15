@@ -62,6 +62,17 @@ const items = [
     fmt:"video",
   },
 
+  {
+    title: "15th June 2024",
+    poster:
+      "https://www.youtube.com/embed/JJxPXCCRpck",
+    maintitle: `Hands-on workshop with Akansha Jain`,
+    rec_link: "https://www.youtube.com/live/JJxPXCCRpck?si=B_ETHMIZE-h4J9ke",
+    info: "Live Coding Session: Watch Akansha build an app from scratch! 🚀",
+    medium: "Youtube",
+    fmt:"video",
+  },
+
     
 ];
 
