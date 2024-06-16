@@ -556,6 +556,9 @@ function Leaderboard() {
                 <a className="ml-2 underline hover:no-underline" href="https://github.com/GSSoC24/Contributor/discussions/288" target="_blank" rel="noreferrer" >
                   More details about badges
                 </a>
+                <a className="ml-2 underline hover:no-underline" href="https://life-made-easy.vercel.app" target="_blank" rel="noreferrer" >
+                  Review PRs
+                </a>
               </p>
             </div>
 
