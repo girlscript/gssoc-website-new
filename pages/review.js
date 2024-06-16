@@ -5,7 +5,7 @@ import {
 import UserData from "../components/review/UserData";
 import UserForm from "../components/review/UserForm";
 import { getUserData, updateUser } from "./api/review";
-function review() {
+function Review() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   function getCurrentDateTime() {
@@ -64,4 +64,4 @@ function review() {
   );
 }
 
-export default review;
+export default Review;
