@@ -1,26 +1,40 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const moveUp = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+`;
 
 const ButtonContainer = styled.span`
   position: fixed;
-  bottom: 32px;
+  bottom: 26px;
   right: 32px;
   align-items: center;
-  height: 32px;
-  width: 32px;
+  height: 42px;
+  width: 42px;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
-  opacity: 0.7;
-  background: #000000;
-  border-radius: 4px;
-  transition: opacity 0.4s, color ease-in-out 0.2s, background ease-in-out 0.2s;
+  background: #ff6024;
+  border-radius: 50%;
+  transition: opacity 0.4s, color ease-in-out 0.2s, background ease-in-out 0.2s, transform 0.2s;
   display: ${({ isScrollButtonVisible }) =>
     isScrollButtonVisible ? "flex" : "none"};
 
   &:hover {
     opacity: 1;
+    background: #ff733f;
+    transform: scale(1.08);
+
+    svg {
+      animation: ${moveUp} 0.2s forwards;
+    }
   }
 `;
 
@@ -49,15 +63,14 @@ const BackToTopButton = () => {
   return (
     <ButtonContainer isScrollButtonVisible={showButton} onClick={scrollToTop}>
       <svg
-        width={24}
-        height={24}
+        width={22}
+        height={22}
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#ff7a19"
+        stroke="#fff"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="animate-bounce"
       >
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
