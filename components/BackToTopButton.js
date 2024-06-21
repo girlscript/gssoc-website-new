@@ -21,16 +21,17 @@ const ButtonContainer = styled.span`
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
-  background: #ff6024;
+  background: ${({ isNearBottom }) => (isNearBottom ? "black" : "#ff6024")};
+  opacity: ${({ isNearBottom }) => (isNearBottom ? 0.7 : 1)};
   border-radius: 50%;
-  transition: opacity 0.4s, color ease-in-out 0.2s, background ease-in-out 0.2s, transform 0.2s;
+  transition: opacity 0.4s, background ease-in-out 0.2s, transform 0.2s;
   display: ${({ isScrollButtonVisible }) =>
     isScrollButtonVisible ? "flex" : "none"};
 
   &:hover {
     opacity: 1;
-    background: #ff733f;
-    transform: scale(1.08);
+    background: ${({ isNearBottom }) => (isNearBottom ? "black" : "#ff733f")};
+    transform: scale(1.04);
 
     svg {
       animation: ${moveUp} 0.2s forwards;
@@ -40,13 +41,24 @@ const ButtonContainer = styled.span`
 
 const BackToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
+  const [isNearBottom, setIsNearBottom] = useState(false);
 
   useEffect(() => {
     const checkScrollHeight = () => {
-      if (!showButton && window.pageYOffset > 400) {
+      const offset = window.pageYOffset;
+      const height = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (!showButton && offset > 400) {
         setShowButton(true);
-      } else if (showButton && window.pageYOffset <= 400) {
+      } else if (showButton && offset <= 400) {
         setShowButton(false);
+      }
+
+      if (documentHeight - offset - height < 270) {
+        setIsNearBottom(true);
+      } else {
+        setIsNearBottom(false);
       }
     };
 
@@ -61,7 +73,7 @@ const BackToTopButton = () => {
   };
 
   return (
-    <ButtonContainer isScrollButtonVisible={showButton} onClick={scrollToTop}>
+    <ButtonContainer isScrollButtonVisible={showButton} isNearBottom={isNearBottom} onClick={scrollToTop}>
       <svg
         width={22}
         height={22}
