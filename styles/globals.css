@@ -11,6 +11,34 @@
 html {
   scroll-behavior: smooth;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.separator {
+  border-top: 4px solid black;
+}
+
+.separator td {
+  padding: 0;
+  border: none;
+}
 
 @keyframes float {
   0% {

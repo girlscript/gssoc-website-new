@@ -93,7 +93,7 @@ const columns = [
         score: 5500,
         name: "Legend Badge",
         badge: "./badges/8.png",
-      }
+      },
     },
   },
   {
@@ -186,7 +186,7 @@ function Leaderboard() {
   }
 
   function createBadgesList(score) {
-    const badgeColumn = columns.find(column => column.id === 'badge');
+    const badgeColumn = columns.find((column) => column.id === "badge");
     let badges = [];
 
     for (const key in badgeColumn.badges) {
@@ -198,7 +198,7 @@ function Leaderboard() {
       }
     }
 
-    return badges
+    return badges;
   }
 
   useEffect(() => {
@@ -237,12 +237,12 @@ function Leaderboard() {
               a.login < b.login
             );
           });
-          
+
           let blacklist = ["Ajay-Dhangar"];
 
           const rankedData = data.leaderboard
             .filter((usr) => {
-              return (blacklist.includes(usr.login) === false);
+              return blacklist.includes(usr.login) === false;
             })
             .map((contributorData, idx) => ({
               ...contributorData,
@@ -498,7 +498,7 @@ function Leaderboard() {
                           // else{
                           //   filterData()
                           // }
-                            filterData()
+                          filterData();
                         }}
                         type="search"
                         className="form-control relative flex-auto min-w-0 block px-0.5 py-1.5 text-base dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-600 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-400 focus:outline-none dark:placeholder-neutral-300"
@@ -553,8 +553,21 @@ function Leaderboard() {
                 {isLoading === false && lastupdated === null && (
                   <>The server is updating. Please comeback after 5-10 mins</>
                 )}
-                <a className="ml-2 underline hover:no-underline" href="https://github.com/GSSoC24/Contributor/discussions/288" target="_blank" rel="noreferrer" >
+                <a
+                  className="ml-2 underline hover:no-underline"
+                  href="https://github.com/GSSoC24/Contributor/discussions/288"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   More details about badges
+                </a>
+                <a
+                  className="ml-2 underline hover:no-underline"
+                  href="https://gssoc.girlscript.tech/review"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Review PRs
                 </a>
               </p>
             </div>
@@ -649,57 +662,57 @@ function Leaderboard() {
                                         <div>
                                           {row["score"] >= 60 && (
                                             <>
-                                          <Image
-                                            src={
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].badge
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].badge
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].badge
-                                              : row["score"] >= 500
-                                                ? column.badges[500].badge
-                                                : row["score"] >= 300
-                                                ? column.badges[300].badge
-                                                : row["score"] >= 200
-                                                ? column.badges[200].badge
-                                                : row["score"] >= 140
-                                                ? column.badges[140].badge
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].badge : "data:"
-                                            }
-                                            width={75}
-                                            height={75}
-                                            id={`badge-${i}`}
-                                          />
-                                          <Tooltip
-                                            anchorSelect={`#badge-${i}`}
-                                            place="right"
-                                          >
-                                            {
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].name
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].name
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].name
-                                              : row["score"] >= 500
-                                                ? column.badges[500].name
-                                                : row["score"] >= 300
-                                                ? column.badges[300].name
-                                                : row["score"] >= 200
-                                                ? column.badges[200].name
-                                                : row["score"] >= 140
-                                                ? column.badges[140].name
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].name : "data:"
-                                            }
-                                          </Tooltip>
-                                          </>
-                                )}
+                                              <Image
+                                                src={
+                                                  row["score"] >= 5500
+                                                    ? column.badges[5500].badge
+                                                    : row["score"] >= 2500
+                                                    ? column.badges[2500].badge
+                                                    : row["score"] >= 1200
+                                                    ? column.badges[1200].badge
+                                                    : row["score"] >= 500
+                                                    ? column.badges[500].badge
+                                                    : row["score"] >= 300
+                                                    ? column.badges[300].badge
+                                                    : row["score"] >= 200
+                                                    ? column.badges[200].badge
+                                                    : row["score"] >= 140
+                                                    ? column.badges[140].badge
+                                                    : row["score"] >= 60
+                                                    ? column.badges[60].badge
+                                                    : "data:"
+                                                }
+                                                width={75}
+                                                height={75}
+                                                id={`badge-${i}`}
+                                              />
+                                              <Tooltip
+                                                anchorSelect={`#badge-${i}`}
+                                                place="right"
+                                              >
+                                                {row["score"] >= 5500
+                                                  ? column.badges[5500].name
+                                                  : row["score"] >= 2500
+                                                  ? column.badges[2500].name
+                                                  : row["score"] >= 1200
+                                                  ? column.badges[1200].name
+                                                  : row["score"] >= 500
+                                                  ? column.badges[500].name
+                                                  : row["score"] >= 300
+                                                  ? column.badges[300].name
+                                                  : row["score"] >= 200
+                                                  ? column.badges[200].name
+                                                  : row["score"] >= 140
+                                                  ? column.badges[140].name
+                                                  : row["score"] >= 60
+                                                  ? column.badges[60].name
+                                                  : "data:"}
+                                              </Tooltip>
+                                            </>
+                                          )}
                                         </div>
                                       ) : (
-                                        value 
+                                        value
                                       )}
                                     </div>
                                   );
@@ -763,57 +776,56 @@ function Leaderboard() {
                                         </button>
                                       ) : column.id === "badge" ? (
                                         <div>
-                                          {row["score"] >= 60 &&
-                                          (
+                                          {row["score"] >= 60 && (
                                             <>
-                                          <Image
-                                            src={
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].badge
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].badge
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].badge
-                                              : row["score"] >= 500
-                                                ? column.badges[500].badge
-                                                : row["score"] >= 300
-                                                ? column.badges[300].badge
-                                                : row["score"] >= 200
-                                                ? column.badges[200].badge
-                                                : row["score"] >= 140
-                                                ? column.badges[140].badge
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].badge : "data:"
-                                            }
-                                            width={75}
-                                            height={75}
-                                            id={`badge-${i}`}
-                                          />
-                                          <Tooltip
-                                            anchorSelect={`#badge-${i}`}
-                                            place="right"
-                                          >
-                                            {
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].name
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].name
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].name
-                                              : row["score"] >= 500
-                                                ? column.badges[500].name
-                                                : row["score"] >= 300
-                                                ? column.badges[300].name
-                                                : row["score"] >= 200
-                                                ? column.badges[200].name
-                                                : row["score"] >= 140
-                                                ? column.badges[140].name
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].name : "data:"
-                                            }
-                                          </Tooltip>
-                                          </>
-                                )}
+                                              <Image
+                                                src={
+                                                  row["score"] >= 5500
+                                                    ? column.badges[5500].badge
+                                                    : row["score"] >= 2500
+                                                    ? column.badges[2500].badge
+                                                    : row["score"] >= 1200
+                                                    ? column.badges[1200].badge
+                                                    : row["score"] >= 500
+                                                    ? column.badges[500].badge
+                                                    : row["score"] >= 300
+                                                    ? column.badges[300].badge
+                                                    : row["score"] >= 200
+                                                    ? column.badges[200].badge
+                                                    : row["score"] >= 140
+                                                    ? column.badges[140].badge
+                                                    : row["score"] >= 60
+                                                    ? column.badges[60].badge
+                                                    : "data:"
+                                                }
+                                                width={75}
+                                                height={75}
+                                                id={`badge-${i}`}
+                                              />
+                                              <Tooltip
+                                                anchorSelect={`#badge-${i}`}
+                                                place="right"
+                                              >
+                                                {row["score"] >= 5500
+                                                  ? column.badges[5500].name
+                                                  : row["score"] >= 2500
+                                                  ? column.badges[2500].name
+                                                  : row["score"] >= 1200
+                                                  ? column.badges[1200].name
+                                                  : row["score"] >= 500
+                                                  ? column.badges[500].name
+                                                  : row["score"] >= 300
+                                                  ? column.badges[300].name
+                                                  : row["score"] >= 200
+                                                  ? column.badges[200].name
+                                                  : row["score"] >= 140
+                                                  ? column.badges[140].name
+                                                  : row["score"] >= 60
+                                                  ? column.badges[60].name
+                                                  : "data:"}
+                                              </Tooltip>
+                                            </>
+                                          )}
                                         </div>
                                       ) : (
                                         value
@@ -877,29 +889,29 @@ function Leaderboard() {
                   <ModalBody>
                     <div className="flex-auto py-2 px-6 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                            <img
-                              alt="Suvraneel Bhuin"
-                              src={avatar}
-                              className="w-24 rounded-full xl:w-28"
-                            />
-                            <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
-                              🏆 {score}
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap pt-4 gap-2">
-                              {
-                                badges.map((badge, i) => {
-                                  return <Image
-                                          src={badge.badge}
-                                          key={i}
-                                          width={70}
-                                          height={70}
-                                          id={`badge-${i}-${i}`}
-                                        />
-                                })
-                              }
-                          </div>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            alt="Suvraneel Bhuin"
+                            src={avatar}
+                            className="w-24 rounded-full xl:w-28"
+                          />
+                          <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
+                            🏆 {score}
+                          </p>
+                        </div>
+                        <div className="flex flex-wrap pt-4 gap-2">
+                          {badges.map((badge, i) => {
+                            return (
+                              <Image
+                                src={badge.badge}
+                                key={i}
+                                width={70}
+                                height={70}
+                                id={`badge-${i}-${i}`}
+                              />
+                            );
+                          })}
+                        </div>
                         <div
                           style={{
                             marginTop: 30,
@@ -961,29 +973,29 @@ function Leaderboard() {
                   <ModalBody>
                     <div className="flex-auto py-2 px-4 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
-                          <div style={{ display: "flex", alignItems: "center" }}>
-                            <img
-                              alt="Suvraneel Bhuin"
-                              src={avatar}
-                              className="w-24 rounded-full xl:w-28"
-                            />
-                            <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
-                              🏆 {score}
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap pt-4 gap-2">
-                              {
-                                badges.map((badge, i) => {
-                                  return <Image
-                                          src={badge.badge}
-                                          key={i}
-                                          width={70}
-                                          height={70}
-                                          id={`badge-${i}-${i}`}
-                                        />
-                                })
-                              }
-                          </div>
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            alt="Suvraneel Bhuin"
+                            src={avatar}
+                            className="w-24 rounded-full xl:w-28"
+                          />
+                          <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
+                            🏆 {score}
+                          </p>
+                        </div>
+                        <div className="flex flex-wrap pt-4 gap-2">
+                          {badges.map((badge, i) => {
+                            return (
+                              <Image
+                                src={badge.badge}
+                                key={i}
+                                width={70}
+                                height={70}
+                                id={`badge-${i}-${i}`}
+                              />
+                            );
+                          })}
+                        </div>
                         <div style={{ marginTop: 30, fontWeight: "bolder" }}>
                           List Of PRs:{" "}
                         </div>
