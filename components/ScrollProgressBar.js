@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const ScrollProgressBar = () => {
   const [scroll, setScroll] = useState(0);
+  const router = useRouter();
 
   const handleScroll = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -14,6 +16,17 @@ const ScrollProgressBar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setScroll(0);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <div className="scroll-progress-container">
