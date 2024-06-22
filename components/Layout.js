@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import ScrollToTop from "./BackToTopButton";
 import { useRouter } from "next/router";
 import ComingSoon from "./CustomPages/ComingSoon";
+import ScrollProgressBar from "./ScrollProgressBar";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
         <div className="hidden lg:block">
           <ScrollToTop />
         </div>
+        <ScrollProgressBar />
         <Footer />
       </div>
     );
