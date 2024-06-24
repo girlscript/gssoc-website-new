@@ -6,15 +6,21 @@ import Tilt from "react-parallax-tilt";
 
 import SocialFollow from "../components/homepage/SocialFollow";
 import ThemeChanger from "../components/Toggler";
+import UnderConstruction from "../components/wob/UnderConstruction";
 
 export default function Wob() {
-  const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
 
+  const [mounted, setMounted] = useState(false); //set it true after completion
+  const { theme } = useTheme();
+  const isUnderConstruction = true
   useEffect(() => {
     Aos.init({ duration: 2000 });
     setMounted(true);
   }, []);
+
+  if(isUnderConstruction){
+    return <UnderConstruction />
+  }
 
   if (!mounted) return null;
 
