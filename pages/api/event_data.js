@@ -72,7 +72,16 @@ const items = [
     medium: "Youtube",
     fmt:"video",
   },
-
+  {
+    title: "15th June 2024",
+    poster:
+      "https://www.youtube.com/embed/1DP6WDTsL8s",
+    maintitle: `Live with Animesh Pathak Dev-Relations @Keploy`,
+    rec_link: "https://www.youtube.com/live/1DP6WDTsL8s?si=1xLyFjzJE8JJKn4x",
+    info: "Testing Microservices with Keploy and DevPod",
+    medium: "Youtube",
+    fmt:"video",
+  },
     
 ];
 
