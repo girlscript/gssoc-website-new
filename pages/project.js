@@ -25,6 +25,12 @@ const Project = () => {
   const getProjects = useCallback(async (year) => {
     if (year === "2021") {
       setData(projectLinks[year]);
+    } else if (year === "2024") {
+      const res = await fetch(
+        "https://gssoc-leaderboard.vercel.app/api/projects"
+      );
+      const projects = await res.json();
+      setData(projects.projects);
     } else {
       const response = await fetch(projectLinks[year]);
       setData(await response.json());
@@ -41,7 +47,7 @@ const Project = () => {
   // const [isOpen, setIsOpen] = React.useState(false)
   // const onClose = () => setIsOpen(false)
   // const cancelRef = React.useRef()
-
+  console.log(data);
   return (
     <>
       <Head>
@@ -121,18 +127,18 @@ const Project = () => {
                 .map((curElem, i) => {
                   return (
                     <div
-                      className="flex items-center justify-between w-80"
+                      className="flex items-center overflow-hidden justify-between w-80"
                       key={i}
                       data-aos="flip-up"
                       data-aos-duration="800"
                     >
                       <div className="shadow dark:bg-black rounded-lg">
                         <div
-                          className="overflow-y-clip rounded-lg h-fit md:h-80 
+                          className="rounded-lg h-fit md:h-80 
                     w-80 flex flex-col justify-start 
-                    shadow-lg shadow-black-200 relative"
+                    shadow-lg shadow-black-200 relative overflow-hidden"
                         >
-                          <>
+                          <div className="flex flex-col items-start justify-start overflow-y-auto">
                             <div className="flex flex-col justify-start gap-2 px-5 py-3">
                               <div className="font-bold text-primary_orange-0 md:text-xl">
                                 <a
@@ -152,6 +158,22 @@ const Project = () => {
                                 By {curElem.owner_name}
                               </div>
                             </div>
+                            {year === "24" && (
+                              <div className="dark:text-gray-400 text-gray-700 flex flex-col justify-start gap-2 px-5 pb-3">
+                                {curElem.stats.latestPullRequest?.mergedAt && (
+                                  <h1 className=" text-base font-semibold">
+                                    Latest PR merged At :{" "}
+                                    {curElem.stats.latestPullRequest.mergedAt.split('T')[0]}, {curElem.stats.latestPullRequest.mergedAt.split('T')[1].split('Z')[0]}
+                                  </h1>
+                                )}
+                                <h1 className=" text-base font-semibold">
+                                  Open Issues : {curElem.stats.openIssues}
+                                </h1>
+                                <h1 className=" text-base font-semibold">
+                                  Open PRs : {curElem.stats.openPullRequests}
+                                </h1>
+                              </div>
+                            )}
                             <SimpleGrid
                               columns={{ sm: 2, md: 3 }}
                               spacing={2}
@@ -178,7 +200,7 @@ const Project = () => {
                                   );
                                 })}
                             </SimpleGrid>
-                          </>
+                          </div>
                           <br />
                           <br />
                           <ProjectModal currProject={curElem} />
