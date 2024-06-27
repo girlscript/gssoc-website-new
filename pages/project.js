@@ -2,7 +2,7 @@ import { Search2Icon } from "@chakra-ui/icons";
 import { Spacer } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchTags from "../components/SearchTags";
 import axios from "axios";
 import { FaGithub } from "react-icons/fa";
@@ -113,6 +113,7 @@ const Project = () => {
                   by{" "}
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     className="text-cyan-500 hover:underline"
                     href={project["GitHub Profile URL"]}
                   >
@@ -152,6 +153,7 @@ const Project = () => {
 
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href={project.project_link}
                   className="flex items-center text-black bg-gradient-to-b from-orange-500 to-orange-700 justify-center gap-2 rounded-md border-gray-600 bg-gray-700 px-5 py-1.5 text-sm font-semibold  md:text-base mt-auto w-full"
                 >
