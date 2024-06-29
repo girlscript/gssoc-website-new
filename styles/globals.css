@@ -266,7 +266,7 @@ html {
 .pagination-holder {
   position: relative;
   width: 100%;
-  margin: 15px 0 ;
+  margin-bottom: 15px;
   height: 50px;
 }
 

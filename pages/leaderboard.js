@@ -491,9 +491,28 @@ function Leaderboard() {
             </div>
 
             <div className="mt-10">
+            <div className="pagination-holder">
+                  <Pagination
+                    innerClass={
+                      theme === "dark" ? "dark-theme pagination" : "pagination"
+                    }
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    activePage={activePage}
+                    activeClass="active-page"
+                    itemsCountPerPage={itemsPerPage}
+                    totalItemsCount={searchData.length}
+                    pageRangeDisplayed={width < 600 ? 3 : 5}
+                    onChange={(e) => {
+                      // console.log(e);
+                      handlePageChange(e);
+                    }}
+                  />
+                </div>
               <div className="flex mb-5">
                   <div className="input-group relative flex flex-wrap items-stretch w-full">
-                    <span className="relative flex w-1/2">
+                    <span className="relative flex w-1/2 justify-start">
+                    <span className="relative search-container flex w-full justify-start">
                     <div className="relative flex search-container">
                       <input
                         onChange={(e) => {
@@ -520,7 +539,7 @@ function Leaderboard() {
                       onMouseUp={() => {
                         filterData();
                       }}
-                      className="btn inline-block px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
+                      className="btn relative px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
                       type="button"
                       id="clearSearch"
                       style={{
@@ -543,9 +562,10 @@ function Leaderboard() {
                   </svg>
                     </button>
                     </span>
+                    </span>
                     <span className="relative flex items-center w-1/2 justify-end">
                       <label className=" mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
-                      Rows per page
+                      Showing
                       </label>
                       <select className="relative bg-gray-300 dark:bg-neutral-600 text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400 items-center"
                       onInput={(e) => {
@@ -564,27 +584,12 @@ function Leaderboard() {
                         <option value="500">500</option>
                         <option value="1000">1000</option>
                       </select>
+                      <label className=" ml-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                      rows per page
+                      </label>
                       </span>
                   </div>
               </div>
-                <div className="pagination-holder">
-                  <Pagination
-                    innerClass={
-                      theme === "dark" ? "dark-theme pagination" : "pagination"
-                    }
-                    itemClass="page-item"
-                    linkClass="page-link"
-                    activePage={activePage}
-                    activeClass="active-page"
-                    itemsCountPerPage={itemsPerPage}
-                    totalItemsCount={searchData.length}
-                    pageRangeDisplayed={width < 600 ? 3 : 5}
-                    onChange={(e) => {
-                      // console.log(e);
-                      handlePageChange(e);
-                    }}
-                  />
-                </div>
             </div>
             <div className="bg-sky-100 dark:bg-orange-200 px-1.5 py-1.5 rounded-md mb-3">
               <p className="text-sky-700 dark:text-orange-900 text-sm">
