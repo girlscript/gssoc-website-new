@@ -19,6 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@headlessui/react": "^1.6.5",
+    "@leenguyen/react-flip-clock-countdown": "^1.6.0",
     "@next/env": "^14.2.3",
     "@react-email/components": "^0.0.17",
     "@react-email/tailwind": "^0.0.16",

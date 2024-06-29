@@ -12,6 +12,48 @@ html {
   scroll-behavior: smooth;
 }
 
+.flip-clock {
+  --fcc-flip-duration: 0.5s;
+  --fcc-spacing: 8px;
+  --fcc-digit-block-width: 84px;
+  --fcc-digit-block-height: 90px;
+  --fcc-digit-block-radius: 5px;
+  --fcc-digit-block-spacing: 5px;
+  --fcc-digit-font-size: 98px;
+  --fcc-digit-color: white;
+  --fcc-label-font-size: 18px;
+  --fcc-label-color: #ffffff;
+  --fcc-background: radial-gradient(
+    circle,
+    rgba(173, 216, 230, 1) 0%,
+    rgba(0, 0, 139, 1) 100%
+  );
+  --fcc-divider-color: white;
+  --fcc-divider-height: 3px;
+  --fcc-separator-size: 6px;
+  --fcc-separator-color: white;
+}
+
+@media (max-width: 768px) {
+  .flip-clock {
+    --fcc-digit-block-width: 60px;
+    --fcc-digit-block-height: 65px;
+    --fcc-digit-font-size: 70px;
+    --fcc-label-font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-clock {
+    --fcc-digit-block-width: 25px;
+    --fcc-digit-block-height: 30px;
+    --fcc-digit-font-size: 20px;
+    --fcc-label-font-size: 8px;
+    --fcc-divider-height: 1px;
+    --fcc-separator-size: 3px;
+  }
+}
+
 @keyframes float {
   0% {
     /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
