@@ -51,12 +51,37 @@ function Contact() {
   return (
     <div className="grid place-content-center">
       <>
+        <style jsx>{`
+        @keyframes fadeInDown {
+          0% {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .line-spacing {
+          line-height: 1.7; /* Adjust this value to increase or decrease spacing */
+        }
+
+        .animated-text {
+          animation: fadeInDown 3s ease-in-out;
+        }
+      `}</style>
+
         <div className="text-[#FF7F0D] text-center">
-          <h1 className="text-4xl font-bold my-2">Contact Us</h1>
-          <span className="font-medium my-2">
-            Any questions or remarks? Just write us a message!
+          <h1 className="text-4xl font-bold my-2 animated-text">
+            Contact Us
+          </h1>
+          <span className="font-medium my-2 animated-text">
+            Feel free to contact us if you have any questions or remarks!
           </span>
         </div>
+
+
         <div className="bg-white dark:bg-gray-800 p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
           <div className="relative">
             <div className="md:absolute top-10 z-10 left-0">
@@ -101,23 +126,23 @@ function Contact() {
                 width={650}
               />
             </div>
-               <div className="flex flex-row  md:flex-row md:absolute md:bottom-5 md:left-9 md:z-1 md:gap-3 md:items-center  ">
+            <div className="flex flex-row  md:flex-row md:absolute md:bottom-5 md:left-9 md:z-1 md:gap-3 md:items-center  ">
               <a href="https://www.facebook.com/girlscriptsoc/" className="cursor-pointer">
                 <Facebook />
               </a>
-             <a href="https://www.instagram.com/girlscriptsummerofcode/?hl=en" className="cursor-pointer">
+              <a href="https://www.instagram.com/girlscriptsummerofcode/?hl=en" className="cursor-pointer">
                 <Instagram />
-             </a>
+              </a>
               <a href="https://www.linkedin.com/company/girlscriptsoc/mycompany/" className="cursor-pointer">
                 <LinkedIn />
               </a>
-             <a href="https://twitter.com/girlscriptsoc" className="cursor-pointer">
+              <a href="https://twitter.com/girlscriptsoc" className="cursor-pointer">
                 <Twitter />
               </a>
             </div>
           </div>
           <form
-            className=" w-full text-black mr-3 px-5 md:px-0 mt-16 md:mt-0"
+            className="w-full text-black mr-3 px-5 md:px-0 mt-16 md:mt-0"
             onSubmit={handleSubmit}
           >
             <div className="md:flex items-center justify-between gap-10">
@@ -153,17 +178,16 @@ function Contact() {
                 placeholder="Enter your phone number"
                 className="w-full"
                 value={data.phoneNumber}
-                onChange={(e) =>
-                  handleInputChange("phoneNumber", e.target.value)
-                }
+                onChange={(e) => handleInputChange("phoneNumber", e.target.value)}
               />
             </div>
 
             <textarea
-              className="w-full my-3 rounded-lg dark:text-white  p-4  "
+              className="w-full my-3 rounded-lg dark:text-white p-4 border-b-2 border-gray-300 focus:outline-none focus:border-black dark:focus:border-[#FF7F0D]"
               placeholder="Enter your message..."
               value={data.message}
               required
+              rows={5}
               maxLength={5000}
               onChange={(e) => handleInputChange("message", e.target.value)}
             />
