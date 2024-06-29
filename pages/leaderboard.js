@@ -491,6 +491,8 @@ function Leaderboard() {
             </div>
 
             <div className="mt-10">
+
+            {/* // remove this comment to add this pagination
             <div className="pagination-holder">
                   <Pagination
                     innerClass={
@@ -508,11 +510,37 @@ function Leaderboard() {
                       handlePageChange(e);
                     }}
                   />
-                </div>
+                </div> */}
+
               <div className="flex mb-5">
                   <div className="input-group relative flex flex-wrap items-stretch w-full">
-                    <span className="relative flex w-1/2 justify-start">
-                    <span className="relative search-container flex w-full justify-start">
+                    <span className="relative flex items-center w-1/2 justify-start">
+                      <label className=" mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                      Showing
+                      </label>
+                      <select className="relative bg-gray-300 dark:bg-neutral-600 text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400 items-center"
+                      onInput={(e) => {
+                        // console.log(e);
+                        handleItemsPerPageChange(e);
+                      }}
+                      onChange={(e) => {
+                        handlePageChange(1);
+                      }}
+                      value={itemsPerPage}>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50" >50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                      </select>
+                      <label className=" ml-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                      rows per page
+                      </label>
+                      </span>
+                      <span className="relative flex w-1/2 justify-end">
+                    <span className="relative search-container flex w-full justify-end">
                     <div className="relative flex search-container">
                       <input
                         onChange={(e) => {
@@ -563,31 +591,6 @@ function Leaderboard() {
                     </button>
                     </span>
                     </span>
-                    <span className="relative flex items-center w-1/2 justify-end">
-                      <label className=" mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
-                      Showing
-                      </label>
-                      <select className="relative bg-gray-300 dark:bg-neutral-600 text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400 items-center"
-                      onInput={(e) => {
-                        // console.log(e);
-                        handleItemsPerPageChange(e);
-                      }}
-                      onChange={(e) => {
-                        handlePageChange(1);
-                      }}
-                      value={itemsPerPage}>
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50" >50</option>
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                        <option value="500">500</option>
-                        <option value="1000">1000</option>
-                      </select>
-                      <label className=" ml-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
-                      rows per page
-                      </label>
-                      </span>
                   </div>
               </div>
             </div>
