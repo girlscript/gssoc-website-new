@@ -13,7 +13,7 @@ import VisibilitySensor from "react-visibility-sensor";
 export default function Wob() {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
-  const isUnderConstruction = false; //set it false after completion
+  const isUnderConstruction = true; //set it false after completion
   useEffect(() => {
     Aos.init({ duration: 2000 });
     setMounted(true);
