@@ -13,7 +13,7 @@ import VisibilitySensor from "react-visibility-sensor";
 export default function Wob() {
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
-  const isUnderConstruction = true; //set it false after completion
+  const isUnderConstruction = false; //set it false after completion
   useEffect(() => {
     Aos.init({ duration: 2000 });
     setMounted(true);
@@ -34,7 +34,7 @@ export default function Wob() {
         <meta name="WOB'24" content="WOB'24 is back!" />
         <link
           rel="icon"
-          href="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png"
+          href="/WoB/Favicon.ico"
         />
         <meta property="og:url" content="https://gssoc.girlscript.tech/" />
         <meta property="og:type" content="website" />

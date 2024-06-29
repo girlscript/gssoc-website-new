@@ -51,12 +51,19 @@ function Leaderboard() {
     <>
       <Head>
         <title>
-          Leaderboard | GirlScript Summer of Code 2024 | GirlScript Foundation
+          Leaderboard | GirlScript Winter of Blockchain 2024 | GirlScript Foundation
           India
         </title>
         <meta
           name="description"
-          content="GirlScript Summer of Code Certificates"
+          content="GirlScript Winter of Blockchain Leaderboard"
+        />
+        <title>
+          GirlScript Winter of Blockchain 2024 | GirlScript Foundation India
+        </title>
+        <link
+          rel="icon"
+          href="/WoB/Favicon.ico"
         />
       </Head>
       <Spacer mt={10} />

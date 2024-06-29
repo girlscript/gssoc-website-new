@@ -28,10 +28,14 @@ const WobEvents = () => {
   return (
     <>
       <Head>
-        <title>WOB 2024 Events | GirlScript Summer of Code</title>
+        <title>WOB 2024 Events | GirlScript Winter of Blockchain</title>
         <meta
           name="description"
           content="Browse the latest events at WOB 2024, hosted by GirlScript Foundation."
+        />
+        <link
+          rel="icon"
+          href="/WoB/Favicon.ico"
         />
       </Head>
 
