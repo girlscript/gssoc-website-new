@@ -8,7 +8,7 @@ const Footer = () => {
 
   useEffect(() => {
     if (router.asPath.startsWith("/wob")) {
-      setIsWobRoute(false); // set it to true if you launch the website
+      setIsWobRoute(true); // set it to true if you launch the website
     } else {
       setIsWobRoute(false);
     }
