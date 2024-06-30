@@ -119,11 +119,20 @@ export default function Home() {
                   Register Here
                 </button>
               </a>
-              <a data-aos="fade-down" href="#about-gssoc">
+              <a className="" href="#about-gssoc">
+                <button
+                  id="CTA-button1"
+                  data-aos="fade-down"
+                  className=" bg-gradient-to-b from-primary_orange-0 to-orange-600 text-md text-white font-semibold px-4 py-4 rounded-2xl md:text-2xl md:py-2 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600"
+                >
+                 Learn More
+                </button>
+              </a>
+              {/* <a data-aos="fade-down" href="#about-gssoc">
                 <div className="font-serif font-medium text-md text-primary_orange-0 ml-9 md:text-2xl">
                   Learn More
                 </div>
-              </a>
+              </a> */}
             </div>
           </div>
 

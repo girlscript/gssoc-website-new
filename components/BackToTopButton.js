@@ -1,38 +1,64 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const moveUp = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+`;
 
 const ButtonContainer = styled.span`
   position: fixed;
-  bottom: 32px;
+  bottom: 26px;
   right: 32px;
   align-items: center;
-  height: 32px;
-  width: 32px;
+  height: 42px;
+  width: 42px;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
-  opacity: 0.7;
-  background: #000000;
-  border-radius: 4px;
-  transition: opacity 0.4s, color ease-in-out 0.2s, background ease-in-out 0.2s;
+  background: ${({ isNearBottom }) => (isNearBottom ? "black" : "#ff6024")};
+  opacity: ${({ isNearBottom }) => (isNearBottom ? 0.7 : 1)};
+  border-radius: 50%;
+  transition: opacity 0.4s, background ease-in-out 0.2s, transform 0.2s;
   display: ${({ isScrollButtonVisible }) =>
     isScrollButtonVisible ? "flex" : "none"};
 
   &:hover {
     opacity: 1;
+    background: ${({ isNearBottom }) => (isNearBottom ? "black" : "#ff733f")};
+    transform: scale(1.04);
+
+    svg {
+      animation: ${moveUp} 0.2s forwards;
+    }
   }
 `;
 
 const BackToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
+  const [isNearBottom, setIsNearBottom] = useState(false);
 
   useEffect(() => {
     const checkScrollHeight = () => {
-      if (!showButton && window.pageYOffset > 400) {
+      const offset = window.pageYOffset;
+      const height = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      if (!showButton && offset > 400) {
         setShowButton(true);
-      } else if (showButton && window.pageYOffset <= 400) {
+      } else if (showButton && offset <= 400) {
         setShowButton(false);
+      }
+
+      if (documentHeight - offset - height < 270) {
+        setIsNearBottom(true);
+      } else {
+        setIsNearBottom(false);
       }
     };
 
@@ -47,17 +73,16 @@ const BackToTopButton = () => {
   };
 
   return (
-    <ButtonContainer isScrollButtonVisible={showButton} onClick={scrollToTop}>
+    <ButtonContainer isScrollButtonVisible={showButton} isNearBottom={isNearBottom} onClick={scrollToTop}>
       <svg
-        width={24}
-        height={24}
+        width={22}
+        height={22}
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#ff7a19"
+        stroke="#fff"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="animate-bounce"
       >
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
