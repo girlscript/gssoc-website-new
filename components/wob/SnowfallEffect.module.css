@@ -1,8 +1,7 @@
-/* components/SnowfallEffect.module.css */
 .snowflake {
     position: fixed;
     top: -10px;
-    background-image: url('/WoB/snowfall.png'); /* Path to your snowflake image */
+    background-image: url('/WoB/snowfall.png');
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.8;
@@ -20,7 +19,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(30px); /* Adjust for wind effect */
+      transform: translateX(30px);
     }
   }
   

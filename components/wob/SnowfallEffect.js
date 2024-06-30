@@ -1,4 +1,3 @@
-// components/SnowfallEffect.js
 import React, { useEffect } from 'react';
 import styles from './SnowfallEffect.module.css';
 
@@ -14,7 +13,7 @@ const SnowfallEffect = () => {
       snowflake.style.animationDelay = `${Math.random() * -5}s`; // Delay to spread snowflakes over time
       snowflake.style.width = `${Math.random() * 15 + 5}px`; // Radius between 5 and 20 pixels
       snowflake.style.height = snowflake.style.width;
-      snowflake.style.zIndex = '11'; // Ensure z-index > 10
+      snowflake.style.zIndex = '11';
 
       // Random wind effect
       const wind = (Math.random() * 3 - 0.5).toFixed(2); // Wind between -0.5 and 2.5
