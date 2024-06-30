@@ -13,7 +13,7 @@ const Footer = () => {
               <Link href="https://gssoc.girlscript.tech/contact">
                 <img
                   className="cursor-pointer"
-                  src="./GS_Foundation_logo_Black.svg"
+                  src="/GS_Foundation_logo_Black.svg"
                   alt="logo"
                 />
               </Link>
