@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     if (router.asPath.startsWith("/wob")) {
-      setIsWobRoute(false); // set it as true if you want to launch the website
+      setIsWobRoute(true); // set it as true if you want to launch the website
     } else {
       setIsWobRoute(false);
     }
