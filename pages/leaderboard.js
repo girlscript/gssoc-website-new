@@ -1,4 +1,5 @@
 import {
+  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -625,10 +626,12 @@ function Leaderboard() {
                                       style={{ verticalAlign: "middle" }}
                                     >
                                       {column.id === "avatar" ? (
+                                        <Link href={'/pullRequestProfile/'+ row.username[0]}>
                                         <img
                                           className="w-9 rounded-full m-auto bg-white"
                                           src={value}
                                         />
+                                        </Link>
                                       ) : column.id === "position" ? (
                                         row.rank
                                       ) : column.id === "username" ? (
@@ -746,10 +749,12 @@ function Leaderboard() {
                                       // align={column.align}
                                     >
                                       {column.id === "avatar" ? (
+                                        <Link href={'/pullRequestProfile/'+ row.username[0]}>
                                         <img
                                           className="w-9 rounded-full m-auto bg-white"
                                           src={value}
                                         />
+                                        </Link>
                                       ) : column.id === "position" ? (
                                         row.rank
                                       ) : column.id === "username" ? (
@@ -903,11 +908,13 @@ function Leaderboard() {
                     <div className="flex-auto py-2 px-6 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
                       <div style={{ display: "flex", alignItems: "center" }}>
+                      <Link href={'/pullRequestProfile/'+ login}>
                             <img
                               alt="Suvraneel Bhuin"
                               src={avatar}
                               className="w-24 rounded-full xl:w-28"
                             />
+                            </Link>
                             <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
                               🏆 {score}
                             </p>
