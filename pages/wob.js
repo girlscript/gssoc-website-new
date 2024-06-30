@@ -9,6 +9,7 @@ import ThemeChanger from "../components/Toggler";
 import UnderConstruction from "../components/wob/UnderConstruction";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import SnowfallEffect from "../components/wob/SnowfallEffect";
 
 export default function Wob() {
   const [mounted, setMounted] = useState(false);
@@ -383,6 +384,7 @@ export default function Wob() {
           </div>
         </div>
       </div>
+      <SnowfallEffect />
     </div>
   );
 }

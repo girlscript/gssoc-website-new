@@ -12,6 +12,26 @@ html {
   scroll-behavior: smooth;
 }
 
+.snowflake {
+  position: fixed;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background-image: url('/WoB/snowfall.png'); /* Path to your snowflake image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  pointer-events: none; /* Ensure clicks pass through the snowflakes */
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+
 .flip-clock {
   --fcc-flip-duration: 0.5s;
   --fcc-spacing: 8px;
