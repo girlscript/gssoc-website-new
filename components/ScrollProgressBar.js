@@ -4,6 +4,15 @@ import { useRouter } from 'next/router';
 const ScrollProgressBar = () => {
   const [scroll, setScroll] = useState(0);
   const router = useRouter();
+  const [isWobRoute, setIsWobRoute] = useState(false);
+
+  useEffect(() => {
+    if (router.asPath.startsWith("/wob")) {
+      setIsWobRoute(false); // set it as true if you want to launch the website
+    } else {
+      setIsWobRoute(false);
+    }
+  }, [router.asPath]);
 
   const handleScroll = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -30,7 +39,7 @@ const ScrollProgressBar = () => {
 
   return (
     <div className="scroll-progress-container">
-      <div className="scroll-progress-bar" style={{ width: scroll }} />
+      <div className="scroll-progress-bar" style={isWobRoute?{ width: scroll,background:"#85C6DC"}:{width: scroll}} />
     </div>
   );
 };

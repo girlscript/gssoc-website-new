@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
@@ -21,7 +22,7 @@ const ButtonContainer = styled.span`
   z-index: 1000;
   cursor: pointer;
   animation: fadeIn 0.3s;
-  background: ${({ isNearBottom }) => (isNearBottom ? "black" : "#ff6024")};
+  background: ${({ isNearBottom , isWobRoute }) => (isNearBottom ? "black" : isWobRoute?"#00008B": "#ff6024")};
   opacity: ${({ isNearBottom }) => (isNearBottom ? 0.7 : 1)};
   border-radius: 50%;
   transition: opacity 0.4s, background ease-in-out 0.2s, transform 0.2s;
@@ -30,7 +31,7 @@ const ButtonContainer = styled.span`
 
   &:hover {
     opacity: 1;
-    background: ${({ isNearBottom }) => (isNearBottom ? "black" : "#ff733f")};
+    background: ${({ isNearBottom, isWobRoute }) => (isNearBottom ? "black" : isWobRoute?"#85C6DC": "#ff733f")};
     transform: scale(1.04);
 
     svg {
@@ -42,6 +43,16 @@ const ButtonContainer = styled.span`
 const BackToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
   const [isNearBottom, setIsNearBottom] = useState(false);
+  const router = useRouter();
+  const [isWobRoute, setIsWobRoute] = useState(false);
+
+  useEffect(() => {
+    if (router.asPath.startsWith("/wob")) {
+      setIsWobRoute(false); // set it as true if you want to launch the website
+    } else {
+      setIsWobRoute(false);
+    }
+  }, [router.asPath]);
 
   useEffect(() => {
     const checkScrollHeight = () => {
@@ -73,7 +84,7 @@ const BackToTopButton = () => {
   };
 
   return (
-    <ButtonContainer isScrollButtonVisible={showButton} isNearBottom={isNearBottom} onClick={scrollToTop}>
+    <ButtonContainer isScrollButtonVisible={showButton} isWobRoute={isWobRoute} isNearBottom={isNearBottom} onClick={scrollToTop}>
       <svg
         width={22}
         height={22}
