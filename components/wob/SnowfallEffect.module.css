@@ -1,25 +1,25 @@
+/* components/SnowfallEffect.module.css */
 .snowflake {
-    position: fixed;
-    top: -10px;
-    background-image: url('/WoB/snowfall.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    pointer-events: none; /* Ensure clicks pass through the snowflakes */
+  position: fixed;
+  top: -10px;
+  background-image: url("/WoB/snowfall.png"); /* Path to your snowflake image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  pointer-events: none; /* Ensure clicks pass through the snowflakes */
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
   }
-  
-  @keyframes fall {
-    to {
-      transform: translateY(100vh);
-    }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0);
   }
-  
-  @keyframes sway {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(30px);
-    }
+  100% {
+    transform: translateX(20px); /* Adjust for wind effect */
   }
-  
+}
