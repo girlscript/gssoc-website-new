@@ -42,7 +42,7 @@ const Footer = () => {
                           Contact Us
                         </span>
                       </Link>
-                      <Link href="/codeofconduct">
+                      <Link href="/wobCodeofConduct">
                         <a className="font-normal text-white py-1 block hover:underline">
                           Code of Conduct
                         </a>
