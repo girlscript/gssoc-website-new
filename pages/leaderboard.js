@@ -153,6 +153,7 @@ function Leaderboard() {
   const [openn, setOpenn] = React.useState(true);
   const [activePage, setActivePage] = useState(1);
   const { height, width } = useWindowDimensions();
+  const [itemsPerPage, setItemsPerPage] = useState(50); // default items per page
   let rows = [];
 
   function createData(
@@ -248,7 +249,7 @@ function Leaderboard() {
               ...contributorData,
               rank: idx + 1,
             }));
-          setLeaderss(rankedData.slice(0, 50));
+          setLeaderss(rankedData.slice(0, itemsPerPage));
           setIsLboardLoading(false);
           setIsLoading(false);
           setTotalData(rankedData);
@@ -335,13 +336,18 @@ function Leaderboard() {
     setActivePage(pageNumber);
   };
 
+  const handleItemsPerPageChange = (event) => {
+    setItemsPerPage(Number(event.target.value));
+    handlePageChange(0);
+  };
+
   useEffect(() => {
-    if ((activePage - 1) * 50 + 50 < searchData.length) {
+    if ((activePage - 1) * itemsPerPage + itemsPerPage < searchData.length) {
       setLeaderss(
-        searchData.slice((activePage - 1) * 50, (activePage - 1) * 50 + 50)
+        searchData.slice((activePage - 1) * itemsPerPage, (activePage - 1) * itemsPerPage + itemsPerPage)
       );
     } else {
-      setLeaderss(searchData.slice((activePage - 1) * 50));
+      setLeaderss(searchData.slice((activePage - 1) * itemsPerPage));
     }
   }, [activePage, searchData]);
 
@@ -484,10 +490,57 @@ function Leaderboard() {
               </div>
             </div>
 
-            <div className="mt-20">
-              <div className="flex justify-end">
-                <div className="mb-3 xl:w-96">
-                  <div className="input-group relative flex flex-wrap items-stretch w-full mb-4 justify-end">
+            <div className="mt-10">
+
+            {/* // remove this comment to add this pagination
+            <div className="pagination-holder">
+                  <Pagination
+                    innerClass={
+                      theme === "dark" ? "dark-theme pagination" : "pagination"
+                    }
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    activePage={activePage}
+                    activeClass="active-page"
+                    itemsCountPerPage={itemsPerPage}
+                    totalItemsCount={searchData.length}
+                    pageRangeDisplayed={width < 600 ? 3 : 5}
+                    onChange={(e) => {
+                      // console.log(e);
+                      handlePageChange(e);
+                    }}
+                  />
+                </div> */}
+
+              <div className="flex mb-5">
+                  <div className="input-group relative flex flex-wrap items-stretch w-full">
+                    <span className="relative flex items-center w-1/2 justify-start">
+                      <label className=" mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                      Showing
+                      </label>
+                      <select className="relative bg-gray-300 dark:bg-neutral-600 text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400 items-center"
+                      onInput={(e) => {
+                        // console.log(e);
+                        handleItemsPerPageChange(e);
+                      }}
+                      onChange={(e) => {
+                        handlePageChange(1);
+                      }}
+                      value={itemsPerPage}>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50" >50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                      </select>
+                      <label className=" ml-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                      rows per page
+                      </label>
+                      </span>
+                      <span className="relative flex w-1/2 justify-end">
+                    <span className="relative search-container flex w-full justify-end">
                     <div className="relative flex search-container">
                       <input
                         onChange={(e) => {
@@ -514,7 +567,7 @@ function Leaderboard() {
                       onMouseUp={() => {
                         filterData();
                       }}
-                      className="btn inline-block px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
+                      className="btn relative px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
                       type="button"
                       id="clearSearch"
                       style={{
@@ -536,36 +589,9 @@ function Leaderboard() {
                     <path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"></path>
                   </svg>
                     </button>
-                    <button
-                      onClick={() => {
-                        filterData();
-                      }}
-                      className="btn inline-block px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
-                      type="button"
-                      id="searchButton"
-                      aria-label="Search"
-                      aria-describedby="button-addon2"
-                      style={{
-                        padding: "10px 10px",
-                        maxWidth: "45px",
-                        width: "20%",
-                      }}
-                    >
-                      <svg
-                        className="w-4 fill-neutral-600 hover:fill-neutral-800 dark:fill-neutral-300 dark:hover:fill-neutral-100"
-                        aria-hidden="true"
-                        focusable="false"
-                        data-prefix="fas"
-                        data-icon="search"
-                        role="img"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                      >
-                        <path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
-                      </svg>
-                    </button>
+                    </span>
+                    </span>
                   </div>
-                </div>
               </div>
             </div>
             <div className="bg-sky-100 dark:bg-orange-200 px-1.5 py-1.5 rounded-md mb-3">
@@ -873,7 +899,7 @@ function Leaderboard() {
                 linkClass="page-link"
                 activePage={activePage}
                 activeClass="active-page"
-                itemsCountPerPage={50}
+                itemsCountPerPage={itemsPerPage}
                 totalItemsCount={searchData.length}
                 pageRangeDisplayed={width < 600 ? 3 : 5}
                 onChange={(e) => {

@@ -36,9 +36,13 @@ const WobTeam = () => {
     <>
       <Head>
         <title>
-          Team | GirlScript Summer of Code 2024 | GirlScript Foundation India
+          Team | GirlScript Winter of Blockchain 2024 | GirlScript Foundation India
         </title>
-        <meta name="description" content="GirlScript Summer of Code Team" />
+        <meta name="description" content="GirlScript Winter of Blockchain Team" />
+        <link
+          rel="icon"
+          href="/WoB/Favicon.ico"
+        />
       </Head>
       <div className="self-stretch flex w-screen flex-col items-center justify-start py-0 px-0 box-border max-w-full text-center text-29xl text-skyblue font-text-4xl-225rem-3rem">
         <div className="flex flex-col items-center justify-start gap-[66px] w-full">

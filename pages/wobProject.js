@@ -43,7 +43,11 @@ const Project = () => {
         <title>
           Projects | Winter of Code 2024 | GirlScript Foundation India
         </title>
-        <meta name="description" content="Projects of Winter of Code" />
+        <meta name="description" content="Projects of Winter of Blockchain" />
+        <link
+          rel="icon"
+          href="/WoB/Favicon.ico"
+        />
       </Head>
       <section className="min-h-screen">
         <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-24 w-full">
