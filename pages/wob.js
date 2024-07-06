@@ -33,13 +33,13 @@ export default function Wob() {
           GirlScript Winter of Blockchain 2024 | GirlScript Foundation India
         </title>
         <meta name="WOB'24" content="WOB'24 is back!" />
-        <link
-          rel="icon"
-          href="/WoB/Favicon.ico"
-        />
+        <link rel="icon" href="/WoB/Favicon.ico" />
         <meta property="og:url" content="https://gssoc.girlscript.tech/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="GirlScript Winter of Blockchain'24" />
+        <meta
+          property="og:title"
+          content="GirlScript Winter of Blockchain'24"
+        />
         <meta property="og:description" content="WOB'24 is back!" />
         <meta
           property="og:image"
@@ -48,7 +48,10 @@ export default function Wob() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="gssoc.girlscript.tech" />
         <meta property="twitter:url" content="https://gssoc.girlscript.tech/" />
-        <meta name="twitter:title" content="GirlScript Winter of Blockchain'24" />
+        <meta
+          name="twitter:title"
+          content="GirlScript Winter of Blockchain'24"
+        />
         <meta name="twitter:description" content="WOB'24 is here!" />
         <meta
           name="twitter:image"
@@ -179,13 +182,14 @@ export default function Wob() {
             </div>
             <p className="dark:text-white font-serif text-left text-xl">
               GirlScript Winter Of Blockchain is a thirty-days-long Open-Source
-              Program started to conduct every early Winter by the Girlscript Foundation. With
-              constant efforts, participants contribute to numerous projects
-              under the extreme guidance of skilled mentors over this duration.
-              With such exposure, students begin to contribute to real-world
-              projects from the comfort of their homes. GirlScript Winter Of
-              Blockchain has witnessed active participation over the years, and the
-              2024 edition aims to carry the legacy with a promising impact towards Blockchain.
+              Program started to conduct every early Winter by the Girlscript
+              Foundation. With constant efforts, participants contribute to
+              numerous projects under the extreme guidance of skilled mentors
+              over this duration. With such exposure, students begin to
+              contribute to real-world projects from the comfort of their homes.
+              GirlScript Winter Of Blockchain has witnessed active participation
+              over the years, and the 2024 edition aims to carry the legacy with
+              a promising impact towards Blockchain.
             </p>
           </div>
 
@@ -208,7 +212,7 @@ export default function Wob() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={27000} /> : null}+
+                            {isVisible ? <CountUp end={400} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -225,7 +229,7 @@ export default function Wob() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={200} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={100} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
@@ -242,7 +246,7 @@ export default function Wob() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={11000} /> : null}+
+                            {isVisible ? <CountUp end={300} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -262,7 +266,7 @@ export default function Wob() {
                       >
                         {({ isVisible }) => (
                           <div>
-                            {isVisible ? <CountUp end={17000} /> : null}+
+                            {isVisible ? <CountUp end={400} /> : null}+
                           </div>
                         )}
                       </VisibilitySensor>
@@ -279,7 +283,7 @@ export default function Wob() {
                         offset={{ bottom: 0 }}
                       >
                         {({ isVisible }) => (
-                          <div>{isVisible ? <CountUp end={20} /> : null}+</div>
+                          <div>{isVisible ? <CountUp end={5} /> : null}+</div>
                         )}
                       </VisibilitySensor>
                     </h1>
@@ -362,24 +366,79 @@ export default function Wob() {
           </div>
         </div>
         {/* sponsors */}
-        <div
-          className="relative h-[549px] rounded-r-[50px] w-[1282] bg-cover bg-center"
-          style={{ backgroundImage: "url('/WoB/sponser_bg.png')" }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/70 p-10">
-            <p className="absolute top-[3%] left-[35%] text-[64px] text-[#00008B]">
-              Sponsors
-            </p>
-            <div className="absolute top-[30%] left-[15%] h-[71px] w-[73px] bg-[#00008B] rounded-full" />
-            <div className="absolute top-[60%] left-[15%] h-[71px] w-[73px] bg-[#00008B] rounded-full" />
-            <div className="absolute top-[30%] right-[45%] h-[71px] w-[73px] bg-[#00008B] rounded-full" />
-            <div className="absolute top-[60%] right-[45%] h-[71px] w-[73px] bg-[#00008B] rounded-full" />
-            <div className="absolute top-[30%] right-[15%] h-[71px] w-[73px] bg-[#00008B] rounded-full" />
-            <div className="absolute top-[60%] right-[15%] h-[71px] w-[73px] bg-[#00008B] rounded-full" />
-            <div className="flex flex-col justify-center items-start h-full max-w-lg mx-auto">
-              <button className="px-6 py-3 w-[279px] h-[63px] bg-gradient-to-r from-[#00008B] to-[#ADD8E6] absolute bottom-[40px] text-[#00008B] right-[80px] rounded-r-[30px] shadow-md hover:bg-blue-600">
-                Sponsor Us
-              </button>
+        <div className="flex justify-center items-start h-full min-w-[300px] mx-auto">
+          <div
+            className="flex flex-row justify-center px-3 mb-20"
+            id="Sponsors"
+          >
+            <div className="sponsors__wrapper flex flex-col">
+              <div
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+                data-aos-duration="400"
+                className="dark:bg-orange-100 bg-white other__sponsors px-9 py-9 shadow-xl rounded flex flex-col justify-center items-center"
+              >
+                <h3 className=" dark:text-gray-800 text-[#00008B] font-sans font-bold text-4xl  mb-12 place-content-center">
+                  Sponsors
+                </h3>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-x-28 justify-between items-center mb-5">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-20"
+                    src="/WoB/sponser_6.png"
+                    alt=""
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-20"
+                    src="/WoB/sponser_polygon.png"
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-x-20 gap-y-4 md:gap-y-8 justify-evenly items-center mb-5">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="/WoB/sponser_2.png"
+                    alt=""
+                  />
+
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="/WoB/sponser_3.png"
+                    alt=""
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="/WoB/sponser_4.png"
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-x-20 gap-y-4 md:gap-y-8 justify-evenly items-center mb-5">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="/WoB/sponser_5.png"
+                    alt=""
+                  />
+
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="/WoB/sponser_7.png"
+                    alt=""
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
