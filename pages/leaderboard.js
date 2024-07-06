@@ -996,14 +996,14 @@ function Leaderboard() {
                                         <div className="flex w-full space-x-2">
                                           <button
                                             onClick={() => shareBadge(badge.badge)}
-                                            className="bg-gray-700 dark:bg-gray-700 w-1/2 p-2.5 rounded-full"
+                                            className="bg-gray-700 w-1/2 p-2.5 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
                                           </button>
                                           <button
                                             onClick={() => downloadImage( badge.badge)}
-                                            className="bg-blue-700 dark:bg-blue-700 w-1/2 p-1 rounded-full"
+                                            className="bg-blue-700 w-1/2 p-1 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"  fill="#ffffff" viewBox="0 0 512 512"><path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
@@ -1107,14 +1107,14 @@ function Leaderboard() {
                                         <div className="flex w-full space-x-2">
                                           <button
                                             onClick={() => shareBadge(badge.badge)}
-                                            className="bg-gray-700 dark:bg-gray-700 w-1/2 p-2.5 rounded-full"
+                                            className="bg-gray-700 w-1/2 p-2.5 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
                                           </button>
                                           <button
                                             onClick={() => downloadImage( badge.badge)}
-                                            className="bg-blue-700 dark:bg-blue-700 w-1/2 p-1 rounded-full"
+                                            className="bg-blue-700 w-1/2 p-1 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"  fill="#ffffff" viewBox="0 0 512 512"><path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
