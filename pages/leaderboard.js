@@ -1073,7 +1073,7 @@ function Leaderboard() {
                                       <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
                                         <div className="flex w-full space-x-2">
                                           <button
-                                            onClick={() => createTemplate(badge.badge, "share")}
+                                            onClick={() => createTemplate(badge.badge, "share", login , score , avatar , badge.name)}
                                             className="bg-gray-700 w-1/2 p-2.5 rounded-full"
                                             disabled={!imageClicked}
                                           >
@@ -1184,14 +1184,14 @@ function Leaderboard() {
                                       <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
                                         <div className="flex w-full space-x-2">
                                           <button
-                                            onClick={() => createTemplate(badge.badge, "share")}
+                                            onClick={() => createTemplate(badge.badge, "share", login , score , avatar , badge.name)}
                                             className="bg-gray-700 w-1/2 p-2.5 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
                                           </button>
                                           <button
-                                            onClick={() => createTemplate(badge.badge, "download")}
+                                            onClick={() => createTemplate(badge.badge, "download", login , score , avatar , badge.name)}
                                             className="bg-blue-700 w-1/2 p-1 rounded-full"
                                             disabled={!imageClicked}
                                           >
