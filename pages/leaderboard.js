@@ -432,8 +432,8 @@ function Leaderboard() {
 
       // clip the drawing area to a circle to draw avatar picture as a circle // this change cant be reset and hence it placed at the end of the code
       const radius = 165;
-      const imageWidth = avatarImage.width;
-      const imageHeight = avatarImage.height;
+      const imageWidth = 330;
+      const imageHeight = 330;
       const avatarX = 1150  - imageWidth / 2;
       const avatarY = 530 - imageHeight / 2;
       //clip canvas
