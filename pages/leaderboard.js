@@ -21,6 +21,7 @@ import { Tooltip } from "react-tooltip";
 import React, { useCallback, useEffect, useState } from "react";
 import Confetti from "react-confetti";
 import Pagination from "react-js-pagination";
+import { data } from "autoprefixer";
 const columns = [
   { id: "position", label: "Rank", minWidth: 50 },
   { id: "avatar", label: "Avatar", minWidth: 50 },
@@ -347,7 +348,7 @@ function Leaderboard() {
     fetch(badgeImageUrl)
       .then(response => response.blob())
       .then(imageBlob => {
-        const imageFile = new File([imageBlob], 'badge.png', { type: 'image/png' });
+        const imageFile = new File([imageBlob], 'Share Badge.png', { type: 'image/png' });
         const shareData = {
           files: [imageFile],
           title: 'Happy to contribute',
@@ -367,17 +368,93 @@ function Leaderboard() {
     fetch(badgeImageUrl)
       .then(response => response.blob())
       .then(imageBlob => {
-        const imageFile = new File([imageBlob], 'badge.png', { type: 'image/png' });
+        const imageFile = new File([imageBlob], 'Share Badge.png', { type: 'image/png' });
         const imageURL = URL.createObjectURL(imageFile);
         const link = document.createElement('a');
         link.href = imageURL;
-        link.download = 'badge.png';
+        link.download = 'Share Badge.png';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       });
   };
+
+  function createTemplate(badgePath, action, name, points, avatarPath, badgeName) {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
   
+    const templateImage = new window.Image();
+    const badgeImage = new window.Image();
+    const avatarImage = new window.Image();
+  
+    Promise.all([
+      new Promise((resolve, reject) => {
+        templateImage.onload = () => resolve();
+        templateImage.onerror = reject;
+        templateImage.src = "./badges/badge-share-template.png";
+      }),
+      new Promise((resolve, reject) => {
+        badgeImage.onload = () => resolve();
+        badgeImage.onerror = reject;
+        badgeImage.src = badgePath;
+      }),
+      new Promise((resolve, reject) => {
+        avatarImage.onload = () => resolve();
+        avatarImage.onerror = reject;
+        avatarImage.crossOrigin = "anonymous";
+        avatarImage.src = avatarPath;
+      })
+    ]).then(() => {
+      canvas.width = templateImage.width;
+      canvas.height = templateImage.height;
+      ctx.drawImage(templateImage, 0, 0);
+
+      ctx.drawImage(badgeImage, 85, 715, 655, 655);
+
+      //adjust the username to fit inside the canvas max allowed spacee is 800 pixels - Bold font used Georgia - white color
+      let fontsize= 110;
+      ctx.font= "bold 110px Courier New";
+      while (ctx.measureText(name).width > 800){
+          fontsize-=5;
+          ctx.font= `bold ${fontsize}px Courier New`;
+      }
+      ctx. textAlign = "right";
+      ctx.fillStyle= "#ffffff";
+      ctx.fillText(name, 870, 580);
+
+      // bold font monospace carrier new - black color
+      ctx.font= "bold 100px Courier New";
+      ctx. textAlign = "center";
+      ctx.fillStyle= "#000000";
+      ctx.fillText(points, 1050, 1150);
+      ctx. textAlign = "right";
+      ctx.fillText(badgeName, 1300, 1600);
+
+      // clip the drawing area to a circle to draw avatar picture as a circle // this change cant be reset and hence it placed at the end of the code
+      const radius = 165;
+      const imageWidth = avatarImage.width;
+      const imageHeight = avatarImage.height;
+      const avatarX = 1150  - imageWidth / 2;
+      const avatarY = 530 - imageHeight / 2;
+      //clip canvas
+      ctx.beginPath();
+      ctx.arc(avatarX + imageWidth / 2, avatarY + imageHeight / 2, radius, 0, 2 * Math.PI, true);
+      ctx.closePath();
+      ctx.clip();
+      // Draw the image with proper centering and potential scaling
+      ctx.drawImage(avatarImage, avatarX, avatarY, imageWidth, imageHeight);
+      
+      const dataURL = canvas.toDataURL("image/png");
+
+      if (action=="download"){
+        downloadImage(dataURL);
+      }else {
+        shareBadge(dataURL);
+      }
+    }).catch(err => {
+      console.error("Error loading images:", err);
+    });
+  }
 
   useEffect(() => {
     if ((activePage - 1) * itemsPerPage + itemsPerPage < searchData.length) {
@@ -968,7 +1045,8 @@ function Leaderboard() {
                       <div id="alert-dialog-slide-description">
                       <div style={{ display: "flex", alignItems: "center" }}>
                             <img
-                              alt="Suvraneel Bhuin"
+                              id="avatarImage"
+                              alt="Avatar Image"
                               src={avatar}
                               className="w-24 rounded-full xl:w-28"
                             />
@@ -995,14 +1073,14 @@ function Leaderboard() {
                                       <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
                                         <div className="flex w-full space-x-2">
                                           <button
-                                            onClick={() => shareBadge(badge.badge)}
+                                            onClick={() => createTemplate(badge.badge, "share")}
                                             className="bg-gray-700 w-1/2 p-2.5 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
                                           </button>
                                           <button
-                                            onClick={() => downloadImage( badge.badge)}
+                                            onClick={() => createTemplate(badge.badge, "download", login , score , avatar , badge.name)}
                                             className="bg-blue-700 w-1/2 p-1 rounded-full"
                                             disabled={!imageClicked}
                                           >
@@ -1106,14 +1184,14 @@ function Leaderboard() {
                                       <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
                                         <div className="flex w-full space-x-2">
                                           <button
-                                            onClick={() => shareBadge(badge.badge)}
+                                            onClick={() => createTemplate(badge.badge, "share")}
                                             className="bg-gray-700 w-1/2 p-2.5 rounded-full"
                                             disabled={!imageClicked}
                                           >
                                             <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
                                           </button>
                                           <button
-                                            onClick={() => downloadImage( badge.badge)}
+                                            onClick={() => createTemplate(badge.badge, "download")}
                                             className="bg-blue-700 w-1/2 p-1 rounded-full"
                                             disabled={!imageClicked}
                                           >
