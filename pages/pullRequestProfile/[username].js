@@ -46,7 +46,7 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-function pullrequestProfile2() {
+function pullrequestProfile() {
     const [username,setUsername] = useState("Vyomrana02") ;
     const { theme } = useTheme();
     const[searchData,setSearchData] = useState([])
@@ -267,4 +267,4 @@ function pullrequestProfile2() {
         </>
     )
 }
-export default pullrequestProfile2;
+export default pullrequestProfile;
