@@ -45,6 +45,7 @@
     "react-confetti": "^6.1.0",
     "react-countup": "^6.3.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1",
     "react-is": "^18.2.0",
     "react-js-pagination": "^3.0.3",
     "react-parallax-tilt": "^1.7.42",

@@ -356,10 +356,10 @@ function Leaderboard() {
         };
         navigator.share(shareData)
           .then(() => {
-            console.log('Shared on Twitter');
+            console.log('Shared your badge!');
           })
           .catch((error) => {
-            console.log('Error sharing on Twitter:', error);
+            console.log('Error sharing your badge:', error);
           });
       });
   };
@@ -531,6 +531,7 @@ function Leaderboard() {
                           ? totalData[1].avatar_url
                           : null
                       }
+                      alt=""
                     />
                     <FontAwesomeIcon
                       className="invisible lg:visible w-8 h-8 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-amber-300 inline-block"
@@ -561,6 +562,7 @@ function Leaderboard() {
                           ? totalData[0].avatar_url
                           : null
                       }
+                      alt=""
                     />
                     <FontAwesomeIcon
                       className="invisible lg:visible w-10 h-10 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-cyan-200 inline-block"
@@ -590,6 +592,7 @@ function Leaderboard() {
                           ? totalData[2].avatar_url
                           : null
                       }
+                      alt=""
                     />
                     <FontAwesomeIcon
                       className="invisible lg:visible w-8 h-8 rounded-full border-5 border-white absolute bottom-1/4 right-1/4 bg-zinc-100 inline-block"
@@ -753,6 +756,7 @@ function Leaderboard() {
                               <div
                                 className="table-row"
                                 role="checkbox"
+                                aria-checked="false"
                                 tabIndex={-1}
                                 key={row.username}
                               >
@@ -769,6 +773,7 @@ function Leaderboard() {
                                         <img
                                           className="w-9 rounded-full m-auto bg-white"
                                           src={value}
+                                          alt=""
                                         />
                                       ) : column.id === "position" ? (
                                         row.rank
@@ -837,6 +842,7 @@ function Leaderboard() {
                                             width={75}
                                             height={75}
                                             id={`badge-${i}`}
+                                            alt=""
                                           />
                                           <Tooltip
                                             anchorSelect={`#badge-${i}`}
@@ -875,6 +881,7 @@ function Leaderboard() {
                               <div
                                 className="table-row"
                                 role="checkbox"
+                                aria-checked="false"
                                 tabIndex={-1}
                                 key={row.username}
                               >
@@ -890,6 +897,7 @@ function Leaderboard() {
                                         <img
                                           className="w-9 rounded-full m-auto bg-white"
                                           src={value}
+                                          alt=""
                                         />
                                       ) : column.id === "position" ? (
                                         row.rank
@@ -954,6 +962,7 @@ function Leaderboard() {
                                             width={75}
                                             height={75}
                                             id={`badge-${i}`}
+                                            alt=""
                                           />
                                           <Tooltip
                                             anchorSelect={`#badge-${i}`}
