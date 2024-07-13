@@ -82,7 +82,17 @@ const items = [
     medium: "Youtube",
     fmt:"video",
   },
-    
+  {
+    title: "15th July 2024",
+    poster:
+      "https://www.youtube.com/embed/uMrlAyniwzk",
+    maintitle: `Beyond Data - Emerging Trends in Cloud-Based Data Engineering`,
+    rec_link: "https://www.youtube.com/live/uMrlAyniwzk?si=HHP0IAxAesmX1VMl",
+    info: "Don't miss this opportunity to explore the future of data engineering and gain valuable insights from an industry expert.✨",
+    medium: "Youtube",
+    fmt:"video",
+  },
+  
 ];
 
 export default items;

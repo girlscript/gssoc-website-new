@@ -237,7 +237,7 @@ const projectLinks = {
   2021: projectData,
 };
 
-const Project = () => {
+gitconst Project = () => {
   // const [data, setData] = useState(projectData);
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
