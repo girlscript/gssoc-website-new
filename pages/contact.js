@@ -51,6 +51,7 @@ function Contact() {
   return (
     <div className="grid place-content-center">
       <>
+      {/* eslint-disable-next-line react/no-unknown-property */}
         <style jsx>{`
         @keyframes fadeInDown {
           0% {
