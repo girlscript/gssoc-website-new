@@ -191,7 +191,6 @@ function Leaderboard() {
       rank,
     };
   }
-
   function createBadgesList(score) {
     const badgeColumn = columns.find(column => column.id === 'badge');
     let badges = [];
@@ -306,58 +305,29 @@ function Leaderboard() {
       )
     );
   }
-  function handleModalOpen(){
-    console.log('sdsds')
-    onOpen(false);
-    onClose()
-    setIsStatsModal(true)
-    for (let link in leaderss[row].pr_urls) {
-      
-      prlinks.push(leaderss[row].pr_urls[link]);
-    }
-    let unique = prlinks.filter((item, i, ar) => ar.indexOf(item) === i);
-    console.log(unique)
-    unique.map((data)=>{
-      // fetchPRDetails(data)
-      console.log(data)
-      fetchPRDetails(data)
-    })
-    setBadges(createBadgesList(leaderss[row].score));
-    // setLeveldata({
-    //     level0: leaderss[num].level0,
-    //     level1: leaderss[num].level1,
-    //     level2: leaderss[num].level2,
-    //     level3: leaderss[num].level3,
-    //     level4: leaderss[num].level4,
-    // });
-    setLogin(leaderss[row].login);
-    setAvatar(leaderss[row].avatar_url);
-    setScore(leaderss[row].score);
-  }
-  function statsmodal(num){
-    setIsStatsModal(true)
+
+async   function statsmodal(num){
     for (let link in leaderss[num].pr_urls) {
       
       prlinks.push(leaderss[num].pr_urls[link]);
     }
     let unique = prlinks.filter((item, i, ar) => ar.indexOf(item) === i);
     console.log(unique)
-    unique.map((data)=>{
-      // fetchPRDetails(data)
-      console.log(data)
-      fetchPRDetails(data)
+    let arr1=[]
+    unique.map(async (data)=>{
+      arr1.push(data)
     })
     setBadges(createBadgesList(leaderss[num].score));
-    // setLeveldata({
-    //     level0: leaderss[num].level0,
-    //     level1: leaderss[num].level1,
-    //     level2: leaderss[num].level2,
-    //     level3: leaderss[num].level3,
-    //     level4: leaderss[num].level4,
-    // });
+    arr1=await JSON.stringify(arr1)
+    localStorage.setItem('data',arr1)
+  
     setLogin(leaderss[num].login);
     setAvatar(leaderss[num].avatar_url);
     setScore(leaderss[num].score);
+    localStorage.setItem('avatar',leaderss[num].avatar_url)
+    localStorage.setItem('login',leaderss[num].login)
+    localStorage.setItem('time',modalTimeUpdated)
+    window.location.href=`/user/${leaderss[num].login}`
   }
   const { isOpen, onOpen, onClose } = useDisclosure();
   let prlinks = [];
@@ -392,10 +362,9 @@ function extractTitle(title) {
 const date=formatDate(response.merged_at)
       const repositoryName = response.base.repo.name;
       let arr=[title,levelLabel,commitCount,commentCount,date,response.issue_url,issueNumber,repositoryName]
-      console.log(arr)
-      console.log(response)
+     
       setLinks((prev)=>[...prev,arr]);
-
+      return arr
     } catch (error) {
       console.error(`Error fetching PR details: ${error.message}`);
       return null;
@@ -403,18 +372,13 @@ const date=formatDate(response.merged_at)
   }
   let handleClickOpen = (num) => {
     onOpen(true);
-setRow(num)
+    setRow(num)
     for (let link in leaderss[num].pr_urls) {
-      
-      prlinks.push(leaderss[num].pr_urls[link]);
+      prlinks.push(leaderss[num].pr_urls[link] + "\n\n\n\n");
     }
+
     let unique = prlinks.filter((item, i, ar) => ar.indexOf(item) === i);
-    console.log(unique)
-    unique.map((data)=>{
-      // fetchPRDetails(data)
-      console.log(data)
-      fetchPRDetails(data)
-    })
+    setLinks(unique);
     setBadges(createBadgesList(leaderss[num].score));
     // setLeveldata({
     //     level0: leaderss[num].level0,
@@ -426,8 +390,6 @@ setRow(num)
     setLogin(leaderss[num].login);
     setAvatar(leaderss[num].avatar_url);
     setScore(leaderss[num].score);
-    // setUpdation(leaderss[num].score);
-
   };
 
   const filterData = () => {
@@ -1187,7 +1149,7 @@ setRow(num)
                               alt="Avatar Image"
                               src={avatar}
                               className="w-24 rounded-full xl:w-28"
-                              onClick={handleModalOpen}
+                              onClick={()=>statsmodal(row)}
                             />
                             <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
                               🏆 {score}
@@ -1299,7 +1261,7 @@ setRow(num)
                               alt="Suvraneel Bhuin"
                               src={avatar}
                               className="w-24 rounded-full xl:w-28"
-                              onClick={handleModalOpen}
+                              onClick={()=>statsmodal(row)}
 
                             />
                             <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
@@ -1383,277 +1345,7 @@ setRow(num)
                 </ModalContent>
               </Modal>
             )}
-            {
-       
-                theme=="dark"? 
-                <Modal
-                isOpen={isStatsModal}
-                onClose={handleClose}
-                size="6xl"
-                aria-labelledby="alert-dialog-slide-title"
-                aria-describedby="alert-dialog-slide-description"
-                backgroundColor="#000"
-                className="max-w[90vw] w-[90vw]"
-              >
-                <ModalOverlay />
-                <ModalContent backgroundColor="#000000">
-                  {/* <ModalHeader
-                    className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed"
-                    id="alert-dialog-slide-title"
-                  >
-                    {login + "'s Stats"}
-                  </ModalHeader> */}
-                  <ModalBody>
-                    <div className="flex-auto py-2 px-6 overflow-y-auto">
-                      <div id="alert-dialog-slide-description">
-                      <div className="h-auto items-center" style={{ display: "flex", alignItems: "center",flexDirection:"column-reverse" }}>
-                      <span className="text-gray-500 text-lg font-semibold "><i>{modalTimeUpdated}</i></span>  <p className="font-bold text-4xl text-white"> <span className="text-[#ff7a19]">{login}</span>{ "'s Stats"}</p>
-                            <img
-                              id="avatarImage"
-                              alt="Avatar Image"
-                              src={avatar}
-                              className="w-24 rounded-full xl:w-28"
-                            />
-                        
-                          </div>
-                          <div className="flex justify-center flex-wrap pt-4 gap-2">
-                              {
-                                badges.map((badge, i) => {
-                                  return (
-                                    <div key={i} className="relative w-auto group">
-                                      <Image
-                                        className="w-full h-auto opacity-100 transition-opacity duration-500 ease-in-out group-hover:opacity-50"
-                                        src={badge.badge}
-                                        width={70}
-                                        height={70}
-                                        id={`badge-${i}-${i}`}
-                                        alt={`Badge ${i}`}
-                                        onMouseOver={() => setImageClicked(true)}
-
-                                      />
-                                      {imageClicked && (
-                                      <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
-                                        <div className="flex w-full space-x-2">
-                                          <button
-                                            onClick={() => createTemplate(badge.badge, "share", login , score , avatar , badge.name)}
-                                            className="bg-gray-700 w-1/2 p-2.5 rounded-full"
-                                            disabled={!imageClicked}
-                                          >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
-                                          </button>
-                                          <button
-                                            onClick={() => createTemplate(badge.badge, "download", login , score , avatar , badge.name)}
-                                            className="bg-blue-700 w-1/2 p-1 rounded-full"
-                                            disabled={!imageClicked}
-                                          >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"  fill="#ffffff" viewBox="0 0 512 512"><path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
-                                          </button>
-                                        </div>
-                                      </div>
-                                      )}
-                                    </div>
-                                  );
-                                })
-                              }
-                          </div>
-                        <div
-                          style={{
-                            marginTop: 30,
-                            fontWeight: "bolder",
-                            color: "#fe8026",
-                         marginBottom:"20px" }}
-                        >
-                          List Of PullRequests:{" "}
-                        </div>
-                        <table>
-                          <thead>
-                          <tr class="bg-[#ff7a19] overflow-x-scroll">
-                    <th class="border px-4 py-2 min-w-[100px]">No</th>
-                    <th class="border px-4 py-2 min-w-[100px] w-auto">Repository</th>
-                    <th class="border px-4 py-2  min-w-[100px] whitespace-nowrap w-auto">Title</th>
-                    <th class="border px-4 py-2  min-w-[100px] w-auto">Level</th>
-                    <th class="border px-4 py-2 min-w-[100px] w-auto">Commits</th>
-                    <th class="border px-4 py-2 min-w-[100px] w-auto">Comments</th>
-                    <th class="border px-4 py-2 min-w-[100px] w-auto">Merged At</th>
-                    <th class="border px-4 py-2 min-w-[100px]  whitespace-nowrap w-auto">Related Issue</th>
-                </tr>
-                          </thead>
-                          <tbody>
-                          {links.length !== 0 &&
-                          links.map((link,index) => {
-                 return (   <tr>
-                    <td class="border px-4 py-2  whitespace-nowrap text-center text-white" style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{index+1}</td>
-                    <td class="border px-4 py-2 whitespace-nowrap text-[#fe8026]"style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{link[7]}</td>
-                    <td class="border px-4 py-2 text-white  whitespace-nowrap "style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{link[0]}</td>
-                    <td class="border px-4 py-2 whitespace-nowrap text-center w-[150px] text-white"style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{link[1]}</td>
-                    <td class="border px-4 py-2 whitespace-nowrap text-center text-white"style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{link[2]}</td>
-                    <td class="border px-4 py-2 whitespace-nowraptext-center text-white"style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{link[3]}</td>
-                    <td class="border px-4 py-2 whitespace-nowrap text-center text-white"style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`}}>{link[4]}</td>
-                    <td class="border border-white whitespace-nowrap  px-4 py-2 text-center text-white"style={{backgroundColor:`${index%2==0?"rgb(24, 22, 22)":"black"}`,border:"solid 1px white"}} className="text-center"><a target="_blank"   className="text-green-500 text-center" href={link[5]}>{link[6]}</a></td>
-                </tr>)
-})}
-               
-            </tbody>
-                        </table>
-                       
-                      </div>
-                    </div>
-                    <div className="flex px-2 py-2 items-center justify-end">
-                      <button
-                        onClick={handleClose}
-                        color="primary"
-                        className="close-btn"
-                        style={{
-                          background: "#FA6329",
-                          border: "none",
-                          padding: "10px 20px",
-                          color: "white",
-                          borderRadius: 5,
-                          cursor: "pointer",
-                          fontSize: "18px",
-                        }}
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </ModalBody>
-                </ModalContent>
-              </Modal>:
-               <Modal
-               isOpen={isStatsModal}
-               onClose={handleClose}
-               size="6xl"
-               aria-labelledby="alert-dialog-slide-title"
-               aria-describedby="alert-dialog-slide-description"
-               backgroundColor="#ffffff"
-               className="max-w[90vw] w-[90vw]"
-             >
-               <ModalOverlay />
-               <ModalContent backgroundColor="#ffffff">
-                 {/* <ModalHeader
-                   className="dark:text-white flex m-0 py-4 px-6 font-medium text-lg leading-relaxed"
-                   id="alert-dialog-slide-title"
-                 >
-                   {login + "'s Stats"}
-                 </ModalHeader> */}
-                 <ModalBody>
-                   <div className="flex-auto py-2 px-6 overflow-y-auto">
-                     <div id="alert-dialog-slide-description">
-                     <div className="h-auto items-center" style={{ display: "flex", alignItems: "center",flexDirection:"column-reverse" }}>
-                     <span className="text-gray-500 text-lg font-semibold "><i>{modalTimeUpdated}</i></span>  <p className="font-bold text-4xl text-black"> <span className="text-[#ff7a19]">{login}</span>{ "'s Stats"}</p>
-                           <img
-                             id="avatarImage"
-                             alt="Avatar Image"
-                             src={avatar}
-                             className="w-24 rounded-full xl:w-28"
-                           />
-                       
-                         </div>
-                         <div className="flex justify-center flex-wrap pt-4 gap-2">
-                             {
-                               badges.map((badge, i) => {
-                                 return (
-                                   <div key={i} className="relative w-auto group">
-                                     <Image
-                                       className="w-full h-auto opacity-100 transition-opacity duration-500 ease-in-out group-hover:opacity-50"
-                                       src={badge.badge}
-                                       width={70}
-                                       height={70}
-                                       id={`badge-${i}-${i}`}
-                                       alt={`Badge ${i}`}
-                                       onMouseOver={() => setImageClicked(true)}
- 
-                                     />
-                                     {imageClicked && (
-                                     <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
-                                       <div className="flex w-full space-x-2">
-                                         <button
-                                           onClick={() => createTemplate(badge.badge, "share", login , score , avatar , badge.name)}
-                                           className="bg-gray-700 w-1/2 p-2.5 rounded-full"
-                                           disabled={!imageClicked}
-                                         >
-                                           <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
-                                         </button>
-                                         <button
-                                           onClick={() => createTemplate(badge.badge, "download", login , score , avatar , badge.name)}
-                                           className="bg-blue-700 w-1/2 p-1 rounded-full"
-                                           disabled={!imageClicked}
-                                         >
-                                           <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"  fill="#ffffff" viewBox="0 0 512 512"><path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
-                                         </button>
-                                       </div>
-                                     </div>
-                                     )}
-                                   </div>
-                                 );
-                               })
-                             }
-                         </div>
-                       <div
-                         style={{
-                           marginTop: 30,
-                           fontWeight: "bolder",
-                           color: "#fe8026",
-                        marginBottom:"20px" }}
-                       >
-                         List Of PullRequests:{" "}
-                       </div>
-                       <table>
-                         <thead>
-                         <tr class="bg-black text-white overflow-x-scroll">
-                   <th class="border px-4 py-2 min-w-[100px]">No</th>
-                   <th class="border px-4 py-2 min-w-[100px] w-auto">Repository</th>
-                   <th class="border px-4 py-2  min-w-[100px] whitespace-nowrap w-auto">Title</th>
-                   <th class="border px-4 py-2  min-w-[100px] w-auto">Level</th>
-                   <th class="border px-4 py-2 min-w-[100px] w-auto">Commits</th>
-                   <th class="border px-4 py-2 min-w-[100px] w-auto">Comments</th>
-                   <th class="border px-4 py-2 min-w-[100px] w-auto">Merged At</th>
-                   <th class="border px-4 py-2 min-w-[100px]  whitespace-nowrap w-auto">Related Issue</th>
-               </tr>
-                         </thead>
-                         <tbody>
-                         {links.length !== 0 &&
-                         links.map((link,index) => {
-                return (   <tr>
-                   <td class="border px-4 py-2  whitespace-nowrap text-center text-white" style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{index+1}</td>
-                   <td class="border px-4 py-2 whitespace-nowrap text-[white]" style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{link[7]}</td>
-                   <td class="border px-4 py-2 text-white  whitespace-nowrap " style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{link[0]}</td>
-                   <td class="border px-4 py-2 whitespace-nowrap text-center w-[150px] text-white" style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{link[1]}</td>
-                   <td class="border px-4 py-2 whitespace-nowrap text-center text-white" style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{link[2]}</td>
-                   <td class="border px-4 py-2 whitespace-nowrap text-center text-white" style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{link[3]}</td>
-                   <td class="border px-4 py-2 whitespace-nowrap text-center text-white" style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`}}>{link[4]}</td>
-                   <td class="border border-white whitespace-nowrap  px-4 py-2 text-center text-white"style={{backgroundColor:`${index%2==0?"#d0833e":"#d9975c"}`,border:"solid 1px white"}} className="text-center"><a target="_blank"   className="text-white text-center" href={link[5]}>{link[6]}</a></td>
-               </tr>)
- })}
-              
-           </tbody>
-                       </table>
-                      
-                     </div>
-                   </div>
-                   <div className="flex px-2 py-2 items-center justify-end">
-                     <button
-                       onClick={handleClose}
-                       color="primary"
-                       className="close-btn"
-                       style={{
-                         background: "#FA6329",
-                         border: "none",
-                         padding: "10px 20px",
-                         color: "white",
-                         borderRadius: 5,
-                         cursor: "pointer",
-                         fontSize: "18px",
-                       }}
-                     >
-                       Close
-                     </button>
-                   </div>
-                 </ModalBody>
-               </ModalContent>
-             </Modal>
-             
-            }
+           
           </div>
         </div>
       </div>
