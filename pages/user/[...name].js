@@ -1,10 +1,10 @@
 
+import React, { useCallback, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import {
   Skeleton,
   Stack,
 } from "@chakra-ui/react";
-import React, { useCallback, useEffect, useState } from "react";
 const columns = [
   { id: "No", label: "No", minWidth: 50 },
   { id: "Repository", label: "Repository", minWidth: 50 },
@@ -71,7 +71,7 @@ function useWindowDimensions() {
 
   return windowDimensions;
 }
-export default function contributorstats() {
+export default function Stats() {
     const { theme } = useTheme();
     let [time,setTime]=useState('')
     let [rows,setRows]=useState([])
