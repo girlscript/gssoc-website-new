@@ -153,7 +153,7 @@ export default function Stats() {
              <span className="text-gray-500 text-lg font-semibold "><i>{time}</i></span>
              <p>
               <span className="text-primary_orange-0"> {login} </span>
-              Stat's
+            {  "Stat's"}
               </p> 
             </div>
           </div>
