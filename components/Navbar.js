@@ -5,7 +5,6 @@ import { Tooltip } from "@chakra-ui/react";
 import MoreMenu from "./MoreMenu";
 import ThemeChanger from "./Toggler";
 import { useRouter } from "next/router";
-
 function MyLink(props) {
   let { href, children, ...rest } = props;
   return (
@@ -158,14 +157,14 @@ export const Navbar = () => {
                     <img
                       style={{ width: "200px" }}
                       id="Learn_more"
-                      src="./GS_logo_Black.svg"
+                      src="/GS_logo_Black.svg"
                       alt="GSSoC logo light"
                     />
                   ) : (
                     <img
                       style={{ width: "200px" }}
                       id="Learn_more"
-                      src="./GS_logo_White.svg"
+                      src="/GS_logo_White.svg"
                       alt="GSSoC logo dark"
                     />
                   )}
