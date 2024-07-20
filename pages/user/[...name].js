@@ -249,7 +249,7 @@ export default function Stats() {
                                       // align={column.align}
                                       style={{ verticalAlign: "middle" }}
                                     >
-          <a target="_blank"   className="text-green-500 text-center" href={row[5]}>{row[6]}</a>                              </div> 
+          <a target="_blank" rel="noreferrer"  className="text-green-500 text-center" href={row[5]}>{row[6]}</a>                              </div> 
                                
                               </div>
                             ) : (
@@ -310,7 +310,7 @@ export default function Stats() {
                                     // align={column.align}
                                     style={{ verticalAlign: "middle" }}
                                   >
-        <a target="_blank"   className="text-green-500 text-center" href={row[5]}>{row[6]}</a>                              </div> 
+        <a target="_blank"  rel="noreferrer" className="text-green-500 text-center" href={row[5]}>{row[6]}</a>                              </div> 
                              
                             </div>
                             )}
