@@ -327,7 +327,7 @@ async   function statsmodal(num){
     localStorage.setItem('avatar',leaderss[num].avatar_url)
     localStorage.setItem('login',leaderss[num].login)
     localStorage.setItem('time',modalTimeUpdated)
-    window.location.href=`/user/${leaderss[num].login}`
+    window.location.href=`/user?username=${leaderss[num].login}`
   }
   const { isOpen, onOpen, onClose } = useDisclosure();
   let prlinks = [];
