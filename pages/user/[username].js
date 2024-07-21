@@ -56,7 +56,7 @@ const Page = () => {
           className="mx-auto mb-2 block size-32 md:size-40 rounded-full border-2 border-orange-500 p-1"
         />
         <h3 className="text-center text-2xl font-semibold md:text-4xl">
-          <span className="text-center text-orange-500">@{username}</span>'s
+          <span className="text-center text-orange-500">@{username}</span>&apos;s
           Stats
         </h3>
 
@@ -115,7 +115,7 @@ const Page = () => {
                       {pr.repository.name}
                     </td>
                     <td className="border border-zinc-700/75 p-1.5  text-xs md:px-3 md:text-base max-w-72 truncate text-left md:max-w-96">
-                      <a href={pr.url} target="_blank">
+                      <a href={pr.url} target="_blank" rel="noreferrer">
                         {pr.titleHTML}
                       </a>
                     </td>
@@ -140,7 +140,7 @@ const Page = () => {
                       {pr.closingIssuesReferences.nodes.map((issue, index) => (
                         <a
                           key={index}
-                          target="_blank"
+                          target="_blank" rel="noreferrer"
                           href={issue.url}
                           className="text-green-500"
                         >
@@ -227,7 +227,7 @@ const Page = () => {
                     </td>
 
                     <td className="border border-zinc-700/75 p-1.5  text-xs md:px-3 md:text-base max-w-32 truncate text-left text-orange-400 md:max-w-96">
-                      <a href={repo.url} target="_blank">
+                      <a href={repo.url} target="_blank" rel="noreferrer">
                         {repo.name}
                       </a>
                     </td>
