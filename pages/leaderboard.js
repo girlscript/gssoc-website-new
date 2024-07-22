@@ -45,6 +45,13 @@ const columns = [
     minWidth: 100,
     align: "right",
     badges: {
+      1: {
+        score: Math.max,
+        name: "Postman Badge",
+        badge: "./badges/postman.png",
+        content:
+          "Congratulations! You've unlocked the Explorer Badge for reaching 60 points. Keep exploring and discovering new horizons!",
+      },
       60: {
         score: 60,
         name: "Explorer Badge",
@@ -174,7 +181,8 @@ function Leaderboard() {
     level2,
     level3,
     level4,
-    rank
+    rank,
+    postManTag
   ) {
     return {
       username,
@@ -189,16 +197,21 @@ function Leaderboard() {
       level3,
       level4,
       rank,
+      postManTag
     };
   }
-  function createBadgesList(score) {
+  function createBadgesList(user) {
+    let score = user.score
     const badgeColumn = columns.find(column => column.id === 'badge');
     let badges = [];
 
     for (const key in badgeColumn.badges) {
       if (badgeColumn.badges.hasOwnProperty(key)) {
         const badge = badgeColumn.badges[key];
-        if (score >= badge.score) {
+        if (badge.score == Math.max && user.postManTag) {
+            badges.push(badge);
+        }
+        else if (score >= badge.score) {
           badges.push(badge);
         }
       }
@@ -301,7 +314,8 @@ function Leaderboard() {
         leaderss[leader].level2,
         leaderss[leader].level3,
         leaderss[leader].level4,
-        leaderss[leader].rank
+        leaderss[leader].rank,
+        leaderss[leader].postManTag
       )
     );
   }
@@ -317,7 +331,7 @@ async   function statsmodal(num){
     unique.map(async (data)=>{
       arr1.push(data)
     })
-    setBadges(createBadgesList(leaderss[num].score));
+    setBadges(createBadgesList(leaderss[num]));
     arr1=await JSON.stringify(arr1)
     localStorage.setItem('data',arr1)
   
@@ -379,7 +393,7 @@ const date=formatDate(response.merged_at)
 
     let unique = prlinks.filter((item, i, ar) => ar.indexOf(item) === i);
     setLinks(unique);
-    setBadges(createBadgesList(leaderss[num].score));
+    setBadges(createBadgesList(leaderss[num]));
     // setLeveldata({
     //     level0: leaderss[num].level0,
     //     level1: leaderss[num].level1,
@@ -905,7 +919,7 @@ const date=formatDate(response.merged_at)
                                         </button>
                                       ) : column.id === "badge" ? (
                                         <div>
-                                          {row["score"] >= 60 && (
+                                          {row["score"] > 0 && (
                                             <>
                                           <Image
                                             src={
@@ -924,7 +938,8 @@ const date=formatDate(response.merged_at)
                                                 : row["score"] >= 140
                                                 ? column.badges[140].badge
                                                 : row["score"] >= 60 ?
-                                                  column.badges[60].badge : "data:"
+                                                  column.badges[60].badge
+                                                : row["postManTag"] ? column.badges[1].badge: "data:"
                                             }
                                             width={75}
                                             height={75}
@@ -950,8 +965,9 @@ const date=formatDate(response.merged_at)
                                                 ? column.badges[200].name
                                                 : row["score"] >= 140
                                                 ? column.badges[140].name
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].name : "data:"
+                                                : row["score"] >= 60 
+                                                ? column.badges[60].badge
+                                                : row["postManTag"] && column.badges[1].name
                                             }
                                           </Tooltip>
                                           </>
@@ -1028,7 +1044,7 @@ const date=formatDate(response.merged_at)
                                         </button>
                                       ) : column.id === "badge" ? (
                                         <div>
-                                          {row["score"] >= 60 &&
+                                          {row["score"] > 0 &&
                                           (
                                             <>
                                           <Image
@@ -1047,8 +1063,10 @@ const date=formatDate(response.merged_at)
                                                 ? column.badges[200].badge
                                                 : row["score"] >= 140
                                                 ? column.badges[140].badge
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].badge : "data:"
+                                                : row["score"] >= 60 
+                                                ? column.badges[60].badge
+                                                : row["postManTag"] 
+                                                ? column.badges[1].badge : "data:"
                                             }
                                             width={75}
                                             height={75}
@@ -1074,8 +1092,9 @@ const date=formatDate(response.merged_at)
                                                 ? column.badges[200].name
                                                 : row["score"] >= 140
                                                 ? column.badges[140].name
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].name : "data:"
+                                                : row["score"] >= 60 
+                                                ? column.badges[60].badge
+                                                : row["postManTag"] && column.badges[1].name
                                             }
                                           </Tooltip>
                                           </>
