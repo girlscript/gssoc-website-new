@@ -1,48 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Spacer } from "@chakra-ui/react";
 import Head from "next/head";
+import Image from "next/image";
 
 const WobTeam = () => {
+  const [users, setUsers] = useState([]);
 
-  // have to update it with actual team members
-  const team = [
-    {
-      Designation: "Content Developer",
-      GitHub: "https://github.com",
-      Image: "/WoB/teamMember.png",
-      LinkedIn: "https://www.linkedin.com",
-      Name: "Kavya Jain",
-      Twitter: "https://twitter.com",
-    },
-    {
-      Designation: "Content Developer",
-      GitHub: "https://github.com",
-      Image: "/WoB/teamMember.png",
-      LinkedIn: "https://www.linkedin.com",
-      Name: "Kavya Jain",
-      Twitter: "https://twitter.com",
-    },
-    {
-      Designation: "Content Developer",
-      GitHub: "https://github.com",
-      Image: "/WoB/teamMember.png",
-      LinkedIn: "https://www.linkedin.com",
-      Name: "Kavya Jain",
-      Twitter: "https://twitter.com",
-    },
-  ];
+  const getUsers = async (year) => {
+    let url = `/WoB/wob_team/team${year}.json`;
+    const response = await fetch(url);
+    setUsers(await response.json());
+  };
+
+  useEffect(() => {
+    var customQuery = window.location.href.split("#")[1];
+    customQuery ? getUsers(customQuery) : getUsers("2024");
+  }, []);
 
   return (
     <>
       <Head>
         <title>
-          Team | GirlScript Winter of Blockchain 2024 | GirlScript Foundation India
+          Team | GirlScript Winter of Blockchain 2024 | GirlScript Foundation
+          India
         </title>
-        <meta name="description" content="GirlScript Winter of Blockchain Team" />
-        <link
-          rel="icon"
-          href="/WoB/Favicon.ico"
+        <meta
+          name="description"
+          content="GirlScript Winter of Blockchain Team"
         />
+        <link rel="icon" href="/WoB/Favicon.ico" />
       </Head>
       <div className="self-stretch flex w-screen flex-col items-center justify-start py-0 px-0 box-border max-w-full text-center text-29xl text-skyblue font-text-4xl-225rem-3rem">
         <div className="flex flex-col items-center justify-start gap-[66px] w-full">
@@ -67,21 +53,27 @@ const WobTeam = () => {
         </div>
       </div>
       <Spacer mt={10} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-10">
-        {team.map((member, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 p-10">
+        {users.map((member, index) => (
           <div
             key={index}
             className="relative bg-[#DBF6FF] shadow-xl rounded-xl h-[464px] w-[90%] max-w-[336px] text-center text-black mx-auto"
           >
             <div className="absolute top-[-5%] h-[434px] w-[90%] max-w-[290px] left-[5%] right-[5%] z-[1] flex flex-col items-center justify-center gap-4">
               <img
-                className="rounded-xl w-full h-[290px] object-cover"
+                className="rounded-xl hover:-translate-y-4 duration-300 hover:cursor-pointer w-full h-[290px] object-cover"
                 src={member.Image}
                 alt={member.Name}
               />
+              {console.log(member.Image)}
+              {/* <iframe className="rounded-xl w-full h-[290px] object-cover" src="https://drive.google.com/file/d/1EF8pCFmYBEDEisz4ihhM5ckn-VDprzCk/preview" allow="autoplay"></iframe> */}
               <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl font-semibold">{member.Name}</h3>
-                <p className="text-base sm:text-lg text-gray-500">{member.Designation}</p>
+                <h3 className="text-2xl sm:text-3xl font-semibold">
+                  {member.Name}
+                </h3>
+                <p className="text-base sm:text-lg text-gray-500">
+                  {member.Designation}
+                </p>
               </div>
               <div className="flex flex-row gap-3">
                 <a
