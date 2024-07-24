@@ -65,8 +65,6 @@ const WobTeam = () => {
                 src={member.Image}
                 alt={member.Name}
               />
-              {console.log(member.Image)}
-              {/* <iframe className="rounded-xl w-full h-[290px] object-cover" src="https://drive.google.com/file/d/1EF8pCFmYBEDEisz4ihhM5ckn-VDprzCk/preview" allow="autoplay"></iframe> */}
               <div className="text-center">
                 <h3 className="text-2xl sm:text-3xl font-semibold">
                   {member.Name}
