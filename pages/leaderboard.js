@@ -337,7 +337,7 @@ function Leaderboard() {
     localStorage.setItem("avatar", leaderss[num].avatar_url);
     localStorage.setItem("login", leaderss[num].login);
     localStorage.setItem("time", modalTimeUpdated);
-    window.location.href = `/user/${leaderss[num].login}`;
+    window.location.href = `/contributorAnalytics`;
   }
   const { isOpen, onOpen, onClose } = useDisclosure();
   let prlinks = [];
