@@ -51,7 +51,6 @@ export default function Stats() {
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("data"));
-    console.log(data);
     if (data) {
       data.forEach(fetchPRDetails);
     }
@@ -61,7 +60,7 @@ export default function Stats() {
   }, []);
 
   async function fetchPRDetails(prUrl) {
-    console.log(process.env.GH_ACCESS_TOKEN);
+    console.log(process.env.GH_ACCESS_TOKEN?`true`:`false`);
     try {
       const apiUrl = prUrl
         .replace("github.com", "api.github.com/repos")

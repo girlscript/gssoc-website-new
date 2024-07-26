@@ -101,7 +101,7 @@ const columns = [
         score: 5500,
         name: "Legend Badge",
         badge: "./badges/8.png",
-      }
+      },
     },
   },
   {
@@ -145,12 +145,12 @@ function useWindowDimensions() {
 function Leaderboard() {
   const { theme } = useTheme();
   let [totalData, setTotalData] = useState([]);
-  let [modalTimeUpdated,setModalLastUpdated]=useState('')
+  let [modalTimeUpdated, setModalLastUpdated] = useState("");
   let [leaderss, setLeaderss] = useState([]);
   let [searchData, setSearchData] = useState([]);
   let [links, setLinks] = useState([]);
   let [isStatsModal, setIsStatsModal] = useState(false);
-  let [row,setRow]=useState(-1)
+  let [row, setRow] = useState(-1);
   let [badges, setBadges] = useState([]);
   let [login, setLogin] = useState("");
   let [score, setScore] = useState("");
@@ -166,7 +166,7 @@ function Leaderboard() {
   const { height, width } = useWindowDimensions();
   const [itemsPerPage, setItemsPerPage] = useState(50); // default items per page
   const [imageClicked, setImageClicked] = useState(false); // used in badge sharing
-  const [userPrData,setUserPrData]=useState([])
+  const [userPrData, setUserPrData] = useState([]);
   let rows = [];
 
   function createData(
@@ -197,45 +197,43 @@ function Leaderboard() {
       level3,
       level4,
       rank,
-      postManTag
+      postManTag,
     };
   }
   function createBadgesList(user) {
-    let score = user.score
-    const badgeColumn = columns.find(column => column.id === 'badge');
+    let score = user.score;
+    const badgeColumn = columns.find((column) => column.id === "badge");
     let badges = [];
 
     for (const key in badgeColumn.badges) {
       if (badgeColumn.badges.hasOwnProperty(key)) {
         const badge = badgeColumn.badges[key];
         if (badge.score == Math.max && user.postManTag) {
-            badges.push(badge);
-        }
-        else if (score >= badge.score) {
+          badges.push(badge);
+        } else if (score >= badge.score) {
           badges.push(badge);
         }
       }
     }
 
-    return badges
+    return badges;
   }
   function formatDateTime(dateString) {
     const date = new Date(dateString);
 
     // Extract date components
     const day = date.getDate();
-    const month = date.toLocaleString('default', { month: 'long' });
+    const month = date.toLocaleString("default", { month: "long" });
     const year = date.getFullYear();
-
     // Extract time components
     let hours = date.getHours();
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
-
+    console.log(`${day} ${month} ${year}, ${hours}:${minutes} ${ampm}`);
     return `${day} ${month} ${year}, ${hours}:${minutes} ${ampm}`;
-}
+  }
   useEffect(() => {
     setIsLoading(true);
     setIsLboardLoading(true);
@@ -272,12 +270,12 @@ function Leaderboard() {
               a.login < b.login
             );
           });
-          
+
           let blacklist = ["Ajay-Dhangar"];
 
           const rankedData = data.leaderboard
             .filter((usr) => {
-              return (blacklist.includes(usr.login) === false);
+              return blacklist.includes(usr.login) === false;
             })
             .map((contributorData, idx) => ({
               ...contributorData,
@@ -290,7 +288,7 @@ function Leaderboard() {
           setSearchData(rankedData);
           setOpenn(false);
           setLastupdated(data.updatedTimestring);
-          setModalLastUpdated(formatDateTime(data.updatedTimestring))
+          setModalLastUpdated(formatDateTime(data.updatedAt));
           setShowConfetti(true);
           setTimeout(function () {
             setShowConfetti(false);
@@ -320,65 +318,79 @@ function Leaderboard() {
     );
   }
 
-async   function statsmodal(num){
+  async function statsmodal(num) {
     for (let link in leaderss[num].pr_urls) {
-      
       prlinks.push(leaderss[num].pr_urls[link]);
     }
     let unique = prlinks.filter((item, i, ar) => ar.indexOf(item) === i);
-    console.log(unique)
-    let arr1=[]
-    unique.map(async (data)=>{
-      arr1.push(data)
-    })
+    console.log(unique);
+    let arr1 = [];
+    unique.map(async (data) => {
+      arr1.push(data);
+    });
     setBadges(createBadgesList(leaderss[num]));
-    arr1=await JSON.stringify(arr1)
-    localStorage.setItem('data',arr1)
-  
+    arr1 = JSON.stringify(arr1);
+    localStorage.setItem("data", arr1);
     setLogin(leaderss[num].login);
     setAvatar(leaderss[num].avatar_url);
     setScore(leaderss[num].score);
-    localStorage.setItem('avatar',leaderss[num].avatar_url)
-    localStorage.setItem('login',leaderss[num].login)
-    localStorage.setItem('time',modalTimeUpdated)
-    window.location.href=`/user/${leaderss[num].login}`
+    localStorage.setItem("avatar", leaderss[num].avatar_url);
+    localStorage.setItem("login", leaderss[num].login);
+    localStorage.setItem("time", modalTimeUpdated);
+    window.location.href = `/user/${leaderss[num].login}`;
   }
   const { isOpen, onOpen, onClose } = useDisclosure();
   let prlinks = [];
   function formatDate(dateString) {
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const options = { day: "numeric", month: "long", year: "numeric" };
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-GB', options);
-}
-function extractTitle(title) {
-  // Split the title by '#'
-  const parts = title.split('#');
+    return date.toLocaleDateString("en-GB", options);
+  }
+  function extractTitle(title) {
+    // Split the title by '#'
+    const parts = title.split("#");
 
-  // Get the first part, remove dashes, and trim any extra whitespace
-  const extractedTitle = parts[0].replace(/-/g, ' ').trim();
+    // Get the first part, remove dashes, and trim any extra whitespace
+    const extractedTitle = parts[0].replace(/-/g, " ").trim();
 
-  return extractedTitle;
-}
+    return extractedTitle;
+  }
   async function fetchPRDetails(prUrl) {
     try {
-      const apiUrl = prUrl.replace('github.com', 'api.github.com/repos').replace('/pull/', '/pulls/');
-      let response = await fetch(apiUrl,{method:"GET",headers: {
-        'Accept': 'application/vnd.github.v3+json'
-      }});
-      response=await response.json()
+      const apiUrl = prUrl
+        .replace("github.com", "api.github.com/repos")
+        .replace("/pull/", "/pulls/");
+      let response = await fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          Accept: "application/vnd.github.v3+json",
+        },
+      });
+      response = await response.json();
 
-      const labels = response.labels.map(label => label.name);
-      const levelLabel = labels.find(label => label.toLowerCase().includes('level'));
-      const issueNumber ="#"+ response.issue_url.match(/\/(\d+)$/)[1];
+      const labels = response.labels.map((label) => label.name);
+      const levelLabel = labels.find((label) =>
+        label.toLowerCase().includes("level")
+      );
+      const issueNumber = "#" + response.issue_url.match(/\/(\d+)$/)[1];
       const commitCount = response.commits;
       const commentCount = response.comments;
-      let title=extractTitle(response.title)
-const date=formatDate(response.merged_at)
+      let title = extractTitle(response.title);
+      const date = formatDate(response.merged_at);
       const repositoryName = response.base.repo.name;
-      let arr=[title,levelLabel,commitCount,commentCount,date,response.issue_url,issueNumber,repositoryName]
-     
-      setLinks((prev)=>[...prev,arr]);
-      return arr
+      let arr = [
+        title,
+        levelLabel,
+        commitCount,
+        commentCount,
+        date,
+        response.issue_url,
+        issueNumber,
+        repositoryName,
+      ];
+
+      setLinks((prev) => [...prev, arr]);
+      return arr;
     } catch (error) {
       console.error(`Error fetching PR details: ${error.message}`);
       return null;
@@ -386,7 +398,7 @@ const date=formatDate(response.merged_at)
   }
   let handleClickOpen = (num) => {
     onOpen(true);
-    setRow(num)
+    setRow(num);
     for (let link in leaderss[num].pr_urls) {
       prlinks.push(leaderss[num].pr_urls[link] + "\n\n\n\n");
     }
@@ -424,13 +436,13 @@ const date=formatDate(response.merged_at)
 
   const handleClose = () => {
     prlinks = [];
-    setLinks([])
-    setIsStatsModal(false)
-    console.log("Setting Links")
+    setLinks([]);
+    setIsStatsModal(false);
+    console.log("Setting Links");
     onOpen(false);
     onClose();
   };
- 
+
   const handlePageChange = (pageNumber) => {
     // console.log(`active page is ${pageNumber}`);
     setActivePage(pageNumber);
@@ -444,47 +456,59 @@ const date=formatDate(response.merged_at)
   const shareBadge = (badgeImageUrl) => {
     // Fetch the image from your server
     fetch(badgeImageUrl)
-      .then(response => response.blob())
-      .then(imageBlob => {
-        const imageFile = new File([imageBlob], 'Share Badge.png', { type: 'image/png' });
+      .then((response) => response.blob())
+      .then((imageBlob) => {
+        const imageFile = new File([imageBlob], "Share Badge.png", {
+          type: "image/png",
+        });
         const shareData = {
           files: [imageFile],
-          title: 'Happy to contribute',
-          text: 'Check out my badge!',
+          title: "Happy to contribute",
+          text: "Check out my badge!",
         };
-        navigator.share(shareData)
+        navigator
+          .share(shareData)
           .then(() => {
-            console.log('Shared your badge!');
+            console.log("Shared your badge!");
           })
           .catch((error) => {
-            console.log('Error sharing your badge:', error);
+            console.log("Error sharing your badge:", error);
           });
       });
   };
 
   const downloadImage = (badgeImageUrl) => {
     fetch(badgeImageUrl)
-      .then(response => response.blob())
-      .then(imageBlob => {
-        const imageFile = new File([imageBlob], 'Share Badge.png', { type: 'image/png' });
+      .then((response) => response.blob())
+      .then((imageBlob) => {
+        const imageFile = new File([imageBlob], "Share Badge.png", {
+          type: "image/png",
+        });
         const imageURL = URL.createObjectURL(imageFile);
-        const link = document.createElement('a');
+        const link = document.createElement("a");
         link.href = imageURL;
-        link.download = 'Share Badge.png';
+        link.download = "Share Badge.png";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       });
   };
 
-  function createTemplate(badgePath, action, name, points, avatarPath, badgeName) {
+  function createTemplate(
+    badgePath,
+    action,
+    name,
+    points,
+    avatarPath,
+    badgeName
+  ) {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
-  
+
     const templateImage = new window.Image();
     const badgeImage = new window.Image();
     const avatarImage = new window.Image();
-  
+
     Promise.all([
       new Promise((resolve, reject) => {
         templateImage.onload = () => resolve();
@@ -501,63 +525,75 @@ const date=formatDate(response.merged_at)
         avatarImage.onerror = reject;
         avatarImage.crossOrigin = "anonymous";
         avatarImage.src = avatarPath;
+      }),
+    ])
+      .then(() => {
+        canvas.width = templateImage.width;
+        canvas.height = templateImage.height;
+        ctx.drawImage(templateImage, 0, 0);
+
+        ctx.drawImage(badgeImage, 85, 715, 655, 655);
+
+        //adjust the username to fit inside the canvas max allowed spacee is 800 pixels - Bold font used Georgia - white color
+        let fontsize = 110;
+        ctx.font = "bold 110px Courier New";
+        while (ctx.measureText(name).width > 800) {
+          fontsize -= 5;
+          ctx.font = `bold ${fontsize}px Courier New`;
+        }
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(name, 870, 580);
+
+        // bold font monospace carrier new - black color
+        ctx.font = "bold 100px Courier New";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#000000";
+        ctx.fillText(points, 1050, 1150);
+        ctx.textAlign = "right";
+        ctx.fillText(badgeName, 1300, 1600);
+
+        // clip the drawing area to a circle to draw avatar picture as a circle // this change cant be reset and hence it placed at the end of the code
+        const radius = 165;
+        const imageWidth = 330;
+        const imageHeight = 330;
+        const avatarX = 1150 - imageWidth / 2;
+        const avatarY = 530 - imageHeight / 2;
+        //clip canvas
+        ctx.beginPath();
+        ctx.arc(
+          avatarX + imageWidth / 2,
+          avatarY + imageHeight / 2,
+          radius,
+          0,
+          2 * Math.PI,
+          true
+        );
+        ctx.closePath();
+        ctx.clip();
+        // Draw the image with proper centering and potential scaling
+        ctx.drawImage(avatarImage, avatarX, avatarY, imageWidth, imageHeight);
+
+        const dataURL = canvas.toDataURL("image/png");
+
+        if (action == "download") {
+          downloadImage(dataURL);
+        } else {
+          shareBadge(dataURL);
+        }
       })
-    ]).then(() => {
-      canvas.width = templateImage.width;
-      canvas.height = templateImage.height;
-      ctx.drawImage(templateImage, 0, 0);
-
-      ctx.drawImage(badgeImage, 85, 715, 655, 655);
-
-      //adjust the username to fit inside the canvas max allowed spacee is 800 pixels - Bold font used Georgia - white color
-      let fontsize= 110;
-      ctx.font= "bold 110px Courier New";
-      while (ctx.measureText(name).width > 800){
-          fontsize-=5;
-          ctx.font= `bold ${fontsize}px Courier New`;
-      }
-      ctx. textAlign = "right";
-      ctx.fillStyle= "#ffffff";
-      ctx.fillText(name, 870, 580);
-
-      // bold font monospace carrier new - black color
-      ctx.font= "bold 100px Courier New";
-      ctx. textAlign = "center";
-      ctx.fillStyle= "#000000";
-      ctx.fillText(points, 1050, 1150);
-      ctx. textAlign = "right";
-      ctx.fillText(badgeName, 1300, 1600);
-
-      // clip the drawing area to a circle to draw avatar picture as a circle // this change cant be reset and hence it placed at the end of the code
-      const radius = 165;
-      const imageWidth = 330;
-      const imageHeight = 330;
-      const avatarX = 1150  - imageWidth / 2;
-      const avatarY = 530 - imageHeight / 2;
-      //clip canvas
-      ctx.beginPath();
-      ctx.arc(avatarX + imageWidth / 2, avatarY + imageHeight / 2, radius, 0, 2 * Math.PI, true);
-      ctx.closePath();
-      ctx.clip();
-      // Draw the image with proper centering and potential scaling
-      ctx.drawImage(avatarImage, avatarX, avatarY, imageWidth, imageHeight);
-      
-      const dataURL = canvas.toDataURL("image/png");
-
-      if (action=="download"){
-        downloadImage(dataURL);
-      }else {
-        shareBadge(dataURL);
-      }
-    }).catch(err => {
-      console.error("Error loading images:", err);
-    });
+      .catch((err) => {
+        console.error("Error loading images:", err);
+      });
   }
 
   useEffect(() => {
     if ((activePage - 1) * itemsPerPage + itemsPerPage < searchData.length) {
       setLeaderss(
-        searchData.slice((activePage - 1) * itemsPerPage, (activePage - 1) * itemsPerPage + itemsPerPage)
+        searchData.slice(
+          (activePage - 1) * itemsPerPage,
+          (activePage - 1) * itemsPerPage + itemsPerPage
+        )
       );
     } else {
       setLeaderss(searchData.slice((activePage - 1) * itemsPerPage));
@@ -707,8 +743,7 @@ const date=formatDate(response.merged_at)
             </div>
 
             <div className="mt-10">
-
-            {/* // remove this comment to add this pagination
+              {/* // remove this comment to add this pagination
             <div className="pagination-holder">
                   <Pagination
                     innerClass={
@@ -729,12 +764,13 @@ const date=formatDate(response.merged_at)
                 </div> */}
 
               <div className="flex mb-5">
-                  <div className="input-group relative flex flex-wrap items-stretch w-full">
-                    <span className="relative flex items-center w-1/2 justify-start">
-                      <label className=" mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                <div className="input-group relative flex flex-wrap items-stretch w-full">
+                  <span className="relative flex items-center w-1/2 justify-start">
+                    <label className=" mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
                       Showing
-                      </label>
-                      <select className="relative bg-gray-300 dark:bg-neutral-600 text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400 items-center"
+                    </label>
+                    <select
+                      className="relative bg-gray-300 dark:bg-neutral-600 text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400 items-center"
                       onInput={(e) => {
                         // console.log(e);
                         handleItemsPerPageChange(e);
@@ -742,72 +778,73 @@ const date=formatDate(response.merged_at)
                       onChange={(e) => {
                         handlePageChange(1);
                       }}
-                      value={itemsPerPage}>
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50" >50</option>
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                        <option value="500">500</option>
-                        <option value="1000">1000</option>
-                      </select>
-                      <label className=" ml-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
-                      rows per page
-                      </label>
-                      </span>
-                      <span className="relative flex w-1/2 justify-end">
-                    <span className="relative search-container flex w-full justify-end">
-                    <div className="relative flex search-container">
-                      <input
-                        onChange={(e) => {
-                          setFilter(e.target.value);
-                          filterData();
-                        }}
-                        value={filter}
-                        id="searchInputField"
-                        type="text"
-                        className="form-control relative flex-auto min-w-0 block px-0.5 py-1.5 text-base dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-600 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-400 focus:outline-none dark:placeholder-neutral-300"
-                        placeholder="Search"
-                        onKeyUp={() => {
-                          filterData();
-                        }}
-                      />
-                      <span className="search-count dark:text-neutral-300">
-                        {searchData.length}
-                      </span>
-                    </div>
-                    <button
-                      onMouseDown={() => {
-                        setFilter("");
-                      }}
-                      onMouseUp={() => {
-                        filterData();
-                      }}
-                      className="btn relative px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
-                      type="button"
-                      id="clearSearch"
-                      style={{
-                        padding: "10px 10px",
-                        maxWidth: "35px",
-                        width: "20%",
-                      }}
+                      value={itemsPerPage}
                     >
-                      <svg
-                    className="w-4 fill-neutral-600 hover:fill-neutral-800 dark:fill-neutral-300 dark:hover:fill-neutral-100"
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    data-icon="search"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                  >
-                    <path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"></path>
-                  </svg>
-                    </button>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                      <option value="200">200</option>
+                      <option value="500">500</option>
+                      <option value="1000">1000</option>
+                    </select>
+                    <label className=" ml-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
+                      rows per page
+                    </label>
+                  </span>
+                  <span className="relative flex w-1/2 justify-end">
+                    <span className="relative search-container flex w-full justify-end">
+                      <div className="relative flex search-container">
+                        <input
+                          onChange={(e) => {
+                            setFilter(e.target.value);
+                            filterData();
+                          }}
+                          value={filter}
+                          id="searchInputField"
+                          type="text"
+                          className="form-control relative flex-auto min-w-0 block px-0.5 py-1.5 text-base dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-600 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-400 focus:outline-none dark:placeholder-neutral-300"
+                          placeholder="Search"
+                          onKeyUp={() => {
+                            filterData();
+                          }}
+                        />
+                        <span className="search-count dark:text-neutral-300">
+                          {searchData.length}
+                        </span>
+                      </div>
+                      <button
+                        onMouseDown={() => {
+                          setFilter("");
+                        }}
+                        onMouseUp={() => {
+                          filterData();
+                        }}
+                        className="btn relative px-6 py-2.5 bg-gray-300 dark:bg-neutral-600 text-gray-600 font-medium text-xs leading-tight uppercase hover:text-gray-800 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex items-center"
+                        type="button"
+                        id="clearSearch"
+                        style={{
+                          padding: "10px 10px",
+                          maxWidth: "35px",
+                          width: "20%",
+                        }}
+                      >
+                        <svg
+                          className="w-4 fill-neutral-600 hover:fill-neutral-800 dark:fill-neutral-300 dark:hover:fill-neutral-100"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="search"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 512 512"
+                        >
+                          <path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"></path>
+                        </svg>
+                      </button>
                     </span>
-                    </span>
-                  </div>
+                  </span>
+                </div>
               </div>
             </div>
             <div className="bg-sky-100 dark:bg-orange-200 px-1.5 py-1.5 rounded-md mb-3">
@@ -820,7 +857,12 @@ const date=formatDate(response.merged_at)
                 {isLoading === false && lastupdated === null && (
                   <>The server is updating. Please comeback after 5-10 mins</>
                 )}
-                <a className="ml-2 underline hover:no-underline" href="https://github.com/GSSoC24/Contributor/discussions/288" target="_blank" rel="noreferrer" >
+                <a
+                  className="ml-2 underline hover:no-underline"
+                  href="https://github.com/GSSoC24/Contributor/discussions/288"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   More details about badges
                 </a>
               </p>
@@ -856,7 +898,6 @@ const date=formatDate(response.merged_at)
                                 role="checkbox"
                                 aria-checked="false"
                                 tabIndex={-1}
-                                key={row.username}
                               >
                                 {columns.map((column) => {
                                   const value = row[column.id];
@@ -871,8 +912,8 @@ const date=formatDate(response.merged_at)
                                         <img
                                           className="w-9 cursor-pointer rounded-full m-auto bg-white"
                                           src={value}
-                                          onClick={()=>{
-                                            statsmodal(rows.indexOf(row))
+                                          onClick={() => {
+                                            statsmodal(rows.indexOf(row));
                                           }}
                                           alt=""
                                         />
@@ -886,7 +927,6 @@ const date=formatDate(response.merged_at)
                                             size="2x"
                                           />
                                           <a
-                                            
                                             target="_blank"
                                             className="no-underline username"
                                             style={{
@@ -921,60 +961,61 @@ const date=formatDate(response.merged_at)
                                         <div>
                                           {row["score"] > 0 && (
                                             <>
-                                          <Image
-                                            src={
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].badge
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].badge
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].badge
-                                              : row["score"] >= 500
-                                                ? column.badges[500].badge
-                                                : row["score"] >= 300
-                                                ? column.badges[300].badge
-                                                : row["score"] >= 200
-                                                ? column.badges[200].badge
-                                                : row["score"] >= 140
-                                                ? column.badges[140].badge
-                                                : row["score"] >= 60 ?
-                                                  column.badges[60].badge
-                                                : row["postManTag"] ? column.badges[1].badge: "data:"
-                                            }
-                                            width={75}
-                                            height={75}
-                                            id={`badge-${i}`}
-                                            alt=""
-                                          />
-                                          <Tooltip
-                                            anchorSelect={`#badge-${i}`}
-                                            place="right"
-                                          >
-                                            {
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].name
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].name
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].name
-                                              : row["score"] >= 500
-                                                ? column.badges[500].name
-                                                : row["score"] >= 300
-                                                ? column.badges[300].name
-                                                : row["score"] >= 200
-                                                ? column.badges[200].name
-                                                : row["score"] >= 140
-                                                ? column.badges[140].name
-                                                : row["score"] >= 60 
-                                                ? column.badges[60].badge
-                                                : row["postManTag"] && column.badges[1].name
-                                            }
-                                          </Tooltip>
-                                          </>
-                                )}
+                                              <Image
+                                                src={
+                                                  row["score"] >= 5500
+                                                    ? column.badges[5500].badge
+                                                    : row["score"] >= 2500
+                                                    ? column.badges[2500].badge
+                                                    : row["score"] >= 1200
+                                                    ? column.badges[1200].badge
+                                                    : row["score"] >= 500
+                                                    ? column.badges[500].badge
+                                                    : row["score"] >= 300
+                                                    ? column.badges[300].badge
+                                                    : row["score"] >= 200
+                                                    ? column.badges[200].badge
+                                                    : row["score"] >= 140
+                                                    ? column.badges[140].badge
+                                                    : row["score"] >= 60
+                                                    ? column.badges[60].badge
+                                                    : row["postManTag"]
+                                                    ? column.badges[1].badge
+                                                    : "data:"
+                                                }
+                                                width={75}
+                                                height={75}
+                                                id={`badge-${i}`}
+                                                alt=""
+                                              />
+                                              <Tooltip
+                                                anchorSelect={`#badge-${i}`}
+                                                place="right"
+                                              >
+                                                {row["score"] >= 5500
+                                                  ? column.badges[5500].name
+                                                  : row["score"] >= 2500
+                                                  ? column.badges[2500].name
+                                                  : row["score"] >= 1200
+                                                  ? column.badges[1200].name
+                                                  : row["score"] >= 500
+                                                  ? column.badges[500].name
+                                                  : row["score"] >= 300
+                                                  ? column.badges[300].name
+                                                  : row["score"] >= 200
+                                                  ? column.badges[200].name
+                                                  : row["score"] >= 140
+                                                  ? column.badges[140].name
+                                                  : row["score"] >= 60
+                                                  ? column.badges[60].badge
+                                                  : row["postManTag"] &&
+                                                    column.badges[1].name}
+                                              </Tooltip>
+                                            </>
+                                          )}
                                         </div>
                                       ) : (
-                                        value 
+                                        value
                                       )}
                                     </div>
                                   );
@@ -1000,8 +1041,8 @@ const date=formatDate(response.merged_at)
                                         <img
                                           className="w-9 cursor-pointer rounded-full m-auto bg-white"
                                           src={value}
-                                          onClick={()=>{
-                                            statsmodal(rows.indexOf(row))
+                                          onClick={() => {
+                                            statsmodal(rows.indexOf(row));
                                           }}
                                           alt=""
                                         />
@@ -1016,7 +1057,6 @@ const date=formatDate(response.merged_at)
                                           />
                                           <a
                                             href={value[1]}
-                                           
                                             className="no-underline username cursor-pointer"
                                             style={{ alignSelf: "center" }}
                                           >
@@ -1044,61 +1084,60 @@ const date=formatDate(response.merged_at)
                                         </button>
                                       ) : column.id === "badge" ? (
                                         <div>
-                                          {row["score"] > 0 &&
-                                          (
+                                          {row["score"] > 0 && (
                                             <>
-                                          <Image
-                                            src={
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].badge
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].badge
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].badge
-                                              : row["score"] >= 500
-                                                ? column.badges[500].badge
-                                                : row["score"] >= 300
-                                                ? column.badges[300].badge
-                                                : row["score"] >= 200
-                                                ? column.badges[200].badge
-                                                : row["score"] >= 140
-                                                ? column.badges[140].badge
-                                                : row["score"] >= 60 
-                                                ? column.badges[60].badge
-                                                : row["postManTag"] 
-                                                ? column.badges[1].badge : "data:"
-                                            }
-                                            width={75}
-                                            height={75}
-                                            id={`badge-${i}`}
-                                            alt=""
-                                          />
-                                          <Tooltip
-                                            anchorSelect={`#badge-${i}`}
-                                            place="right"
-                                          >
-                                            {
-                                              row["score"] >= 5500 ? 
-                                              column.badges[5500].name
-                                              : row["score"] >= 2500
-                                              ? column.badges[2500].name
-                                              : row["score"] >= 1200
-                                              ? column.badges[1200].name
-                                              : row["score"] >= 500
-                                                ? column.badges[500].name
-                                                : row["score"] >= 300
-                                                ? column.badges[300].name
-                                                : row["score"] >= 200
-                                                ? column.badges[200].name
-                                                : row["score"] >= 140
-                                                ? column.badges[140].name
-                                                : row["score"] >= 60 
-                                                ? column.badges[60].badge
-                                                : row["postManTag"] && column.badges[1].name
-                                            }
-                                          </Tooltip>
-                                          </>
-                                )}
+                                              <Image
+                                                src={
+                                                  row["score"] >= 5500
+                                                    ? column.badges[5500].badge
+                                                    : row["score"] >= 2500
+                                                    ? column.badges[2500].badge
+                                                    : row["score"] >= 1200
+                                                    ? column.badges[1200].badge
+                                                    : row["score"] >= 500
+                                                    ? column.badges[500].badge
+                                                    : row["score"] >= 300
+                                                    ? column.badges[300].badge
+                                                    : row["score"] >= 200
+                                                    ? column.badges[200].badge
+                                                    : row["score"] >= 140
+                                                    ? column.badges[140].badge
+                                                    : row["score"] >= 60
+                                                    ? column.badges[60].badge
+                                                    : row["postManTag"]
+                                                    ? column.badges[1].badge
+                                                    : "data:"
+                                                }
+                                                width={75}
+                                                height={75}
+                                                id={`badge-${i}`}
+                                                alt=""
+                                              />
+                                              <Tooltip
+                                                anchorSelect={`#badge-${i}`}
+                                                place="right"
+                                              >
+                                                {row["score"] >= 5500
+                                                  ? column.badges[5500].name
+                                                  : row["score"] >= 2500
+                                                  ? column.badges[2500].name
+                                                  : row["score"] >= 1200
+                                                  ? column.badges[1200].name
+                                                  : row["score"] >= 500
+                                                  ? column.badges[500].name
+                                                  : row["score"] >= 300
+                                                  ? column.badges[300].name
+                                                  : row["score"] >= 200
+                                                  ? column.badges[200].name
+                                                  : row["score"] >= 140
+                                                  ? column.badges[140].name
+                                                  : row["score"] >= 60
+                                                  ? column.badges[60].badge
+                                                  : row["postManTag"] &&
+                                                    column.badges[1].name}
+                                              </Tooltip>
+                                            </>
+                                          )}
                                         </div>
                                       ) : (
                                         value
@@ -1162,58 +1201,89 @@ const date=formatDate(response.merged_at)
                   <ModalBody>
                     <div className="flex-auto py-2 px-6 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
-                      <div style={{ display: "flex", alignItems: "center" }}>
-                            <img
-                              id="avatarImage"
-                              alt="Avatar Image"
-                              src={avatar}
-                              className="w-24 rounded-full xl:w-28"
-                              onClick={()=>statsmodal(row)}
-                            />
-                            <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
-                              🏆 {score}
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap pt-4 gap-2">
-                              {
-                                badges.map((badge, i) => {
-                                  return (
-                                    <div key={i} className="relative w-auto group">
-                                      <Image
-                                        className="w-full h-auto opacity-100 transition-opacity duration-500 ease-in-out group-hover:opacity-50"
-                                        src={badge.badge}
-                                        width={70}
-                                        height={70}
-                                        id={`badge-${i}-${i}`}
-                                        alt={`Badge ${i}`}
-                                        onMouseOver={() => setImageClicked(true)}
-
-                                      />
-                                      {imageClicked && (
-                                      <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
-                                        <div className="flex w-full space-x-2">
-                                          <button
-                                            onClick={() => createTemplate(badge.badge, "share", login , score , avatar , badge.name)}
-                                            className="bg-gray-700 w-1/2 p-2.5 rounded-full"
-                                            disabled={!imageClicked}
-                                          >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
-                                          </button>
-                                          <button
-                                            onClick={() => createTemplate(badge.badge, "download", login , score , avatar , badge.name)}
-                                            className="bg-blue-700 w-1/2 p-1 rounded-full"
-                                            disabled={!imageClicked}
-                                          >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"  fill="#ffffff" viewBox="0 0 512 512"><path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
-                                          </button>
-                                        </div>
-                                      </div>
-                                      )}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            id="avatarImage"
+                            alt="Avatar Image"
+                            src={avatar}
+                            className="w-24 rounded-full xl:w-28"
+                            onClick={() => statsmodal(row)}
+                          />
+                          <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
+                            🏆 {score}
+                          </p>
+                        </div>
+                        <div className="flex flex-wrap pt-4 gap-2">
+                          {badges.map((badge, i) => {
+                            return (
+                              <div key={i} className="relative w-auto group">
+                                <Image
+                                  className="w-full h-auto opacity-100 transition-opacity duration-500 ease-in-out group-hover:opacity-50"
+                                  src={badge.badge}
+                                  width={70}
+                                  height={70}
+                                  id={`badge-${i}-${i}`}
+                                  alt={`Badge ${i}`}
+                                  onMouseOver={() => setImageClicked(true)}
+                                />
+                                {imageClicked && (
+                                  <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
+                                    <div className="flex w-full space-x-2">
+                                      <button
+                                        onClick={() =>
+                                          createTemplate(
+                                            badge.badge,
+                                            "share",
+                                            login,
+                                            score,
+                                            avatar,
+                                            badge.name
+                                          )
+                                        }
+                                        className="bg-gray-700 w-1/2 p-2.5 rounded-full"
+                                        disabled={!imageClicked}
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="15px"
+                                          height="15px"
+                                          fill="#ffffff"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z" />
+                                        </svg>
+                                      </button>
+                                      <button
+                                        onClick={() =>
+                                          createTemplate(
+                                            badge.badge,
+                                            "download",
+                                            login,
+                                            score,
+                                            avatar,
+                                            badge.name
+                                          )
+                                        }
+                                        className="bg-blue-700 w-1/2 p-1 rounded-full"
+                                        disabled={!imageClicked}
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="25px"
+                                          height="25px"
+                                          fill="#ffffff"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z" />
+                                        </svg>
+                                      </button>
                                     </div>
-                                  );
-                                })
-                              }
-                          </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
                         <div
                           style={{
                             marginTop: 30,
@@ -1275,58 +1345,88 @@ const date=formatDate(response.merged_at)
                   <ModalBody>
                     <div className="flex-auto py-2 px-4 overflow-y-auto">
                       <div id="alert-dialog-slide-description">
-                          <div style={{ display: "flex", alignItems: "center" }}>
-                            <img
-                              alt="Suvraneel Bhuin"
-                              src={avatar}
-                              className="w-24 rounded-full xl:w-28"
-                              onClick={()=>statsmodal(row)}
-
-                            />
-                            <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
-                              🏆 {score}
-                            </p>
-                          </div>
-                          <div className="flex flex-wrap pt-4 gap-2">
-                              {
-                                badges.map((badge, i) => {
-                                  return (
-                                    <div key={i} className="relative w-auto group">
-                                      <Image
-                                        className="w-full h-auto opacity-100 transition-opacity duration-500 ease-in-out group-hover:opacity-50"
-                                        src={badge.badge}
-                                        width={70}
-                                        height={70}
-                                        id={`badge-${i}-${i}`}
-                                        alt={`Badge ${i}`}
-                                        onMouseOver={() => setImageClicked(true)}
-
-                                      />
-                                      {imageClicked && (
-                                      <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
-                                        <div className="flex w-full space-x-2">
-                                          <button
-                                            onClick={() => createTemplate(badge.badge, "share", login , score , avatar , badge.name)}
-                                            className="bg-gray-700 w-1/2 p-2.5 rounded-full"
-                                            disabled={!imageClicked}
-                                          >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" fill="#ffffff" viewBox="0 0 512 512"><path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z"/></svg>
-                                          </button>
-                                          <button
-                                            onClick={() => createTemplate(badge.badge, "download", login , score , avatar , badge.name)}
-                                            className="bg-blue-700 w-1/2 p-1 rounded-full"
-                                            disabled={!imageClicked}
-                                          >
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px"  fill="#ffffff" viewBox="0 0 512 512"><path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"/></svg>
-                                          </button>
-                                        </div>
-                                      </div>
-                                      )}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                          <img
+                            alt="Suvraneel Bhuin"
+                            src={avatar}
+                            className="w-24 rounded-full xl:w-28"
+                            onClick={() => statsmodal(row)}
+                          />
+                          <p className="bg-orange-100 dark:bg-neutral-900 dark:text-white rounded-full p-3 text-center modal-score">
+                            🏆 {score}
+                          </p>
+                        </div>
+                        <div className="flex flex-wrap pt-4 gap-2">
+                          {badges.map((badge, i) => {
+                            return (
+                              <div key={i} className="relative w-auto group">
+                                <Image
+                                  className="w-full h-auto opacity-100 transition-opacity duration-500 ease-in-out group-hover:opacity-50"
+                                  src={badge.badge}
+                                  width={70}
+                                  height={70}
+                                  id={`badge-${i}-${i}`}
+                                  alt={`Badge ${i}`}
+                                  onMouseOver={() => setImageClicked(true)}
+                                />
+                                {imageClicked && (
+                                  <div className="opacity-0 transition-opacity duration-500 ease-in-out absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center group-hover:opacity-100">
+                                    <div className="flex w-full space-x-2">
+                                      <button
+                                        onClick={() =>
+                                          createTemplate(
+                                            badge.badge,
+                                            "share",
+                                            login,
+                                            score,
+                                            avatar,
+                                            badge.name
+                                          )
+                                        }
+                                        className="bg-gray-700 w-1/2 p-2.5 rounded-full"
+                                        disabled={!imageClicked}
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="15px"
+                                          height="15px"
+                                          fill="#ffffff"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z" />
+                                        </svg>
+                                      </button>
+                                      <button
+                                        onClick={() =>
+                                          createTemplate(
+                                            badge.badge,
+                                            "download",
+                                            login,
+                                            score,
+                                            avatar,
+                                            badge.name
+                                          )
+                                        }
+                                        className="bg-blue-700 w-1/2 p-1 rounded-full"
+                                        disabled={!imageClicked}
+                                      >
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="25px"
+                                          height="25px"
+                                          fill="#ffffff"
+                                          viewBox="0 0 512 512"
+                                        >
+                                          <path d="M376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3H304V160c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32v96H150.3C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z" />
+                                        </svg>
+                                      </button>
                                     </div>
-                                  );
-                                })
-                              }
-                          </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
                         <div style={{ marginTop: 30, fontWeight: "bolder" }}>
                           List Of PRs:{" "}
                         </div>
@@ -1364,7 +1464,6 @@ const date=formatDate(response.merged_at)
                 </ModalContent>
               </Modal>
             )}
-           
           </div>
         </div>
       </div>
