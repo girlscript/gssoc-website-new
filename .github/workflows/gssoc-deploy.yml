@@ -33,11 +33,11 @@ jobs:
       - name: Create .env file
         run: |
           echo "JSON_RPC_PROVIDER=${{ secrets.JSON_RPC_PROVIDER }}" > .env.local
-          echo "GH_ACCESS_TOKEN=${{ secrets.GH_ACCESS_TOKEN }}" >> .env.local
+          echo "GH_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env.local
       
       - name: Check if secret is available    
         run: |
-          if [ "${{ secrets.GH_ACCESS_TOKEN }}" != '' ]; then
+          if [ "${{ secrets.GITHUB_TOKEN }}" != '' ]; then
             echo "true, secret is available. ";
           else
             echo "false, secret is not available. ";
@@ -55,6 +55,7 @@ jobs:
           branch: gh-pages
           folder: out
           clean: true  # Optional: clean existing files in the branch
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set deployment status
         run: echo "Deployment to GitHub Pages succeeded"
