@@ -17,7 +17,7 @@ import Card from "../components/homepage/Card";
 import Slider from "../components/homepage/Slider";
 import SocialFollow from "../components/homepage/SocialFollow";
 import ThemeChanger from "../components/Toggler";
-import Image from '../public/GSSoC_Schedule_Light_Mode.png'
+import Image from "../public/GSSoC_Schedule_Light_Mode.png";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -45,17 +45,20 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="GirlScript Summer of Code'24" />
         <meta property="og:description" content="GSSoC'24 is back!" />
-        <meta property="og:image" content="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png" />
-
+        <meta
+          property="og:image"
+          content="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="gssoc.girlscript.tech" />
         <meta property="twitter:url" content="https://gssoc.girlscript.tech/" />
         <meta name="twitter:title" content="GirlScript Summer of Code'24" />
         <meta name="twitter:description" content="GSSoC'24 is here!" />
-        <meta name="twitter:image" content="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png" />
-
-
+        <meta
+          name="twitter:image"
+          content="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png"
+        />
       </Head>
       {/* Bg assets */}
       <div className="hidden lg:block 3xl:hidden">
@@ -105,12 +108,15 @@ export default function Home() {
               <br />
               <b> 10th May - 10th August 2024 </b>
             </div>
-{/* 
+            {/* 
             <div className="ring mb-4 ring-primary_orange-0 text-white ring-offset-4 ring-offset-white dark:ring-offset-darkmode_gray-0 rounded-2xl w-full h-20 flex items-center justify-center drop-shadow-2xl">
               <h2 className="font-serif text-center font-medium text-2xl 1.5rem 2rem text-black dark:text-white"><b>GSSoC&apos;24 Job Fair</b> is coming soon!</h2>
             </div> */}
             <div className="flex items-center mt-2 mb-10 md:mb-52 lg:mb-56">
-              <a className="" href="https://docs.google.com/forms/d/e/1FAIpQLScl2zoD7dOYnftAc9csfY4SD72WJbM1c0XMWAq-4Z7X5k45NA/viewform">
+              <a
+                className=""
+                href="https://docs.google.com/forms/d/e/1FAIpQLScl2zoD7dOYnftAc9csfY4SD72WJbM1c0XMWAq-4Z7X5k45NA/viewform"
+              >
                 <button
                   id="CTA-button"
                   data-aos="fade-down"
@@ -125,7 +131,7 @@ export default function Home() {
                   data-aos="fade-down"
                   className=" bg-gradient-to-b from-primary_orange-0 to-orange-600 text-md text-white font-semibold px-4 py-4 rounded-2xl md:text-2xl md:py-2 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600"
                 >
-                 Learn More
+                  Learn More
                 </button>
               </a>
               {/* <a data-aos="fade-down" href="#about-gssoc">
@@ -142,21 +148,16 @@ export default function Home() {
               options={{ max: 25 }}
               style={{ height: 600, width: 600 }}
             >
-              <div className="img__container">{
-                theme === 'light' ?
-                  <img
-                    src={"./Hero_Image_Lite_Theme.svg"}
-                    alt="hero-image"
-                  /> :
-                  <img
-                    src={"./Hero_Image_Dark_Theme.svg"}
-                    alt="hero-image"
-                  />}
+              <div className="img__container">
+                {theme === "light" ? (
+                  <img src={"./Hero_Image_Lite_Theme.svg"} alt="hero-image" />
+                ) : (
+                  <img src={"./Hero_Image_Dark_Theme.svg"} alt="hero-image" />
+                )}
               </div>
             </Tilt>
           </div>
         </div>
-
 
         <div className="flex justify-between items-center flex-wrap mb-24">
           <div
@@ -464,7 +465,27 @@ export default function Home() {
                   />
                 </a>
               </div> */}
-
+              <div className="flex flex-col sm:flex-row flex-wrap gap-x-20 gap-y-4 md:gap-y-8 justify-evenly items-center mb-5">
+                <a href="https://www.postman.com/">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="./Sponsors/Postman.png"
+                    alt="postman"
+                  />
+                </a>
+                
+                <a href="https://gen.xyz/#gssoc23">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="./Sponsors/dotXYZ.png"
+                    alt=".XYZ"
+                  />
+                </a>
+              </div>
               <h3 className=" dark:text-gray-800 text-[#ff7a19] font-sans font-bold text-4xl  mb-12 place-content-center">
                 Previous Year Sponsors
               </h3>
@@ -511,21 +532,23 @@ export default function Home() {
                 </a>
 
                 <a href="https://vercel.com">
-                  <svg aria-label="Vercel logotype" height="64" role="img" viewBox="0 0 283 64" width="283"><path d="M141.68 16.25c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm117.14-14.5c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm-39.03 3.5c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9v-46h9zM37.59.25l36.95 64H.64l36.95-64zm92.38 5l-27.71 48-27.71-48h10.39l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10v14.8h-9v-34h9v9.2c0-5.08 5.91-9.2 13.2-9.2z" fill="black"></path></svg>
+                  <svg
+                    aria-label="Vercel logotype"
+                    height="64"
+                    role="img"
+                    viewBox="0 0 283 64"
+                    width="283"
+                  >
+                    <path
+                      d="M141.68 16.25c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm117.14-14.5c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zm-39.03 3.5c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9v-46h9zM37.59.25l36.95 64H.64l36.95-64zm92.38 5l-27.71 48-27.71-48h10.39l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10v14.8h-9v-34h9v9.2c0-5.08 5.91-9.2 13.2-9.2z"
+                      fill="black"
+                    ></path>
+                  </svg>
                 </a>
 
-                <a href="https://gen.xyz/#gssoc23">
-                  <img
-                    data-aos="fade-up"
-                    data-aos-anchor-placement="top-bottom"
-                    className="h-16"
-                    src="./Sponsors/dotXYZ.png"
-                    alt=".XYZ"
-                  />
-                </a>
               </div>
-
               
+
               <h3 className=" dark:text-gray-800 text-[#ff7a19] font-sans font-semibold text-3xl  mb-5 place-content-center">
                 Hiring Partners
               </h3>
@@ -551,7 +574,7 @@ export default function Home() {
               </div> */}
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-x-28 justify-between items-center mb-5">
-                <a href="https://www.bluelearn.in/#gssoc22">
+                {/* <a href="https://www.bluelearn.in/#gssoc22">
                   <img
                     data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom"
@@ -559,9 +582,17 @@ export default function Home() {
                     src="./Sponsors/BlueLearn.png"
                     alt="Bluelearn"
                   />
+                </a> */}
+                <a href="https://www.zs.com/">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    className="h-16"
+                    src="./Sponsors/zslogo.jpeg"
+                    alt="zs"
+                  />
                 </a>
               </div>
-
             </div>
           </div>
         </div>
@@ -594,7 +625,6 @@ export default function Home() {
                 content="Participating in GSSoC’24 is an opportunity to upgrade your Github profile. Enrich yourselves to learn, explore, improve, enhance, build connections and become a team player to nourish your skills and personality. Don’t miss a chance to get well-versed with Open-Source and essential tools like Git and Github under the supervision of excellent mentors."
                 btntext="Apply as a Contributor"
                 link="https://swiy.co/contributors"
-
               />
               {/* Card-2 */}
               <Card
@@ -618,7 +648,7 @@ export default function Home() {
                 title="Inviting Projects &amp; NGOs"
                 content="If you are an organization with a project idea in mind, a website or an app then this is the golden opportunity to become a part of an awesome community. The budding developers under the guidance of expert mentors will work on your projects and strive to achieve the best version. Apply and let’s collaborate together because Together Everyone Achieves More."
                 btntext="Apply as an Organization/Project Admin"
-                link="https://bit.ly/GSSoC24-Projects" 
+                link="https://bit.ly/GSSoC24-Projects"
               />
               {/* Card-4 */}
               <Card
@@ -633,22 +663,16 @@ export default function Home() {
       </div>
 
       {/* Schedule */}
-      <div className="schedule__container flex flex-col items-center  mb-20  mx-5 md:mx-20  "> 
+      <div className="schedule__container flex flex-col items-center  mb-20  mx-5 md:mx-20  ">
         <div className="schedule__overview  relative">
           <p className="font-sans font-semibold text-3xl ml-5 mb-4 dark:text-white">
             <span className="text-primary_orange-0">Schedule</span> of GSSoC
             2024!
           </p>
           {theme === "light" ? (
-            <img
-              id="Learn_more"
-              src="/GSSoC_Schedule_Light_Mode-2024.png"
-            />
+            <img id="Learn_more" src="/GSSoC_Schedule_Light_Mode-2024.png" />
           ) : (
-            <img
-              id="Learn_more"       
-              src="/GSSoC_Schedule_Dark_Mode-2024.png"
-            />
+            <img id="Learn_more" src="/GSSoC_Schedule_Dark_Mode-2024.png" />
           )}
         </div>
       </div>

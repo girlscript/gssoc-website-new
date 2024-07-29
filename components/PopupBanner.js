@@ -13,7 +13,7 @@ const PopupBanner = ({ onClose }) => {
           &times;
         </button>
         <Image
-          src="/postman_challenge.png"
+          src="/GSSOC_popup.webp"
           alt="Postman Challenge"
           width={600}
           height={300}
