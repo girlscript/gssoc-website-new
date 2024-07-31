@@ -1007,7 +1007,7 @@ function Leaderboard() {
                                                   : row["score"] >= 140
                                                   ? column.badges[140].name
                                                   : row["score"] >= 60
-                                                  ? column.badges[60].badge
+                                                  ? column.badges[60].name
                                                   : row["postManTag"] &&
                                                     column.badges[1].name}
                                               </Tooltip>
@@ -1132,7 +1132,7 @@ function Leaderboard() {
                                                   : row["score"] >= 140
                                                   ? column.badges[140].name
                                                   : row["score"] >= 60
-                                                  ? column.badges[60].badge
+                                                  ? column.badges[60].name
                                                   : row["postManTag"] &&
                                                     column.badges[1].name}
                                               </Tooltip>
