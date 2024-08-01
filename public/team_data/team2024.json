@@ -1,255 +1,262 @@
-[  
-    {  
-        "Name": "Anubha Maneshwar",  
-        "Designation": "Founder & CEO, GirlScript Foundation",  
-        "Image": "https://user-images.githubusercontent.com/63473496/152328358-1a556faf-f644-463c-bdfb-99bc0b28e366.png",  
-        "GitHub": "https://github.com/anubhamane",  
-        "Twitter": "https://twitter.com/anubhamane",  
-        "LinkedIn": "https://www.linkedin.com/in/anubhamane/"  
-    },  
-    {  
-        "Name": "Mohit Varu",  
-        "Designation": "MD, GirlScript Foundation",  
-        "Image": "https://raw.githubusercontent.com/girlscript/GirlScript-Summer-of-Code/master/images/team/2020/mohit.jpg",  
-        "GitHub": "",  
-        "Twitter": "https://twitter.com/13_Saanjh",  
-        "LinkedIn": "https://www.linkedin.com/in/mohitvaru/"  
-    },  
-    {  
-        "Name": "Suvraneel Bhuin",  
-        "Email": "bsuvraneel@gmail.com",  
-        "Designation": "GirlScript Summer of Code'23 Advisor",  
-        "Image": "https://github.com/Suvraneel.png",  
-        "GitHub": "https://github.com/Suvraneel",  
-        "Twitter": "https://twitter.com/SuvraneelB",  
-        "LinkedIn": "https://www.linkedin.com/in/suvraneel"  
-    },  
-    {  
-        "Name": "Sanjay Viswanathan",  
-        "Designation": "Program Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Sanjay%20Viswanathan.jpg?raw=true",  
-        "GitHub": "https://github.com/sanjay-kv",  
-        "Twitter": "https://twitter.com/sanjay_kv",  
-        "LinkedIn": "https://www.linkedin.com/in/sanjay-k-v/"  
-    },  
-    {  
-        "Name": "Arushi Garg",  
-        "Designation": "Program Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Arushi%20Garg.jpeg?raw=true",  
-        "GitHub": "https://github.com/072arushi",  
-        "Twitter": "https://twitter.com/ArushiSpeaks105",  
-        "LinkedIn": "https://www.linkedin.com/in/arushi-garg105"  
-    },  
-    {  
-        "Name": "Shatakshi Chaudhari",  
-        "Designation": "Program Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shatakshi%20Chaudhari.jpg?raw=true",  
-        "GitHub": "https://github.com/shatakshichaudhari",  
-        "LinkedIn": "https://www.linkedin.com/in/shatakshi-chaudhari-707b1b236/"  
-    },  
-    {  
-        "Name": "Aishal Gupta",  
-        "Designation": "Program Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/AishalGupta.jpg?raw=true",  
-        "GitHub": "https://github.com/aishalxgupta",  
-        "Twitter": "https://twitter.com/AishalGupta",  
-        "LinkedIn": "https://www.linkedin.com/in/aishal-gupta/"  
-    },  
-    {  
-        "Name": "Aditi",  
-        "Designation": "Leaderboard Specialist",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Aditi.jpg?raw=true",  
-        "GitHub": "https://github.com/Aditii-03",  
-        "Twitter": "https://twitter.com/Aditiii_03",  
-        "LinkedIn": "www.linkedin.com/in/aditi-35507925b"  
-    },  
-    {  
-        "Name": "Prabhat Singh",  
-        "Designation": "Leaderboard Specialist",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/PrabhatSingh.jpeg?raw=true",  
-        "GitHub": "https://github.com/prabhat-3",  
-        "LinkedIn": "https://www.linkedin.com/in/prabhat3/"  
-    },  
-    {  
-        "Name": "Inam Yadav",  
-        "Designation": "Leaderboard Specialist",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Inam%20Yadav.jpg?raw=true",  
-        "GitHub": "https://github.com/INam1995",  
-        "Twitter": "https://twitter.com/in_nuu",  
-        "LinkedIn": "https://www.linkedin.com/in/inam-yadav-b4a984260/"  
-    },  
-    {  
-        "Name": "Prince Gupta",  
-        "Designation": "Web developer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Prince%20Gupta.jpeg?raw=true",  
-        "GitHub": "https://github.com/Princegupta101",  
-        "Twitter": "https://twitter.com/PrinceG68048211",  
-        "LinkedIn": "https://www.linkedin.com/in/prince-gupta-0201b824b/"  
-    },  
-    {  
-        "Name": "Shristy Joshi Thakur",  
-        "Designation": "Web developer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shristy%20Joshi%20Thakur.png?raw=true",  
-        "GitHub": "https://github.com/hustler0109",  
-        "Twitter": "https://twitter.com/ShristyJoshiTk",  
-        "LinkedIn": "https://www.linkedin.com/in/shristy-joshi-thakur-828597201/"  
-    },  
-    {  
-        "Name": "Hemant Kumar",  
-        "Designation": "Web developer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Hemant%20Kumar.jpg?raw=true",  
-        "GitHub": "https://github.com/HemantKr071",  
-        "Twitter": "https://x.com/Hemant_Kr_071?t=Xusk9n28chgubLLz1sxXgw&s=09",  
-        "LinkedIn": "https://www.linkedin.com/in/hemant-kumar-b1b7a023b"  
-    },  
-    {  
-        "Name": "Neetu Yadav",  
-        "Designation": "Public Relations Officer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Neetu%20Yadav.jpg?raw=true",  
-        "GitHub": "https://github.com/neetuyadav23",  
-        "LinkedIn": "https://www.linkedin.com/in/neetu-y-760450215/"  
-    },  
-    {  
-        "Name": "Prerna Pal",  
-        "Designation": "Public Relations Officer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Prerna%20Pal.jpg?raw=true",  
-        "GitHub": "https://github.com/prernads/",  
-        "Twitter": "https://twitter.com/prerna_pal34020",  
-        "LinkedIn": "https://www.linkedin.com/in/prerna-pal-0a4499277/"  
-    },  
-    {  
-        "Name": "Vinayak Kumar Sharma",  
-        "Designation": "Public Relations Officer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Vinayak%20Kumar%20Sharma.jpeg?raw=true",  
-        "GitHub": "https://github.com/Vinayak-kumar-sharma",  
-        "Twitter": "https://twitter.com/i/flow/login?redirect_after_login=%2FVinayak07t",  
-        "LinkedIn": "https://twitter.com/i/flow/login?redirect_after_login=%2FVinayak07t"  
-    },  
-    {  
-        "Name": "Aditi Dahake",  
-        "Designation": "Public Relations Officer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/%20Aditi%20Dahake.jpg?raw=true",  
-        "GitHub": "https://github.com/aditidahake",  
-        "LinkedIn": "https://www.linkedin.com/in/aaditi-dahake-7a0362241/"  
-    },  
-    {  
-        "Name": "Suhani Parmar",  
-        "Designation": "Community Moderator",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Suhani%20Parmar.jpg?raw=true",  
-        "GitHub": "https://github.com/Suhaniparmar",  
-        "Twitter": "https://twitter.com/ParmarSuhani64",  
-        "LinkedIn": "https://www.linkedin.com/in/suhani-parmar-315a93252/"  
-    },  
-    {  
-        "Name": "SAKSHAM SHANDILYA",  
-        "Designation": "Community Moderator",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/SAKSHAMSHANDILYA.png?raw=true",  
-        "GitHub": "https://github.com/SakshamShandilya",  
-        "Twitter": "https://twitter.com/saksham140023",  
-        "LinkedIn": "https://www.linkedin.com/in/shandilya-saksham-full-stack-developer"  
-    },  
-    {  
-       "Name": "Somya Sharma",  
-        "Designation": "Community Moderator",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Somya%20Sharma.jpg?raw=true",  
-        "GitHub": "https://github.com/Somya2010",  
-        "Twitter": "https://twitter.com/SomyaSh42022767",  
-        "LinkedIn": "https://www.linkedin.com/in/somya-sharma-b5ba01229"  
-    },  
-    {  
-        "Name": "Suraj Ojha",  
-        "Designation": "Content Writer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Suraj%20Ojha.jpg?raw=true",  
-        "GitHub": "https://github.com/surajojha668",  
-        "Twitter": "https://x.com/whyfore_?s=09",  
-        "LinkedIn": "https://www.linkedin.com/in/suraj-ojha-49287a21b"  
-    },  
-    {  
-        "Name": "Shatakshi Gaur",  
-        "Designation": "Content Writer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shatakshi%20Gaur.jpg?raw=true",  
-        "GitHub": "https://github.com/shatakshigaur",  
-        "LinkedIn": "https://www.linkedin.com/in/shatakshi-gaur-5b2b55104/"  
-    },  
-    {  
-        "Name": "Priya Chakraborty",  
-        "Designation": "Content Writer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Priya%20Chakraborty.jpg?raw=true",  
-        "GitHub": "https://github.com/Priyachakraborty",  
-        "Twitter": "https://twitter.com/PriyaCh74879052",  
-        "LinkedIn": "https://www.linkedin.com/in/priya-chakraborty/"  
-    },  
-    {  
-        "Name": "Surbhi Verma",  
-        "Designation": "Sponsorship Core",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Surbhi%20Verma.jpg?raw=true",  
-        "GitHub": "https://github.com/internallylose",  
-        "Twitter": "https://twitter.com/surbhi1906verma",  
-        "LinkedIn": "https://www.linkedin.com/in/surbhi-verma-a1321025a"  
-    },  
-    {  
-        "Name": "Tamanna",  
-        "Designation": "Sponsorship Core",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Tamanna.jpeg?raw=true",  
-        "GitHub": "https://github.com/Tamtu55",  
-        "LinkedIn": "https://www.linkedin.com/in/tamanna-a91496263"  
-    },  
-    {  
-        "Name": "Anshika Saini",  
-        "Designation": "Sponsorship Core",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Anshika%20Saini.jpg?raw=true",  
-        "GitHub": "https://github.com/Anshikaa-Saini",  
-        "LinkedIn": "https://www.linkedin.com/in/anshika-saini-a01345260"  
-    },   
-    {  
-        "Name": "Parshwa Salot",  
-        "Designation": "Graphic Designer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Parshwa%20Salot.jpg?raw=true",  
-        "GitHub": "https://github.com/parshwasalot",  
-        "Twitter": "https://twitter.com/parshwasalot",  
-        "LinkedIn": "https://www.linkedin.com/in/parshwasalot"  
-    },  
-    {  
-        "Name": "Jeevana Maradana",  
-        "Designation": "Graphic Designer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Jeevana%20Maradana.jpg?raw=true",  
-        "GitHub": "https://github.com/Jeevana52",  
-        "Twitter": "https://twitter.com/jeevana_19",  
-        "LinkedIn": "https://www.linkedin.com/in/jeevana123/"  
-    },  
-    {  
-        "Name": "Shubhangi Chandra",  
-        "Designation": "Graphic Designer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shubhangi%20Chandra.png?raw=true",  
-        "GitHub": "https://github.com/Shubhangi1-chandra",  
-        "Twitter": "https://twitter.com/ChandraC11568",  
-        "LinkedIn": "https://www.linkedin.com/in/shubhangi-chandra-79b034251/"  
-    },  
+[
+  {
+    "Name": "Anubha Maneshwar",
+    "Designation": "Founder & CEO, GirlScript Foundation",
+    "Image": "https://user-images.githubusercontent.com/63473496/152328358-1a556faf-f644-463c-bdfb-99bc0b28e366.png",
+    "GitHub": "https://github.com/anubhamane",
+    "Twitter": "https://twitter.com/anubhamane",
+    "LinkedIn": "https://www.linkedin.com/in/anubhamane/"
+  },
+  {
+    "Name": "Mohit Varu",
+    "Designation": "MD, GirlScript Foundation",
+    "Image": "https://raw.githubusercontent.com/girlscript/GirlScript-Summer-of-Code/master/images/team/2020/mohit.jpg",
+    "GitHub": "",
+    "Twitter": "https://twitter.com/13_Saanjh",
+    "LinkedIn": "https://www.linkedin.com/in/mohitvaru/"
+  },
+  {
+    "Name": "Suvraneel Bhuin",
+    "Email": "bsuvraneel@gmail.com",
+    "Designation": "GirlScript Summer of Code'23 Advisor",
+    "Image": "https://github.com/Suvraneel.png",
+    "GitHub": "https://github.com/Suvraneel",
+    "Twitter": "https://twitter.com/SuvraneelB",
+    "LinkedIn": "https://www.linkedin.com/in/suvraneel"
+  },
+  {
+    "Name": "Sanjay Viswanathan",
+    "Designation": "Program Manager",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Sanjay%20Viswanathan.jpg?raw=true",
+    "GitHub": "https://github.com/sanjay-kv",
+    "Twitter": "https://twitter.com/sanjay_kv",
+    "LinkedIn": "https://www.linkedin.com/in/sanjay-k-v/"
+  },
+  {
+    "Name": "Arushi Garg",
+    "Designation": "Program Manager",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Arushi%20Garg.jpeg?raw=true",
+    "GitHub": "https://github.com/072arushi",
+    "Twitter": "https://twitter.com/ArushiSpeaks105",
+    "LinkedIn": "https://www.linkedin.com/in/arushi-garg105"
+  },
+  {
+    "Name": "Shatakshi Chaudhari",
+    "Designation": "Program Manager",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shatakshi%20Chaudhari.jpg?raw=true",
+    "GitHub": "https://github.com/shatakshichaudhari",
+    "LinkedIn": "https://www.linkedin.com/in/shatakshi-chaudhari-707b1b236/"
+  },
+  {
+    "Name": "Aishal Gupta",
+    "Designation": "Program Manager",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/AishalGupta.jpg?raw=true",
+    "GitHub": "https://github.com/aishalxgupta",
+    "Twitter": "https://twitter.com/AishalGupta",
+    "LinkedIn": "https://www.linkedin.com/in/aishal-gupta/"
+  },
+  {
+    "Name": "Aditi",
+    "Designation": "Leaderboard Specialist",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Aditi.jpg?raw=true",
+    "GitHub": "https://github.com/Aditii-03",
+    "Twitter": "https://twitter.com/Aditiii_03",
+    "LinkedIn": "www.linkedin.com/in/aditi-35507925b"
+  },
+  {
+    "Name": "Prabhat Singh",
+    "Designation": "Leaderboard Specialist",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/PrabhatSingh.jpeg?raw=true",
+    "GitHub": "https://github.com/prabhat-3",
+    "LinkedIn": "https://www.linkedin.com/in/prabhat3/"
+  },
+  {
+    "Name": "Inam Yadav",
+    "Designation": "Leaderboard Specialist",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Inam%20Yadav.jpg?raw=true",
+    "GitHub": "https://github.com/INam1995",
+    "Twitter": "https://twitter.com/in_nuu",
+    "LinkedIn": "https://www.linkedin.com/in/inam-yadav-b4a984260/"
+  },
+  {
+    "Name": "Prince Gupta",
+    "Designation": "Web developer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Prince%20Gupta.jpeg?raw=true",
+    "GitHub": "https://github.com/Princegupta101",
+    "Twitter": "https://twitter.com/PrinceG68048211",
+    "LinkedIn": "https://www.linkedin.com/in/prince-gupta-0201b824b/"
+  },
+  {
+    "Name": "Shristy Joshi Thakur",
+    "Designation": "Web developer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shristy%20Joshi%20Thakur.png?raw=true",
+    "GitHub": "https://github.com/hustler0109",
+    "Twitter": "https://twitter.com/ShristyJoshiTk",
+    "LinkedIn": "https://www.linkedin.com/in/shristy-joshi-thakur-828597201/"
+  },
+  {
+    "Name": "Kumar Priyanshu",
+    "Designation": "Web developer",
+    "Image": "https://avatars.githubusercontent.com/u/109672617?v=4",
+    "GitHub": "https://github.com/kpriyanshu2003",
+    "Twitter": "https://x.com/kpriyanshu2003",
+    "LinkedIn": "https://www.linkedin.com/in/kpriyanshu2003/"
+  },
+  {
+    "Name": "Hemant Kumar",
+    "Designation": "Web developer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Hemant%20Kumar.jpg?raw=true",
+    "GitHub": "https://github.com/HemantKr071",
+    "Twitter": "https://x.com/Hemant_Kr_071?t=Xusk9n28chgubLLz1sxXgw&s=09",
+    "LinkedIn": "https://www.linkedin.com/in/hemant-kumar-b1b7a023b"
+  },
+  {
+    "Name": "Neetu Yadav",
+    "Designation": "Public Relations Officer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Neetu%20Yadav.jpg?raw=true",
+    "GitHub": "https://github.com/neetuyadav23",
+    "LinkedIn": "https://www.linkedin.com/in/neetu-y-760450215/"
+  },
+  {
+    "Name": "Prerna Pal",
+    "Designation": "Public Relations Officer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Prerna%20Pal.jpg?raw=true",
+    "GitHub": "https://github.com/prernads/",
+    "Twitter": "https://twitter.com/prerna_pal34020",
+    "LinkedIn": "https://www.linkedin.com/in/prerna-pal-0a4499277/"
+  },
+  {
+    "Name": "Vinayak Kumar Sharma",
+    "Designation": "Public Relations Officer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Vinayak%20Kumar%20Sharma.jpeg?raw=true",
+    "GitHub": "https://github.com/Vinayak-kumar-sharma",
+    "Twitter": "https://twitter.com/i/flow/login?redirect_after_login=%2FVinayak07t",
+    "LinkedIn": "https://twitter.com/i/flow/login?redirect_after_login=%2FVinayak07t"
+  },
+  {
+    "Name": "Aditi Dahake",
+    "Designation": "Public Relations Officer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/%20Aditi%20Dahake.jpg?raw=true",
+    "GitHub": "https://github.com/aditidahake",
+    "LinkedIn": "https://www.linkedin.com/in/aaditi-dahake-7a0362241/"
+  },
+  {
+    "Name": "Suhani Parmar",
+    "Designation": "Community Moderator",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Suhani%20Parmar.jpg?raw=true",
+    "GitHub": "https://github.com/Suhaniparmar",
+    "Twitter": "https://twitter.com/ParmarSuhani64",
+    "LinkedIn": "https://www.linkedin.com/in/suhani-parmar-315a93252/"
+  },
+  {
+    "Name": "SAKSHAM SHANDILYA",
+    "Designation": "Community Moderator",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/SAKSHAMSHANDILYA.png?raw=true",
+    "GitHub": "https://github.com/SakshamShandilya",
+    "Twitter": "https://twitter.com/saksham140023",
+    "LinkedIn": "https://www.linkedin.com/in/shandilya-saksham-full-stack-developer"
+  },
+  {
+    "Name": "Somya Sharma",
+    "Designation": "Community Moderator",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Somya%20Sharma.jpg?raw=true",
+    "GitHub": "https://github.com/Somya2010",
+    "Twitter": "https://twitter.com/SomyaSh42022767",
+    "LinkedIn": "https://www.linkedin.com/in/somya-sharma-b5ba01229"
+  },
+  {
+    "Name": "Suraj Ojha",
+    "Designation": "Content Writer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Suraj%20Ojha.jpg?raw=true",
+    "GitHub": "https://github.com/surajojha668",
+    "Twitter": "https://x.com/whyfore_?s=09",
+    "LinkedIn": "https://www.linkedin.com/in/suraj-ojha-49287a21b"
+  },
+  {
+    "Name": "Shatakshi Gaur",
+    "Designation": "Content Writer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shatakshi%20Gaur.jpg?raw=true",
+    "GitHub": "https://github.com/shatakshigaur",
+    "LinkedIn": "https://www.linkedin.com/in/shatakshi-gaur-5b2b55104/"
+  },
+  {
+    "Name": "Priya Chakraborty",
+    "Designation": "Content Writer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Priya%20Chakraborty.jpg?raw=true",
+    "GitHub": "https://github.com/Priyachakraborty",
+    "Twitter": "https://twitter.com/PriyaCh74879052",
+    "LinkedIn": "https://www.linkedin.com/in/priya-chakraborty/"
+  },
+  {
+    "Name": "Surbhi Verma",
+    "Designation": "Sponsorship Core",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Surbhi%20Verma.jpg?raw=true",
+    "GitHub": "https://github.com/internallylose",
+    "Twitter": "https://twitter.com/surbhi1906verma",
+    "LinkedIn": "https://www.linkedin.com/in/surbhi-verma-a1321025a"
+  },
+  {
+    "Name": "Tamanna",
+    "Designation": "Sponsorship Core",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Tamanna.jpeg?raw=true",
+    "GitHub": "https://github.com/Tamtu55",
+    "LinkedIn": "https://www.linkedin.com/in/tamanna-a91496263"
+  },
+  {
+    "Name": "Anshika Saini",
+    "Designation": "Sponsorship Core",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Anshika%20Saini.jpg?raw=true",
+    "GitHub": "https://github.com/Anshikaa-Saini",
+    "LinkedIn": "https://www.linkedin.com/in/anshika-saini-a01345260"
+  },
+  {
+    "Name": "Parshwa Salot",
+    "Designation": "Graphic Designer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Parshwa%20Salot.jpg?raw=true",
+    "GitHub": "https://github.com/parshwasalot",
+    "Twitter": "https://twitter.com/parshwasalot",
+    "LinkedIn": "https://www.linkedin.com/in/parshwasalot"
+  },
+  {
+    "Name": "Jeevana Maradana",
+    "Designation": "Graphic Designer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Jeevana%20Maradana.jpg?raw=true",
+    "GitHub": "https://github.com/Jeevana52",
+    "Twitter": "https://twitter.com/jeevana_19",
+    "LinkedIn": "https://www.linkedin.com/in/jeevana123/"
+  },
+  {
+    "Name": "Shubhangi Chandra",
+    "Designation": "Graphic Designer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Shubhangi%20Chandra.png?raw=true",
+    "GitHub": "https://github.com/Shubhangi1-chandra",
+    "Twitter": "https://twitter.com/ChandraC11568",
+    "LinkedIn": "https://www.linkedin.com/in/shubhangi-chandra-79b034251/"
+  },
 
-    {  
-        "Name": "Nehal Fathema",  
-        "Designation": "UI/UX Designer",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Nehal%20Fathema.jpg?raw=true",  
-        "GitHub": "https://github.com/nehal-5",  
-        "Twitter": "https://twitter.com/FathemaNehal",  
-        "LinkedIn": "https://www.linkedin.com/in/nehal-fathema/"  
-    },  
+  {
+    "Name": "Nehal Fathema",
+    "Designation": "UI/UX Designer",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Nehal%20Fathema.jpg?raw=true",
+    "GitHub": "https://github.com/nehal-5",
+    "Twitter": "https://twitter.com/FathemaNehal",
+    "LinkedIn": "https://www.linkedin.com/in/nehal-fathema/"
+  },
 
-
-    {  
-        "Name": "Sneha Kumari",  
-        "Designation": "Discord Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Sneha%20Kumari.jpg?raw=true",  
-        "GitHub": "https://github.com/Snehsk",  
-        "Twitter": "https://twitter.com/SnehaKumariSk1",  
-        "LinkedIn": "https://www.linkedin.com/in/sneha-kumari1/"  
-    },  
-    {  
-        "Name": "Hemant Panwar",  
-        "Designation": "Discord Manager",  
-        "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Hemant%20Panwar.jpg?raw=true",  
-        "GitHub": "https://github.com/Hemantlohar",  
-        "Twitter": "https://twitter.com/_Hemant_lohar_",  
-        "LinkedIn": "https://www.linkedin.com/in/hemant-lohar-40195317a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  
-    }  
-] 
+  {
+    "Name": "Sneha Kumari",
+    "Designation": "Discord Manager",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Sneha%20Kumari.jpg?raw=true",
+    "GitHub": "https://github.com/Snehsk",
+    "Twitter": "https://twitter.com/SnehaKumariSk1",
+    "LinkedIn": "https://www.linkedin.com/in/sneha-kumari1/"
+  },
+  {
+    "Name": "Hemant Panwar",
+    "Designation": "Discord Manager",
+    "Image": "https://github.com/GSSoC24/.github/blob/main/assets/Hemant%20Panwar.jpg?raw=true",
+    "GitHub": "https://github.com/Hemantlohar",
+    "Twitter": "https://twitter.com/_Hemant_lohar_",
+    "LinkedIn": "https://www.linkedin.com/in/hemant-lohar-40195317a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+  }
+]
