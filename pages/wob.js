@@ -75,7 +75,7 @@ export default function Wob() {
               <span className="text-[#00008B]">#OpenSource &nbsp;</span>
               program by GirlScript Foundation.
               <br />
-              <b> 10th May - 10th August 2024 </b>
+              <b> 25th September - 25th November 2024 </b>
             </div>
             <div className="flex items-center mt-2 mb-10 md:mb-52 lg:mb-56">
               <a href="">
