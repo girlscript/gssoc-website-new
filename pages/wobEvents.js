@@ -8,20 +8,13 @@ import { Spacer } from "@chakra-ui/react";
 const WobEvents = () => {
   const events = [
     {
-      name: "Blockchain and Crypto Conferences 2024",
-      description: "Forbes",
-      image: "/WoB/events_img.png",
-      logo: "/WoB/f_logo.png",
-      views: "2M views",
-      time: "• 5 months ago",
-    },
-    {
-      name: "Blockchain and Crypto Conferences 2024",
-      description: "Forbes",
-      image: "/WoB/events_img.png",
-      logo: "/WoB/f_logo.png",
-      views: "2M views",
-      time: "• 5 months ago",
+      name: "Open Source Guidance Session📢🚀",
+      description: `📣 Join us for a game-changing session on Open Source 🌐 with Winter of Blockchain featuring our esteemed speaker, Nandini Singh! 🤩⚡ 
+Nandini is an Android developer, open-source enthusiast, and the Program Manager for Winter of Blockchain. She will share her insights and expertise on the fascinating world of open source.`,
+      image: "https://www.youtube.com/embed/V53unQsIISk?si=bfRuT1pmtLkNIC_l",
+      logo: "/WoB/gsf_ytlogo.jpg",
+      views: "live",
+      time: "• Jun 30 2024",
     },
   ];
 
@@ -33,10 +26,7 @@ const WobEvents = () => {
           name="description"
           content="Browse the latest events at WOB 2024, hosted by GirlScript Foundation."
         />
-        <link
-          rel="icon"
-          href="/WoB/Favicon.ico"
-        />
+        <link rel="icon" href="/WoB/Favicon.ico" />
       </Head>
 
       {/* Hero Section */}
@@ -92,11 +82,15 @@ const WobEvents = () => {
               key={index}
               className="bg-[#E6F6FF] rounded-lg max-w-[325px] m-auto overflow-hidden shadow-lg"
             >
-              <img
+              <iframe
+                className="w-full h-80"
                 src={event.image}
-                alt={`Event ${index + 1}`}
-                className="w-full h-48 object-cover"
-              />
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+
               <div className="p-4">
                 <div className="flex mb-2">
                   <img
@@ -105,12 +99,14 @@ const WobEvents = () => {
                     className="w-10 h-10 mr-4 rounded-full"
                   />
                   <div>
-                    <h3 className="text-lg md:text-xl font-bold">
-                      {event.name}
+                    <h3 className="text-lg md:text-xl font-bold overflow-hidden">
+                      {event.name.slice(0, 30)}...
                     </h3>
-                    <p className="text-[#606060] mt-2">{event.description}</p>
+                    <div className="h-20 w-full overflow-hidden mt-2">
+                      <p className="text-[#606060]">{event.description.slice(0,90)}...</p>
+                    </div>
                     <div className="flex items-center text-[#606060] mt-2">
-                      <p className="mr-4">{event.views}</p>
+                      <p className="ml-2 mr-1">{event.views}</p>
                       <p>{event.time}</p>
                     </div>
                   </div>
