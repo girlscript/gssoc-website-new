@@ -47,7 +47,7 @@ export const Navbar = () => {
                 <span className="text-xl font-bold uppercase tracking-wide">
                   {theme === "light" ? (
                     <img
-                      style={{ width: "200px",height:"60px" }}
+                      style={{ width: "200px", height: "60px" }}
                       id="Learn_more"
                       src="/WoB/WOB_Black.png"
                       alt="GSSoC logo light"
@@ -137,6 +137,28 @@ export const Navbar = () => {
                   TEAM
                 </a>
               </Link>
+              <a className="lg:inline-flex lg:w-auto w-full px-2.5 py-2 text-center rounded text-grey-700 text-1xl font-medium mr-2.5 hover:text-[#00008B] dark:hover:text-[#00008B] hover:text-lg transition-all link link-underline link-underline-black-wob cursor-pointer">
+                JOB FAIR
+              </a>
+              <a className="lg:inline-flex lg:w-auto w-full px-2.5 py-2 text-center rounded text-grey-700 text-1xl font-medium mr-2.5 hover:text-[#00008B] dark:hover:text-[#00008B] hover:text-lg transition-all link link-underline link-underline-black-wob cursor-pointer">
+                FAQ
+              </a>
+              <a
+                onClick={handleClick}
+                className="lg:inline-flex lg:w-auto w-full px-2.5 py-2 text-center rounded text-grey-700 text-1xl font-medium mr-2.5 hover:text-[#00008B] dark:hover:text-[#00008B] hover:text-lg transition-all link link-underline link-underline-black-wob cursor-pointer"
+              >
+                BLOG
+              </a>
+              <a
+                onClick={handleClick}
+                href="/wobContact"
+                className="lg:inline-flex lg:w-auto w-full px-2.5 py-2 text-center rounded text-grey-700 text-1xl font-medium mr-2.5 hover:text-[#00008B] dark:hover:text-[#00008B] hover:text-lg transition-all link link-underline link-underline-black-wob cursor-pointer"
+              >
+                CONTACT
+              </a>
+              <div className="lg:inline-flex lg:w-auto w-full px-2 text-center rounded">
+                <MoreMenu handleClick={handleClick} />
+              </div>
               <div className="hidden lg:block">
                 <Tooltip label="Change Theme" placement="bottom">
                   <div>
