@@ -37,7 +37,7 @@ const Footer = () => {
                       ABOUT GSSOC
                     </h6>
                     <div>
-                      <Link href="/contact">
+                      <Link href="/wobContact">
                         <span className="font-normal text-white py-1 hover:underline block cursor-pointer">
                           Contact Us
                         </span>
