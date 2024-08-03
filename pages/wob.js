@@ -3,7 +3,7 @@ import { useTheme } from "next-themes";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
-
+import Card from "../components/homepage/Card";
 import SocialFollow from "../components/homepage/SocialFollow";
 import ThemeChanger from "../components/Toggler";
 import UnderConstruction from "../components/wob/UnderConstruction";
@@ -34,7 +34,7 @@ export default function Wob() {
         </title>
         <meta name="WOB'24" content="WOB'24 is back!" />
         <link rel="icon" href="/WoB/Favicon.ico" />
-        <meta property="og:url" content="https://gssoc.girlscript.tech/" />
+        <meta property="og:url" content="https://gssoc.girlscript.tech/wob" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
@@ -47,7 +47,7 @@ export default function Wob() {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="gssoc.girlscript.tech" />
-        <meta property="twitter:url" content="https://gssoc.girlscript.tech/" />
+        <meta property="twitter:url" content="https://gssoc.girlscript.tech/wob" />
         <meta
           name="twitter:title"
           content="GirlScript Winter of Blockchain'24"
@@ -312,37 +312,63 @@ export default function Wob() {
             </div>
           </div>
         </div>
-
-        <div className="first-section mb-10 flex flex-col md:flex-row">
-          <span className="text-[#00008B] text-[64px]">
-            Be a part of WOB 2024
-          </span>
-        </div>
-        <div className="flex flex-row relative rounded-r-[50px] justify-between items-center bg-[#ADD8E6] h-[672px] dark:bg-black flex-wrap mb-24">
-          <img
-            className="w-[648px] h-[586px] absolute top-[10%]"
-            src="/WoB/people.png"
-            alt=""
-          />
-          <img
-            className="w-[99px] h-[75px] absolute bottom-[15%] left-[50%]"
-            src="/WoB/Right_Duo.png"
-            alt=""
-          />
-          <img
-            className="w-[367px] h-[376px] absolute rounded-tr-[50px] top-0 right-0"
-            src="/WoB/Group.png"
-            alt=""
-          />
-          <div className="bg-gradient-to-b absolute top-2 right-[8.4%] from-[#00008B] to-[#85C6DC] w-[81px] h-[85px]" />
-          <div className="bg-gradient-to-b absolute top-2 right-[24%] from-[#00008B] to-[#85C6DC] w-[81px] h-[85px]" />
-          <div className="bg-gradient-to-b absolute top-[15%] right-2 from-[#00008B] to-[#85C6DC] w-[81px] h-[85px]" />
-          <div className="bg-gradient-to-b absolute top-[15%] right-[16.3%] from-[#00008B] to-[#85C6DC] w-[81px] h-[85px]" />
-          <div className="bg-gradient-to-b absolute top-[28.5%] right-[8.5%] from-[#00008B] to-[#85C6DC] w-[81px] h-[85px]" />
-          <div className="bg-gradient-to-b absolute top-[42.5%] right-2.5 from-[#00008B] to-[#85C6DC] w-[81px] h-[85px]" />
-          <button className=" bg-gradient-to-r from-[#00008B] to-[#85C6DC] text-md text-white font-semibold px-4 py-4 rounded-[8px] absolute left-[60%] bottom-[16.8%] md:text-2xl md:py-2">
-            Register Here
-          </button>
+        <div className="be-part-of">
+          <p className="font-sans font-semibold text-center dark:text-white text-gray-800 text-4xl 2.25rem 3rem ">
+            <span className="text-[#00008B] text-4xl 2.25rem 3rem">
+              Be a part of{" "}
+            </span>
+            WOB 2024
+          </p>
+          <div
+            data-aos="flip-left"
+            data-aos-duration="1500"
+            className="container my-12 mx-auto"
+          >
+            <div
+              className="flex flex-wrap justify-between md:justify-around -mx-1 lg:-mx-4 md:justify-items-stretch"
+              id="card-1"
+            >
+              {/* Card-1 */}
+              <Card
+                disabled
+                title="Start your Journey"
+                content="Participating in WOB’24 is an opportunity to upgrade your Github profile. Enrich yourselves to learn, explore, improve, enhance, build connections and become a team player to nourish your skills and personality towards blockchain the realm of web3. Don’t miss a chance to get well-versed with Open-Source and essential tools like Git and Github under the supervision of excellent mentors."
+                btntext="Apply as a Contributor"
+                link="https://docs.google.com/forms/d/e/1FAIpQLSfu-qjEu69mG4Y-aNUoDmkmPKoCt10dtCfhPLee8ZdnoR5IMw/viewform"
+              />
+              {/* Card-2 */}
+              <Card
+                disabled
+                title="Lead the Pack"
+                content="Mentors are the experts and take the lead of the open-source project team. They guide the fellow participants at each stage in a road map of the project. They are the backbone of team and are available throughout the winter to review the pull requests and suggest betterment. Apply to be a mentor at Girlscript winter of blockchain and be the foundation of your team."
+                btntext="Apply as a mentor"
+                link="https://docs.google.com/forms/d/e/1FAIpQLSea8gByDIvVm6mMGKxw8dWQH8Uov8z-o-guf2RNd79xufPc1A/viewform"
+              />
+            </div>
+          </div>
+          <div
+            data-aos="flip-right"
+            data-aos-duration="1500"
+            className="container my-12 mx-auto "
+          >
+            <div className="flex flex-wrap justify-between md:justify-around -mx-1 lg:-mx-4">
+              {/* Card-3 */}
+              <Card
+                disabled
+                title="Inviting Projects &amp; NGOs"
+                content="If you are an organization with a project idea in mind, a website or an app then this is the golden opportunity to become a part of an awesome community. The budding developers under the guidance of expert mentors will work on your projects and strive to achieve the best version. Apply and let’s collaborate together because Together Everyone Achieves More."
+                btntext="Apply as an Organization/Project Admin"
+                link="https://docs.google.com/forms/d/e/1FAIpQLSf8NTLBHui-zvuEIZysbmmhfCiO2xE1tyFroHdItPOOCE5isA/viewform"
+              />
+              {/* Card-4 */}
+              <Card
+                title="Add a Shade to WOB"
+                content="Sponsors with their precious resources make it possible for GirlScript to conduct the entire event smoothly, to encourage talent by enabling us to give perks to our top participants. Hence as a token of gratitude, we provide great publicity on our social platforms and exposure on media about our sponsors. Sponsor us to add a bright shade to our program."
+                btntext="Sponsor Us"
+                link="https://docs.google.com/forms/d/e/1FAIpQLSfnolIropQlxVQdnFNdWesXt4c8WEYBaRlKJtttRLP7EC3NLQ/viewform"
+              />
+            </div>
+          </div>
         </div>
         {/* Schedule */}
         <div className="schedule__container flex flex-col items-center  mb-20  mx-5 md:mx-20  ">

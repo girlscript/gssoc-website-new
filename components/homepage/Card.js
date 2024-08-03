@@ -1,4 +1,17 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
 function Cards(props) {
+  const router = useRouter();
+  const [isWobRoute, setIsWobRoute] = useState(false);
+
+  useEffect(() => {
+    if (router.asPath.startsWith("/wob")) {
+      setIsWobRoute(true); // set it as true if you want to launch the website
+    } else {
+      setIsWobRoute(false);
+    }
+  }, [router.asPath]);
   return (
     <div className="dark:bg-black flex bg-white shadow-lg rounded-lg  h-500px my-1 px-1 lg:my-4 lg:px-4 w-full md:w-[48%]">
       <article className="overflow-hidden rounded-lg flex justify-between flex-col">
@@ -20,11 +33,11 @@ function Cards(props) {
             rel="noreferrer"
           >
             {!props.disabled ? (
-              <button className="dark:text-black bg-gradient-to-b from-primary_orange-0 to-orange-600 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-white w-full font-bold py-3 px-5 rounded mb-3">
+              <button className={`dark:text-black ${isWobRoute?"bg-gradient-to-b from-[#00008B] to-[#85C6DC] hover:bg-gradient-to-t":"bg-gradient-to-b from-primary_orange-0 to-orange-600 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600"} text-white w-full font-bold py-3 px-5 rounded mb-3`}>
                 {props.btntext}
               </button>
             ) : (
-              <button className="dark:text-black bg-gradient-to-b from-primary_orange-0 to-orange-600 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-white w-full font-bold py-3 px-5 rounded mb-3">
+              <button className={`dark:text-black bg-gradient-to-b ${isWobRoute?"from-[#00008B] to-[#85C6DC]":"from-primary_orange-0 to-orange-600"} hover:bg-gradient-to-t text-white w-full font-bold py-3 px-5 rounded mb-3`}>
                 {props.btntext}
               </button>
             )}
