@@ -74,39 +74,45 @@ const WobTeam = () => {
                 </p>
               </div>
               <div className="flex flex-row gap-3">
-                <a
-                  href={member.Twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    className="w-[36px] h-[36px]"
-                    src="/WoB/TwitterIcon.png"
-                    alt="Twitter"
-                  />
-                </a>
-                <a
-                  href={member.GitHub}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    className="w-[36px] h-[36px]"
-                    src="/WoB/GithubIcon.png"
-                    alt="GitHub"
-                  />
-                </a>
-                <a
-                  href={member.LinkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    className="w-[36px] h-[36px]"
-                    src="/WoB/LinkedInIcon.png"
-                    alt="LinkedIn"
-                  />
-                </a>
+                {member.Twitter && (
+                  <a
+                    href={member.Twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="w-[36px] h-[36px]"
+                      src="/WoB/TwitterIcon.png"
+                      alt="Twitter"
+                    />
+                  </a>
+                )}
+                {member.GitHub && (
+                  <a
+                    href={member.GitHub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="w-[36px] h-[36px]"
+                      src="/WoB/GithubIcon.png"
+                      alt="GitHub"
+                    />
+                  </a>
+                )}
+                {member.LinkedIn && (
+                  <a
+                    href={member.LinkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      className="w-[36px] h-[36px]"
+                      src="/WoB/LinkedInIcon.png"
+                      alt="LinkedIn"
+                    />
+                  </a>
+                )}
               </div>
             </div>
           </div>
