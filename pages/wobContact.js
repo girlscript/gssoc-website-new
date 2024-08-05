@@ -19,6 +19,7 @@ function WobContact() {
     email: "",
     phoneNumber: "",
     message: "",
+    isWob: true
   });
 
   const handleInputChange = (field, value) => {
@@ -102,13 +103,13 @@ function WobContact() {
       <div className="grid place-content-center">
         <div className="bg-white dark:bg-gray-800 p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
           <div className="relative">
-            <div className="md:absolute top-10 z-10 left-0">
-              <div className="w-full py-6 md:py-0 bg-[#DFF4FF] md:bg-transparent rounded-lg">
+            <div className="md:absolute w-full top-10 z-[5] left-0">
+              <div className="m-auto flex px-7 w-auto justify-items-center py-6 md:py-0 bg-[#DFF4FF] md:bg-transparent rounded-lg">
                 <Image
-                  src="/GS_logo_contact.svg"
+                  src="/WoB/WOB_Black.png"
                   alt="GS Logo"
-                  width={600}
-                  height={100}
+                  width={300}
+                  height={80}
                 />
               </div>
               <div className="pl-10 hidden md:block text-white">
@@ -128,7 +129,7 @@ function WobContact() {
                 </Link>
                 <Link href="mailto:gssoc@girlscript.tech">
                   <div className="flex items-center gap-2">
-                    <Email /> gssoc@girlscript.tech
+                    <Email /> wob@girlscript.tech
                   </div>
                 </Link>
                 <div className="flex items-center gap-2">
@@ -138,8 +139,9 @@ function WobContact() {
             </div>
             <div className="hidden md:block">
               <Image
-                src="/GSSoC_Contact_BG.svg"
+                src="/WoB/Wob_Contact_BG.png"
                 alt="Contact Us"
+                className="rounded-md"
                 height={850}
                 width={650}
               />
